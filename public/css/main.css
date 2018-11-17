@@ -1,0 +1,19 @@
+
+.box {
+    border-radius: 0;
+}
+
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  
+.site-content {
+    flex: 1;
+}
+
+#navbar-logo {
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+}

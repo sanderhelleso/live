@@ -1,0 +1,54 @@
+#hero {
+    background: linear-gradient(
+    rgba(253, 164, 91, 0.6), 
+    rgba(196, 68, 255, 0.7)),
+    url("/public/img/landing/hero.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; 
+    min-height: 100vh;
+    position: relative;
+}
+
+#hero-banner {
+    position: absolute;
+    top: 35%;
+    right: 15%;
+    color: #ffffff;
+    max-width: 500px;
+}
+
+#hero-banner h1 {
+    font-size: 7.5vw;
+    letter-spacing: 0.5rem;
+}
+
+#hero-banner h5 {
+    opacity: 0.6;
+    font-size: 1.1vw;
+    max-width: 400px;
+    font-weight: 100;
+}
+
+#hero-banner a {
+    margin: 3rem 0;
+    padding: 1.75rem;
+    min-height: 3rem;
+    min-width: 75%;
+    background: #1FA2FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    color: #ffffff;
+    -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    font-weight: 400;
+}
+
+#landing-section-1 {
+    min-height: 200vh;
+}

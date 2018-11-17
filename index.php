@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <?php include("head/head.php"); ?>
 <html>
-<body>
+<body class="site">
 <?php include("nav/nav.php"); ?>
 <?php include("landing/landing.php"); ?>
 <?php include("footer/footer.php"); ?>
+<script>
+    feather.replace();
+</script>
 </body>
 </html>

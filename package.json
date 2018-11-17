@@ -1,0 +1,22 @@
+{
+  "name": "cst336-final-project",
+  "version": "1.0.0",
+  "description": "cst 336 final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanderhelleso/cst336-Final-Project.git"
+  },
+  "author": "Sander Hellesø, Zack Hutchinson, Gabriel Sanchez, Michael Avalos-Garcia",
+  "license": "UNLICENCED",
+  "bugs": {
+    "url": "https://github.com/sanderhelleso/cst336-Final-Project/issues"
+  },
+  "homepage": "https://github.com/sanderhelleso/cst336-Final-Project#readme",
+  "dependencies": {
+    "bulma": "^0.7.2"
+  }
+}
