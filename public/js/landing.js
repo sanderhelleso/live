@@ -1,23 +1,32 @@
 window.onload = initialize;
 
 // globals
-var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
+let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 
 function initialize() {
-    console.log(123);
     window.addEventListener('scroll', scrollSpy);
 }
 
-function scrollSpy(e) {
-    var navbar = document.querySelector('#main-navbar')
-    var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+function scrollSpy() {
+    const navbar = document.querySelector('#main-navbar');
+    const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (previousPosition > currentPosition) {
-        navbar.className = 'navbar is-fixed-top box animated slideInDown';
-    } 
+    // fade in elements when scrolled past
+    Array.from(document.querySelectorAll('.section')).forEach(section => {
+        if (window.scrollY > (section.offsetTop - 300)) {
+            section.style.opacity = '1';
+        }
+    });
     
-    else {
-        navbar.className = 'navbar is-fixed-top box animated slideOutUp'
+    // animate navigation bar depending on scroll direction
+    if (currentPosition !== 0) {
+        if (previousPosition > currentPosition) {
+            navbar.className = 'navbar is-fixed-top box animated slideInDown';
+        } 
+        
+        else {
+            navbar.className = 'navbar is-fixed-top box animated slideOutUp'
+        }
     }
 
     previousPosition = currentPosition;
