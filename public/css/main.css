@@ -9,6 +9,10 @@
                                     supported by Chrome and Opera */
 }
 
+body {
+    overflow-x: hidden;
+}
+
 p {
     line-height: 1.6;
 }
@@ -30,6 +34,17 @@ p {
 #navbar-logo {
     font-size: 2rem;
     letter-spacing: 0.25rem;
+    margin-left: 1rem;
+}
+
+.navbar-brand a:hover {
+    color: #4a4a4a;
+}
+
+#main-navbar-menu .button {
+    margin-right: 1rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 .footer {

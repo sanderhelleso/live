@@ -41,7 +41,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./public/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./public/css/landing.css" />
     
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="./public/js/navbar.js"></script>
     <script src="./public/js/landing.js"></script>
 
     <title>Home</title>

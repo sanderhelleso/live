@@ -2,14 +2,14 @@
 <main class="site-content">
     <div id="hero">
         <div id="hero-banner" class="has-text-centered animated fadeIn">
-            <h1>LIVE</h1>
-            <h5>Live your life. Find qualified and passionate people to take care of those you care about.</h5>
-            <a class="button" href="/signup/signup.php">Get started today</a>
+            <h1 class="animated fadeInUp">LIVE</h1>
+            <h5 class="animated fadeIn">Live your life. Find qualified and passionate people to take care of those you care about.</h5>
+            <a class="button animated fadeInDown" href="/signup/signup.php">Get started today</a>
         </div>
     </div>
     <section class="section has-text-centered">
         <div class="container">
-            <div class="columns is-mobile is-centered is-vcentered">
+            <div class="columns is-desktop is-centered is-vcentered">
                 <div class="column">
                 <h2 class="title">On demand</h1>
                     <h5 class="subtitle">
@@ -29,7 +29,7 @@
     </section>
     <section class="section has-text-centered">
         <div class="container">
-            <div class="columns is-mobile is-centered is-vcentered">
+            <div class="columns is-desktop is-centered is-vcentered">
                 <div class="column">
                     <figure class="image figure-overlay figure-overlay-2">
                         <img src="./public/img/landing/section2.jpg" alt="Passionate people are waiting just around the corner to make a difference">
@@ -49,7 +49,7 @@
     </section>
     <section class="section has-text-centered">
         <div class="container">
-            <div class="columns is-mobile is-centered is-vcentered">
+            <div class="columns is-desktop is-centered is-vcentered">
                 <div class="column">
                     <h2 class="title">Help each other</h1>
                     <h5 class="subtitle">
