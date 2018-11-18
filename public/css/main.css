@@ -17,6 +17,10 @@ p {
     line-height: 1.6;
 }
 
+label:hover {
+    transition:0.3s ease-in-out;
+}
+
 .box {
     border-radius: 0;
 }

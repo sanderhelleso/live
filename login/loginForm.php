@@ -1,20 +1,22 @@
 <form id="login-form-cont">
     <div class="field">
         <div class="control has-icons-left has-icons-right">
-            <input class="input is-medium" type="email" placeholder="E-Mail">
+            <input class="input is-rounded is-medium login-input" type="email" placeholder="E-Mail">
             <span class="icon is-small is-left">
             <i data-feather="mail"></i>
             </span>
         </div>
+        <p class="help email-help is-danger has-text-left"></p>
     </div>
 
     <div class="field">
         <div class="control has-icons-left has-icons-right">
-            <input class="input is-medium" type="email" placeholder="Password">
+            <input class="input is-rounded is-medium login-input" type="password" placeholder="Password">
             <span class="icon is-left">
             <i data-feather="lock"></i>
             </span>
         </div>
+        <p class="help password-help is-danger has-text-left"></p>
     </div>
     <div class="control has-text-centered is-medium">
         <button id="login-btn" class="button is-primary">Log In</button>
