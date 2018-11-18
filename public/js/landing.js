@@ -13,7 +13,7 @@ function scrollSpy() {
 
     // fade in elements when scrolled past
     Array.from(document.querySelectorAll('.section')).forEach(section => {
-        if (window.scrollY > (section.offsetTop - 300)) {
+        if (window.scrollY > (section.offsetTop - 400)) {
             section.style.opacity = '1';
         }
     });

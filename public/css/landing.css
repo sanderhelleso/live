@@ -7,8 +7,10 @@
 	background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center; 
-    min-height: 100vh;
+    min-height: 105vh;
     position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
 }
 
 #hero-banner {
@@ -20,13 +22,13 @@
 }
 
 #hero-banner h1 {
-    font-size: 7.5vw;
+    font-size: 6.5rem;
     letter-spacing: 0.5rem;
 }
 
 #hero-banner h5 {
     opacity: 0.6;
-    font-size: 1.1vw;
+    font-size: 1.15rem;
     max-width: 400px;
     font-weight: 100;
 }
@@ -35,7 +37,8 @@
     margin: 3rem 0;
     padding: 1.75rem;
     min-height: 3rem;
-    min-width: 75%;
+    min-width: 300px;
+    max-width: 350px;
     background: #1FA2FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -44,9 +47,13 @@
     text-transform: uppercase;
     letter-spacing: 0.15rem;
     color: #ffffff;
-    -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
-    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 16px 32px rgba(10, 10, 10, .2);
     font-weight: 400;
+    transition: 0.3s ease-in-out;
+}
+
+#hero-banner a:hover , #get-started-section a:hover {
+    box-shadow: 0 16px 32px rgba(10, 10, 10, .4);
 }
 
 .section {
@@ -58,46 +65,57 @@
 }
 
 .section:nth-child(3) {
+    padding: 9rem 0;
     background-color: #f5f5f5;
+    -webkit-clip-path: polygon(0 1%, 100% 6%, 100% 94%, 0 100%);
+    clip-path: polygon(0 1%, 100% 6%, 100% 94%, 0 100%);
 }
 
 .section .title {
     margin: 7rem 0 3rem 0;
-    font-size: 2.5vw;
+    font-size: 3rem;
     text-transform: capitalize;
 }
 
 .section .subtitle {
     font-weight: 300;
-    font-size: 1.40vw;
+    font-size: 1.25rem;
     max-width: 85%;
     margin: 0 auto;
     color: #757575;
 }
 
+.section .columns .column:nth-child(1) {
+    margin-right: 1.5rem;
+}
+
+.section .columns .column:nth-child(2) {
+    margin-left: 1.5rem;
+}
+
 .section p {
     color: #9e9e9e;
-    margin: 3rem;
+    margin: 2rem;
     font-weight: 100;
     text-align: left;
 }
 
 .section figure {
-    height: 20rem;
     width: 101%;
     -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
-    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 16px 32px rgba(10, 10, 10, .2);
 }
 
 .section figure img {
-    margin: 4rem 0 2rem 0;
+    margin: 8rem 0 2rem 0;
     height: 100%;
+    width: 101%;
 }
 
 .section .container {
-    max-width: 70%;
+    max-width: 72.5%;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%);
 }
@@ -113,7 +131,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 100.25%;
 }
 
 .figure-overlay-1::after {
@@ -150,8 +168,162 @@
     min-width: 300px;
 }
 
+#get-started-section .container {
+    top: 22.5%;
+}
+
+
 @media screen and (min-height: 1200px) {
     .section {
         min-height: 80vh;
+    }
+
+    #get-started-section {
+        min-height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+
+    #hero-banner h1 {
+        font-size: 8.5rem;
+    }
+    
+    #hero-banner h5 {
+        font-size: 1.5rem;
+        max-width: 500px;
+    }
+
+    #hero-banner a, #get-started-section a {
+        font-size: 1.5rem;
+        padding: 2.5rem;
+        min-width: 400px;
+        max-width: 450px;
+    }
+
+    .section p {
+        font-size: 1.2rem;
+    }
+
+    .section .title {
+        font-size: 3.5rem;
+    }
+
+    .section .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+
+
+@media screen and (max-width: 1100px) {
+
+    .section .columns .column:nth-child(1) {
+        margin-right: 0;
+    }
+    
+    .section .columns .column:nth-child(2) {
+        margin-left: 0;
+    }
+
+    #hero-banner {
+        position: relative;
+        top: 35vh;
+        right: 0;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .section:nth-child(3) .container > .columns {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    .section .container {
+        max-width: 75%;
+        margin: 0;
+        position: relative;
+        top: 5%;
+    }
+
+    .section p {
+        max-width: 85%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .section .title {
+        font-size: 2.5rem;
+        margin: 2rem 0 2.5rem 0;
+    }
+
+    .section .subtitle {
+        font-size: 1.20rem;
+        margin-bottom: 3rem;
+        max-width: 100%;
+    }
+
+    .section figure img {
+        margin: 3rem 0 2rem 0;
+        height: 100%;
+    }
+
+    .section figure {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #hero-banner h1 {
+        font-size: 5.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #hero-banner h5 {
+        margin: 0;
+        font-size: 1.3rem;
+        margin: 0 auto;
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .section figure {
+        width: 75%;
+    }
+
+    .section p {
+        max-width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    #hero-banner {
+        max-width: 85%;
+    }
+
+    #hero-banner h1 {
+        font-size: 4.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #hero-banner h5 {
+        font-size: 1.25rem;
+    }
+
+    .section figure {
+        width: 101%;
+        margin: 0 auto;
+    }
+
+    .section .title {
+        margin: 0 0 2.5rem 0;
+    }
+
+    .section p {
+        max-width: 100%;
+        margin: 0;
     }
 }
