@@ -1,0 +1,108 @@
+#login-cover {
+    background: linear-gradient(150deg,
+    rgba(253, 164, 91, 0.9), 
+    rgba(196, 68, 255, 0.9)),
+    url("/public/img/login/cover.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; 
+    min-height: 125vh;
+    position: relative;
+}
+
+#login-border {
+    height: 8px;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    margin: 2rem auto 3rem auto;
+}
+
+#login {
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 425px;
+    box-shadow: 0 32px 62px rgba(10, 10, 10, .2);
+    padding: 3rem 2.5rem 3rem 2.5rem;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+#login h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+#login-btn {
+    min-width: 100%;
+    margin-top: 1rem;
+    min-height: 3rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#login-btn:hover {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+#login .checkbox-cont {
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eeeeee;
+    color: #9e9e9e;
+}
+
+.login-options {
+    width: 100%;
+    margin: 0.35rem 0;
+    color: #cccccc;
+    display: block;
+}
+
+#login a {
+    color: #9e9e9e;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+#login a:hover {
+    color: #4a4a4a;
+}
+
+@media screen and (max-height: 800px) {
+    #login-cover {
+        min-height: 135vh;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    #login-cover {
+        min-height: 155vh;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    #login-cover {
+        min-height: 185vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #login {
+        min-width: 90%;
+    }
+}
