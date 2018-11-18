@@ -7,16 +7,18 @@
 
         case 'POST':
 
-            // get body json data
-            $data = file_get_contents("php://input");
+            $jsonData = json_decode($_POST["email"], true);
 
-            // do login credential validation here
-            if ($data) {
-                http_response_code(200);
-                return;
-            }
+            // TODO: do stuff to get the $results which is an associative array
+            $results = array($jsonData);
+
+            // Let the client know the format of the data being returned
+            header("Content-Type: application/json");
+
+            // Sending back down as JSON
+            echo json_encode($results);
 
             // login failed
-            http_response_code(401);
+            //http_response_code(401);
     }
 ?>
