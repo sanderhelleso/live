@@ -1,3 +1,5 @@
+@import url("lib/toast.css");
+
 /* class for text not to be selected or focused */
 .noSelect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -53,4 +55,22 @@ label:hover {
 
 .footer {
     padding: 5rem 0;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: rgba(253, 164, 91, 0.9);
+    right: 1.125em;
+    opacity: 0.6;
+    z-index: 4;
+}
+
+select, input {
+    transition: 0.2s ease-in-out !important;
+    color: #757575 !important;
+    font-weight: 300;
+}
+
+.control svg {
+    stroke: #dddddd !important;
+    margin: 0 10px -3px 12px;
 }
