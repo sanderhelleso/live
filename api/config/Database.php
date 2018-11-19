@@ -1,11 +1,13 @@
 <?php
     class Database {
 
-        // db params
+        // db params 
+
+        // *NOTE* Before live, change properties and store i safe file thats not commited
         private $host = 'localhost';
         private $dbName = 'live';
-        private $username = 'root';
-        private $password = '123456';
+        private $username = 'live_administrator';
+        private $password = 'GznUDh1AN8n60JlE'; 
         private $conn;  
 
         // connect db
@@ -14,7 +16,7 @@
 
             try {
                 // attempt to connect to database
-                $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname, $this->username, $this->password);
+                $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbName, $this->username, $this->password);
 
                 // get potensial query errors
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
