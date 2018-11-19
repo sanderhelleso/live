@@ -6,8 +6,8 @@
                 <span class="icon is-small is-left">
                 <i data-feather="user"></i>
                 </span>
+                <p class="help is-danger has-text-left"></p>
             </div>
-            <p class="help email-help is-danger has-text-left"></p>
         </div>
 
         <div class="field is-horizontal column">
@@ -16,40 +16,41 @@
                 <span class="icon is-left">
                 <i data-feather="users"></i>
                 </span>
+                <p class="help is-danger has-text-left"></p>
             </div>
-            <p class="help password-help is-danger has-text-left"></p>
         </div>
     </div>
 
     <div class="columns">
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium login-input" type="email" placeholder="E-Mail">
+                <input class="input is-rounded is-medium email-input" type="email" placeholder="E-Mail">
                 <span class="icon is-small is-left">
                 <i data-feather="mail"></i>
                 </span>
+                <p class="help is-danger has-text-left"></p>
             </div>
-            <p class="help email-help is-danger has-text-left"></p>
         </div>
 
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium login-input" type="number" placeholder="Age">
+                <input class="input is-rounded is-medium age-input" type="number" placeholder="Age">
                 <span class="icon is-small is-left">
                 <i data-feather="calendar"></i>
                 </span>
+                <p class="help is-danger has-text-left"></p>
             </div>
-            <p class="help email-help is-danger has-text-left"></p>
         </div>
     </div>
 
     <div class="columns">
-        <div class="field is-horizontal column">
+        <div class="field is-horizontal column select-field">
             <div class="control has-icons-left has-icons-right">
                 <div class="select is-rounded is-medium">
                     <select id="select-country">
                         <option disabled>Select Country</option>
                     </select>
+                    <p class="help is-danger has-text-left"></p>
                 </div>
                 <span class="icon is-left">
                 <i data-feather="map"></i>
@@ -57,12 +58,13 @@
             </div>
         </div>
 
-        <div class="field is-horizontal column">
+        <div class="field is-horizontal column select-field">
             <div class="control has-icons-left has-icons-right">
                 <div class="select is-rounded is-medium">
                     <select id="select-state">
                         <option disabled>Select State</option>
                     </select>
+                    <p class="help is-danger has-text-left"></p>
                 </div>
                 <span class="icon is-left">
                 <i data-feather="map-pin"></i>
@@ -74,12 +76,12 @@
     <div class="columns">
             <div class="field is-horizontal column">
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input is-rounded is-medium street-input" type="text" placeholder="Street Address">
+                    <input class="input is-rounded is-medium address-input" type="text" placeholder="Street Address">
                     <span class="icon is-small is-left">
                     <i data-feather="flag"></i>
                     </span>
+                    <p class="help is-danger has-text-left"></p>
                 </div>
-                <p class="help email-help is-danger has-text-left"></p>
             </div>
 
             <div class="field is-horizontal column">
@@ -88,8 +90,8 @@
                     <span class="icon is-small is-left">
                     <i data-feather="phone"></i>
                     </span>
+                    <p class="help is-danger has-text-left"></p>
                 </div>
-                <p class="help email-help is-danger has-text-left"></p>
             </div>
         </div>
 
@@ -100,8 +102,8 @@
                 <span class="icon is-left">
                 <i data-feather="lock"></i>
                 </span>
+                <p class="help is-danger has-text-left"></p>
             </div>
-            <p class="help password-help is-danger has-text-left"></p>
         </div>
 
         <div class="field is-horizontal column">
@@ -110,8 +112,8 @@
                 <span class="icon is-left">
                 <i data-feather="unlock"></i>
                 </span>
+                <p class="help is-danger has-text-left"></p>
             </div>
-            <p class="help password-help is-danger has-text-left"></p>
         </div>
     </div>
 
