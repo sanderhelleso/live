@@ -1,3 +1,5 @@
+import { toast } from './lib/toast.js';
+
 window.onload = initializeForm;
 
 // regex pattern for email validation
@@ -70,7 +72,6 @@ async function attemptLogin(email, password, button) {
 
     // validate response
     if (data.success) {
-        console.log(data.message);
 
         // set username and password in localstorage if option is checked
         if (document.querySelector('input[type="checkbox"]').checked) {
@@ -84,16 +85,10 @@ async function attemptLogin(email, password, button) {
         //window.location.replace('/dashboard/dashboard.php');
     }
 
-    // if login failed
-    else {
-
-        // display toast
-        console.log(data.message);
-    }
-
+    toast(data.message, data.success, 3000);
     setTimeout(() => {
         button.classList.remove('is-loading');
-    }, 100);
+    }, 1000);
 }
 
 function validateEmail() {

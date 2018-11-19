@@ -54,3 +54,14 @@ label:hover {
 .footer {
     padding: 5rem 0;
 }
+
+.toast {
+    max-width: 200px;
+    max-height: auto;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 2rem;
+    position: fixed;
+    left: 5%;
+    top: 20%;
+}
