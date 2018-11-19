@@ -1,9 +1,7 @@
-import { toast } from './lib/toast.js';
+import { toast } from './lib/toast';
+import { REGEX } from './helpers/regex';
 
 window.onload = initializeForm;
-
-// regex pattern for email validation
-const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 function initializeForm() {
 
@@ -97,11 +95,11 @@ function validateEmail() {
     const email = document.querySelector('input[type="email"');
 
     // validate email value with regex
-    if (!regexEmail.test(String(email.value).toLowerCase())) {    
+    if (!REGEX.email().test(String(email.value).toLowerCase())) {    
 
         // if email format is invalid, set error message and state
         email.classList.add('is-danger');
-        document.querySelector('.email-help').innerHTML = 'Invalid e-mail format';
+        document.querySelector('.email-help').innerHTML = 'Invalid E-Mail format';
         return false;
     }
       

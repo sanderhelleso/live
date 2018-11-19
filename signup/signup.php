@@ -8,7 +8,7 @@
             <div id="signup" class="animated fadeIn">
                 <h1>Sign Up to LIVE</h1> 
                 <div id="signup-border"></div>
-                <p>Join the community and start making a difference today</p>
+                <p id="intro">Join the community and start making a difference today</p>
                 <?php include("signupForm.php"); ?>
             </div>
         </div>
