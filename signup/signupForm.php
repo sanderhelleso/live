@@ -2,7 +2,7 @@
     <div class="columns">
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium firstName-input" type="text" placeholder="First Name">
+                <input class="input is-rounded is-medium firstName-input" name="firstName" type="text" placeholder="First Name">
                 <span class="icon is-small is-left">
                 <i data-feather="user"></i>
                 </span>
@@ -12,7 +12,7 @@
 
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium lastName-input" type="text" placeholder="Last Name">
+                <input class="input is-rounded is-medium lastName-input" name="lastName" type="text" placeholder="Last Name">
                 <span class="icon is-left">
                 <i data-feather="users"></i>
                 </span>
@@ -24,7 +24,7 @@
     <div class="columns">
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium email-input" type="email" placeholder="E-Mail">
+                <input class="input is-rounded is-medium email-input" name="email" type="email" placeholder="E-Mail">
                 <span class="icon is-small is-left">
                 <i data-feather="mail"></i>
                 </span>
@@ -34,7 +34,7 @@
 
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium age-input" type="number" placeholder="Age">
+                <input class="input is-rounded is-medium age-input" name="age" type="number" placeholder="Age">
                 <span class="icon is-small is-left">
                 <i data-feather="calendar"></i>
                 </span>
@@ -47,7 +47,7 @@
         <div class="field is-horizontal column select-field">
             <div class="control has-icons-left has-icons-right">
                 <div class="select is-rounded is-medium">
-                    <select id="select-country">
+                    <select id="select-country" name="country">
                         <option disabled>Select Country</option>
                     </select>
                     <p class="help is-danger has-text-left"></p>
@@ -61,7 +61,7 @@
         <div class="field is-horizontal column select-field">
             <div class="control has-icons-left has-icons-right">
                 <div class="select is-rounded is-medium">
-                    <select id="select-state">
+                    <select id="select-state" name="state">
                         <option disabled>Select State</option>
                     </select>
                     <p class="help is-danger has-text-left"></p>
@@ -76,7 +76,7 @@
     <div class="columns">
             <div class="field is-horizontal column">
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input is-rounded is-medium address-input" type="text" placeholder="Street Address">
+                    <input class="input is-rounded is-medium address-input" name="address" type="text" placeholder="Street Address">
                     <span class="icon is-small is-left">
                     <i data-feather="flag"></i>
                     </span>
@@ -86,7 +86,7 @@
 
             <div class="field is-horizontal column">
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input is-rounded is-medium phone-input" type="tlf" placeholder="Phone Number">
+                    <input class="input is-rounded is-medium phone-input" name="phone" type="tlf" placeholder="Phone Number">
                     <span class="icon is-small is-left">
                     <i data-feather="phone"></i>
                     </span>
@@ -98,7 +98,7 @@
     <div class="columns">
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium password-input" type="password" placeholder="Password">
+                <input class="input is-rounded is-medium password-input" name="password" type="password" placeholder="Password">
                 <span class="icon is-left">
                 <i data-feather="lock"></i>
                 </span>
@@ -108,7 +108,7 @@
 
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium confirmPassword-input" type="password" placeholder="Confirm Password">
+                <input class="input is-rounded is-medium confirmPassword-input" name="password" type="password" placeholder="Confirm Password">
                 <span class="icon is-left">
                 <i data-feather="unlock"></i>
                 </span>
@@ -122,7 +122,7 @@
     </div>
     <div class="checkbox-cont">
         <label class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" name="newsletter">
         Subscribe to our newsletter
         </label>
     </div>

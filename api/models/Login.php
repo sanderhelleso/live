@@ -9,7 +9,7 @@
         public $email;
         public $password;
 
-        // constructor with DB
+        // constructor with DB and login properties
         public function __construct($db, $email, $password) {
             $this->conn = $db;
             $this->email = $email;

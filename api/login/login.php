@@ -55,7 +55,7 @@
     $valid = $result->rowCount();
 
     // check for valid login
-    if ($valid == 1) {
+    if ($valid) {
 
         // retrieve login data
         $valid = $result->fetch(PDO::FETCH_ASSOC);

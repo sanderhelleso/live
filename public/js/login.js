@@ -5,6 +5,18 @@ window.onload = initializeForm;
 
 function initializeForm() {
 
+    // if user got redirected from sign up,
+    // display message and ask to login with credentials
+    if (localStorage.getItem('account_created_successfully') !== null) {
+
+        // display message
+        toast(`Welcome to LIVE ${localStorage.getItem('account_created_successfully')}! Please login to continue`, true, 4000);
+
+        // clear localstorage
+        localStorage.clear();
+    }
+
+
     // if credentials is stored in localstorage (remember me), retrieve and set
     if (localStorage.getItem('credentials')) {
 
@@ -66,7 +78,6 @@ async function attemptLogin(email, password, button) {
 
     // get response data
     let data = await response.json();
-    console.log(response, data);
 
     // validate response
     if (data.success) {
@@ -80,13 +91,17 @@ async function attemptLogin(email, password, button) {
         }
 
         // redirect user
-        //window.location.replace('/dashboard/dashboard.php');
+        window.location.replace('/dashboard/dashboard.php');
     }
 
-    toast(data.message, data.success, 3000);
-    setTimeout(() => {
-        button.classList.remove('is-loading');
-    }, 1000);
+    else {
+
+        // dispplay response message
+        toast(data.message, data.success, 3000);
+        setTimeout(() => {
+            button.classList.remove('is-loading');
+        }, 1000);
+    }
 }
 
 function validateEmail() {

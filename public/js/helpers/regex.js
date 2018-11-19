@@ -9,8 +9,8 @@ export const REGEX = {
 function name() {
 
     // regex to only allow alphabets and only space character between words
-    // value length can also not be longer than 30 and less than 2
-    const regexName = /^[a-zA-Z æøåÆØÅ ]{2,30}$/;
+    // value length can also not be longer than 50 and less than 2
+    const regexName = /^[a-zA-Z æøåÆØÅ ]{2,50}$/;
     return regexName;
 }
 
