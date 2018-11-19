@@ -47,9 +47,8 @@
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
                 <div class="select is-rounded is-medium">
-                    <select>
-                        <option>Country</option>
-                        <option>With options</option>
+                    <select id="select-country">
+                        <option disabled>Select Country</option>
                     </select>
                 </div>
                 <span class="icon is-left">
@@ -61,9 +60,8 @@
         <div class="field is-horizontal column">
             <div class="control has-icons-left has-icons-right">
                 <div class="select is-rounded is-medium">
-                    <select>
-                        <option>State</option>
-                        <option>With options</option>
+                    <select id="select-state">
+                        <option disabled>Select State</option>
                     </select>
                 </div>
                 <span class="icon is-left">
@@ -78,7 +76,7 @@
                 <div class="control has-icons-left has-icons-right">
                     <input class="input is-rounded is-medium street-input" type="text" placeholder="Street Address">
                     <span class="icon is-small is-left">
-                    <i data-feather="mail"></i>
+                    <i data-feather="flag"></i>
                     </span>
                 </div>
                 <p class="help email-help is-danger has-text-left"></p>
