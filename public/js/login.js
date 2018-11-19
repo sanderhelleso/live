@@ -50,7 +50,7 @@ async function attemptLogin(email, password, button) {
     button.classList.add('is-loading');
 
     // send POST request login endpoint
-    const response = await fetch('/api/login.php', {
+    const response = await fetch('/api/login/login.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
@@ -59,18 +59,18 @@ async function attemptLogin(email, password, button) {
         'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            payload: {
-                email,
-                password
-            }
+            email,
+            password
         })
     });
 
-    console.log(response);
+    // get response data
+    let data = await response.json();
+    console.log(response, data);
 
-    // login successfull
-    if (response.status === 200) {
-        console.log('login successfull');
+    // validate response
+    if (data.success) {
+        console.log(data.message);
 
         // set username and password in localstorage if option is checked
         if (document.querySelector('input[type="checkbox"]').checked) {
@@ -84,15 +84,16 @@ async function attemptLogin(email, password, button) {
         //window.location.replace('/dashboard/dashboard.php');
     }
 
-    // login failed
+    // if login failed
     else {
-        console.log('login failed');
+
+        // display toast
+        console.log(data.message);
     }
 
-    // simulate request with db loading
     setTimeout(() => {
         button.classList.remove('is-loading');
-    }, 1000);
+    }, 100);
 }
 
 function validateEmail() {
