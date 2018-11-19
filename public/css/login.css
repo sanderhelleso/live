@@ -14,7 +14,6 @@
 #login-border {
     height: 8px;
     width: 70%;
-    margin: 0 auto;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
     background: #8A2387;  /* fallback for old browsers */
@@ -22,6 +21,7 @@
     background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     opacity: 0.5;
     margin: 2rem auto 3rem auto;
+    transform: rotate(180deg);
 }
 
 #login {

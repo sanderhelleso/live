@@ -1,0 +1,96 @@
+#signup-cover {
+    background: linear-gradient(-150deg,
+    rgba(253, 164, 91, 0.9), 
+    rgba(196, 68, 255, 0.9)),
+    url("/public/img/login/cover.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; 
+    min-height: 180vh;
+    position: relative;
+}
+
+#signup-border {
+    height: 8px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    margin: 2rem auto;
+}
+
+#signup p {
+    margin-bottom: 3rem;
+    color: #9e9e9e;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+#signup .columns {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#signup .control, #signup .select, #signup select {
+    min-width: 100%;
+}
+
+#signup select {
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+}
+
+#signup {
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 850px;
+    box-shadow: 0 32px 62px rgba(10, 10, 10, .2);
+    padding: 3rem 2.5rem 3rem 2.5rem;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+#signup h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+#signup-btn {
+    min-width: 50%;
+    margin: 2.25rem 0 1rem 0;
+    min-height: 3.5rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+#signup-btn:hover {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+#signup .checkbox-cont {
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eeeeee;
+    color: #9e9e9e;
+}
+
+#signup a {
+    color: #9e9e9e;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+#signup a:hover {
+    color: #4a4a4a;
+}

@@ -36,8 +36,14 @@
         
     <link rel="icon" href="/URL/TO/ICON" type="image/gif" sizes="16x16">
     
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/animate.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/bulma.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/signup.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="../public/js/navbar.js"></script>
+    <script src="../public/js/signup.js" type="module"></script>
 
     <title>Signup</title>
 </head>

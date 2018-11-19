@@ -1,0 +1,37 @@
+.toast {
+    max-height: auto;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 1rem 2rem 1.5rem 2rem;
+    position: fixed;
+    left: 5%;
+    top: 82.5%;
+    font-weight: 100;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    -webkit-box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.toast svg {
+    margin-bottom: -16.25px;
+    padding-right: 10px;
+    opacity: 0.5;
+    height: 45px;
+    width: 45px;
+}
+
+.toast:hover {
+    -webkit-box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
+}
+
+.toast-error {
+    background-color: #ef5350 ;
+}
+
+.toast-success {
+    background-color: #05c776;
+}
