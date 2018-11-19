@@ -1,3 +1,4 @@
+import { toast } from './lib/toast';
 import { DATA } from './lib/countriesAndStates/data';
 import { REGEX } from './helpers/regex';
 
@@ -185,8 +186,76 @@ function validateForm(e) {
         }
     });
 
-    // form is valid, post request here
-    console.log(valid);
+    // form is valid
+    if (valid) {
+
+        //attempt to create account
+        createAccount(this);
+    }
+}
+
+async function createAccount(button) {
+
+    // set loading status
+    button.classList.add('is-loading');
+    const body = formData();
+
+    // send POST request login endpoint
+    const response = await fetch('/api/signup/signup.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        body: body
+    });
+
+    // get response data
+    let data = await response.json();
+
+    // account successfully created
+    if (data.success) {
+
+        // set localstorage to dislay message on page redirect
+        localStorage.setItem('account_created_successfully', JSON.parse(body).firstName);
+
+        // redirect user if account was successfully created
+        window.location.replace('/login/login.php');
+        return;
+    }
+
+    else {
+
+        // display response message
+        toast(data.message, data.success, 3000);
+        setTimeout(() => {
+            button.classList.remove('is-loading');
+        }, 1000);
+    }
+}
+
+function formData() {
+
+    const form = {};
+
+    // itterate over all form fields
+    Array.from(document.querySelectorAll('input, select')).forEach(input => {
+
+        // if checkbox, retireve checked value
+        if (input.type === 'checkbox') {
+            form[input.name] = input.checked ? 1 : 0;
+        }
+
+        // else we set properties to object
+        else {
+            form[input.name] = input.value;
+        }
+    });
+
+    // return form object containing the form data
+    return JSON.stringify(form);
 }
 
 function setHelpMessage(element, status) {
@@ -205,7 +274,7 @@ function setHelpMessage(element, status) {
             break;
 
         case 'invalid_name':
-            help.innerHTML = 'Can only contain letters and must be between 2 - 30 characters';
+            help.innerHTML = 'Can only contain letters and must be between 2 - 50 characters';
             break;
 
         case 'invalid_email':
