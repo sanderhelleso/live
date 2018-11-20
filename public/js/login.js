@@ -5,7 +5,16 @@ window.onload = initializeForm;
 
 function initializeForm() {
 
-    // if user got redirected from sign up,
+    // check if user recently signed up or logged out
+    newUser() ? null : loggedoutUser();
+
+    // initialize "login" button with login event
+    document.querySelector('#login-btn').addEventListener('click', login);
+}
+
+function newUser() {
+
+     // if user got redirected from sign up,
     // display message and ask to login with credentials
     if (localStorage.getItem('account_created_successfully') !== null) {
 
@@ -14,27 +23,27 @@ function initializeForm() {
 
         // clear localstorage
         localStorage.clear();
+        return true;
     }
 
+    return false;
+}
 
-    // if credentials is stored in localstorage (remember me), retrieve and set
-    if (localStorage.getItem('credentials')) {
+function loggedoutUser() {
 
-        // parse credentials
-        const credentials = JSON.parse(localStorage.getItem('credentials'));
+    // if user got redirected from successfull logout,
+    // display message and welcome back the user
+    if (localStorage.getItem('logout_successfull') !== null) {
 
-        // set email credential
-        document.querySelector('input[type="email"').value = credentials.email;
+        // display message
+        toast(`Logout successfull! Hope to see you again soon`, true, 4000);
 
-        // set password credential
-        document.querySelector('input[type="password"').value = credentials.password;
-
-        // set checkbox to checked
-        document.querySelector('input[type="checkbox"]').checked = true;
+        // clear localstorage
+        localStorage.clear();
+        return true;
     }
 
-    // initialize "login" button with login event
-    document.querySelector('#login-btn').addEventListener('click', login);
+    return false;
 }
 
 function login(e) {
@@ -61,18 +70,22 @@ async function attemptLogin(email, password, button) {
     // set loading status
     button.classList.add('is-loading');
 
+    // get "remember me" option
+    const rememberMe = document.querySelector('input[type="checkbox"]').checked;
+
     // send POST request login endpoint
     const response = await fetch('/api/login/login.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
         headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             email,
-            password
+            password,
+            rememberMe
         })
     });
 
@@ -82,10 +95,9 @@ async function attemptLogin(email, password, button) {
     // validate response
     if (data.success) {
 
-        // set auth_token
-        if (document.querySelector('input[type="checkbox"]').checked) {
-            localStorage.setItem('auth_token', JSON.stringify(data.token));
-        }
+        // set auth_token depending on "remember me" is checked
+        localStorage.setItem('auth_token', JSON.stringify(data.token));
+        localStorage.setItem('remember_me', rememberMe);
 
         // redirect user
         window.location.replace('/dashboard/dashboard.php');
