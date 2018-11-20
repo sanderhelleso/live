@@ -58,7 +58,7 @@ function setNavbarData(data) {
 
     // set avatar
     const avatar = document.querySelector('#user-avatar');
-    avatar.src = data.avatar ? data.avatar : '../public/img/dashboard/defaultAvatar.jpg';
+    avatar.src = data.avatar ? data.avatar : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
     avatar.alt = `${data.first_name} ${data.last_name}'s avatar`;
 
     document.querySelector('#nav-user').style.display = 'block';

@@ -57,7 +57,7 @@
     if ($valid) {
 
         // create assoc array containing success response
-        $loginData = array(
+        $logoutData = array(
             'success' => true,
             'message' => 'Logout successfull',
             'timestamp' => $timestamp
@@ -71,6 +71,6 @@
 
         // send back response to request
         http_response_code(200); // Request was fulfilled
-        echo json_encode($loginData);
+        echo json_encode($logoutData);
     } 
 ?>

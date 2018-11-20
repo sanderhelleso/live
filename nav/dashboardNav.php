@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="navbar-dropdown is-right">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="/dashboard/settings/settings.php">
                             <i data-feather="settings"></i> Settings
                         </a>
                         <hr class="navbar-divider">
