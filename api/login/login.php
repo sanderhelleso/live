@@ -39,9 +39,10 @@
     // set JSON header 
     header('Content-Type: application/json');
 
-    // include required db config and login model
+    // include required db config, login and auth model
     include_once '../config/Database.php';
     include_once '../models/Login.php';
+    include_once '../models/Authenticate.php';
 
     // instantiate database and connect
     $databse = new Database();
@@ -65,10 +66,10 @@
 
         // create assoc array containing success response
         $loginData = array(
-            'email' => $email,
             'success' => true,
             'message' => 'Login successfull',
-            'timestamp' => $timestamp
+            'timestamp' => $timestamp,
+            'token' => setToken($user_id)
         );
 
         // send back response to request
@@ -87,5 +88,49 @@
                   'message' => 'Invalid username or password'
             )
         );
+    }
+
+    function setToken($id) {
+
+        // get db connection and logged in users ID
+        $auth = new Authenticate($GLOBALS['db'], $id);
+
+        // create a new auth token
+        $token = $auth->createToken();
+
+        // validate and retrieve token
+        $validate = $auth->validateToken();
+        $validToken = $validate->rowCount();
+
+        // check for valid token
+        if ($validToken) {
+    
+            // retrieve token data
+            $validToken = $validate->fetch(PDO::FETCH_ASSOC);
+    
+            // extract token data
+            extract($validToken);
+
+            // send back token data
+            $tokenData = array(
+                'id' => $user_id,
+                'token' => $token,
+                'issued_at' => $issued_at
+            );
+
+            return $tokenData;
+        }
+
+        else {
+
+            // unable to set auth token
+            http_response_code(403); // Forbidden
+            echo json_encode(
+                array('success' => false,
+                    'timestamp' => $GLOBALs['timestamp'],
+                    'message' => 'Unable to log in at this time. Please try again.'
+                )
+            );
+        }
     }
 ?>
