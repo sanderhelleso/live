@@ -5,8 +5,8 @@ window.onload = initializeForm;
 
 function initializeForm() {
 
-    // check if user recently signed up and got redirected from sign up page
-    newUser();
+    // check if user recently signed up or logged out
+    newUser() ? null : loggedoutUser();
 
     // initialize "login" button with login event
     document.querySelector('#login-btn').addEventListener('click', login);
@@ -23,7 +23,27 @@ function newUser() {
 
         // clear localstorage
         localStorage.clear();
+        return true;
     }
+
+    return false;
+}
+
+function loggedoutUser() {
+
+    // if user got redirected from successfull logout,
+    // display message and welcome back the user
+    if (localStorage.getItem('logout_successfull') !== null) {
+
+        // display message
+        toast(`Logout successfull! Hope to see you again soon`, true, 4000);
+
+        // clear localstorage
+        localStorage.clear();
+        return true;
+    }
+
+    return false;
 }
 
 function login(e) {

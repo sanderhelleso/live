@@ -75,7 +75,7 @@
                       $this->table 
                       SET 
                       token = NULL,
-                      issuedAt = NULL
+                      issued_at = NULL
                       WHERE 
                       user_id = '$this->id'";
 
