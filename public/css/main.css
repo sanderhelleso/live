@@ -37,6 +37,10 @@ label:hover {
     flex: 1;
 }
 
+#main-navbar {
+    padding: 1rem 6rem;
+}
+
 #navbar-logo {
     font-size: 2rem;
     letter-spacing: 0.25rem;

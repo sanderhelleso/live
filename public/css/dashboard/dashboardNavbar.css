@@ -1,0 +1,43 @@
+.navbar-item svg {
+    margin: 3px 15px 3px 5px;
+    height: 21px;
+    width: 21px;
+    stroke: #bdbdbd;
+}
+
+.navbar-dropdown a {
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+#log-out-btn {
+    color: #e57373
+}
+
+#log-out-btn svg {
+   stroke: #e57373;
+}
+
+#avatar figure{
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+#avatar figure img {
+    min-height: 100%;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
+    background-color: #fafafa;
+    color: #4a4a4a;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+    border-color: #e57373;
+    margin-top: -.375em;
+    right: 1.125em;
+}

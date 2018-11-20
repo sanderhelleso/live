@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<?php include("../head/loginHead.php"); ?>
+<?php 
+    include("../auth/auth.php");
+    isLoggedIn();
+    include("../head/loginHead.php");
+?>
 <html>
 <body class="site">
 <?php include("../nav/nav.php"); ?>

@@ -5,7 +5,16 @@ window.onload = initializeForm;
 
 function initializeForm() {
 
-    // if user got redirected from sign up,
+    // check if user recently signed up and got redirected from sign up page
+    newUser();
+
+    // initialize "login" button with login event
+    document.querySelector('#login-btn').addEventListener('click', login);
+}
+
+function newUser() {
+
+     // if user got redirected from sign up,
     // display message and ask to login with credentials
     if (localStorage.getItem('account_created_successfully') !== null) {
 
@@ -15,26 +24,6 @@ function initializeForm() {
         // clear localstorage
         localStorage.clear();
     }
-
-
-    // if credentials is stored in localstorage (remember me), retrieve and set
-    if (localStorage.getItem('credentials')) {
-
-        // parse credentials
-        const credentials = JSON.parse(localStorage.getItem('credentials'));
-
-        // set email credential
-        document.querySelector('input[type="email"').value = credentials.email;
-
-        // set password credential
-        document.querySelector('input[type="password"').value = credentials.password;
-
-        // set checkbox to checked
-        document.querySelector('input[type="checkbox"]').checked = true;
-    }
-
-    // initialize "login" button with login event
-    document.querySelector('#login-btn').addEventListener('click', login);
 }
 
 function login(e) {
@@ -72,7 +61,8 @@ async function attemptLogin(email, password, button) {
         },
         body: JSON.stringify({
             email,
-            password
+            password,
+            rememberMe: document.querySelector('input[type="checkbox"]').checked
         })
     });
 
@@ -82,9 +72,13 @@ async function attemptLogin(email, password, button) {
     // validate response
     if (data.success) {
 
-        // set auth_token
+        // set auth_token depending on "remember me" is checked
         if (document.querySelector('input[type="checkbox"]').checked) {
             localStorage.setItem('auth_token', JSON.stringify(data.token));
+        }
+
+        else {
+            sessionStorage.setItem('auth_token', JSON.stringify(data.token));
         }
 
         // redirect user

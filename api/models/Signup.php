@@ -92,7 +92,8 @@
                       `country`, 
                       `state`, 
                       `street_address`,
-                      `phone_number`, 
+                      `phone_number`,
+                      `avatar`, 
                       `newsletter`
                       ) 
                       VALUES 
@@ -103,7 +104,8 @@
                       '$this->country', 
                       '$this->state', 
                       '$this->address', 
-                      '$this->phone', 
+                      '$this->phone',
+                      NULL, 
                       '$this->newsletter'
                       )";
                       

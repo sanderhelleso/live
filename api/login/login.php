@@ -18,7 +18,6 @@
 
         // decode recieved data
         $data = json_decode($content, true);
-        //echo json_encode($content);
 
         //If json_decode failed, the JSON is invalid.
         if(!is_array($data)) {
@@ -69,7 +68,7 @@
             'success' => true,
             'message' => 'Login successfull',
             'timestamp' => $timestamp,
-            'token' => setToken($user_id)
+            'token' => setToken($user_id, $data['rememberMe'])
         );
 
         // send back response to request
@@ -90,7 +89,7 @@
         );
     }
 
-    function setToken($id) {
+    function setToken($id, $expire) {
 
         // get db connection and logged in users ID
         $auth = new Authenticate($GLOBALS['db'], $id);
@@ -118,6 +117,8 @@
                 'issued_at' => $issued_at
             );
 
+            // store token in cookie
+            setcookie('auth_token', $token, $expire ? 2147483647 : 0, '/');
             return $tokenData;
         }
 
