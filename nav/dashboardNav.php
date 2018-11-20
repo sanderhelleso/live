@@ -13,12 +13,12 @@
 
         <div id="main-navbar-menu" class="navbar-menu animated fadeIn">
             <div class="navbar-end">
-                <div class="navbar-item has-dropdown is-hoverable">
+                <div id="nav-user" class="navbar-item has-dropdown is-hoverable">
                     <div id="avatar" class="navbar-item navbar-link">
                         <figure class="image">
-                            <img class="is-rounded" src="../public/img/dashboard/defaultAvatar.jpg" alt="avatar">
+                            <img id="user-avatar" class="is-rounded">
                         </figure>
-                        <span id="nav-user-name">John</span>
+                        <span id="nav-user-name"></span>
                     </div>
 
                     <div class="navbar-dropdown is-right">

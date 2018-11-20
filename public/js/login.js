@@ -50,6 +50,9 @@ async function attemptLogin(email, password, button) {
     // set loading status
     button.classList.add('is-loading');
 
+    // get "remember me" option
+    const rememberMe = document.querySelector('input[type="checkbox"]').checked;
+
     // send POST request login endpoint
     const response = await fetch('/api/login/login.php', {
         method: 'POST',
@@ -60,7 +63,9 @@ async function attemptLogin(email, password, button) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            
+            email,
+            password,
+            rememberMe
         })
     });
 
@@ -71,7 +76,6 @@ async function attemptLogin(email, password, button) {
     if (data.success) {
 
         // set auth_token depending on "remember me" is checked
-        const rememberMe = document.querySelector('input[type="checkbox"]').checked;
         localStorage.setItem('auth_token', JSON.stringify(data.token));
         localStorage.setItem('remember_me', rememberMe);
 

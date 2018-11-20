@@ -90,6 +90,28 @@
             return $stmt;
         }
 
+        public function compareToken($id, $token) {
+
+            // compare token query
+            $query = "SELECT * 
+                      FROM 
+                      $this->table 
+                      WHERE
+                      user_id = '$id'
+                      AND
+                      token = '$token'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+
+        }
+
         public function validateToken() {
 
             // validate token query
@@ -111,6 +133,52 @@
 
             // return statement
             return $stmt;
+        }
+
+        public function getAuthorizationHeader() {
+
+            // initialize headers as empty
+            $headers = null;
+
+            // fetch headers
+            if (isset($_SERVER['Authorization'])) {
+                $headers = trim($_SERVER["Authorization"]);
+            }
+
+            //Nginx or fast CGI
+            else if (isset($_SERVER['HTTP_AUTHORIZATION'])) { 
+                $headers = trim($_SERVER["HTTP_AUTHORIZATION"]);
+            } 
+            
+            // apache
+            else if (function_exists('apache_request_headers')) {
+
+                $requestHeaders = apache_request_headers();
+
+                // server-side fix for bug in old Android versions 
+                $requestHeaders = array_combine(array_map('ucwords', array_keys($requestHeaders)), array_values($requestHeaders));
+
+                if (isset($requestHeaders['Authorization'])) {
+                    $headers = trim($requestHeaders['Authorization']);
+                }
+            }
+
+            return $headers;
+        }
+
+        public function getBearerToken() {
+
+            // get auth token from header
+            $headers = $this->getAuthorizationHeader();
+
+            // HEADER: Get the access token from the header
+            if (!empty($headers)) {
+                if (preg_match('/Bearer\s(\S+)/', $headers, $matches)) {
+                    return $matches[1];
+                }
+            }
+            
+            return null;
         }
     }
 ?>

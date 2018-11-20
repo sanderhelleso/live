@@ -20,8 +20,8 @@
 }
 
 #avatar figure{
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     margin-right: 1rem;
 }
 
@@ -40,4 +40,8 @@
     border-color: #e57373;
     margin-top: -.375em;
     right: 1.125em;
+}
+
+#nav-user {
+    display: none;
 }
