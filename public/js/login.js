@@ -56,13 +56,11 @@ async function attemptLogin(email, password, button) {
         mode: 'same-origin',
         credentials: 'same-origin',
         headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            email,
-            password,
-            rememberMe: document.querySelector('input[type="checkbox"]').checked
+            
         })
     });
 
@@ -73,13 +71,9 @@ async function attemptLogin(email, password, button) {
     if (data.success) {
 
         // set auth_token depending on "remember me" is checked
-        if (document.querySelector('input[type="checkbox"]').checked) {
-            localStorage.setItem('auth_token', JSON.stringify(data.token));
-        }
-
-        else {
-            sessionStorage.setItem('auth_token', JSON.stringify(data.token));
-        }
+        const rememberMe = document.querySelector('input[type="checkbox"]').checked;
+        localStorage.setItem('auth_token', JSON.stringify(data.token));
+        localStorage.setItem('remember_me', rememberMe);
 
         // redirect user
         window.location.replace('/dashboard/dashboard.php');
