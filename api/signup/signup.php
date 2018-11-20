@@ -39,9 +39,11 @@
     // set JSON header 
     header('Content-Type: application/json');
 
-    // include required db config and login model
+    // include required db config, signup and auth model
     include_once '../config/Database.php';
     include_once '../models/Signup.php';
+    include_once '../models/Authenticate.php';
+
 
     // instantiate database and connect
     $databse = new Database();
@@ -86,17 +88,24 @@
     
         // check if create account insertion was successfull
         if ($valid) {
-            attemptSetUserData($signup);
-        } 
+            attemptSetUserData($signup, $GLOBALS['db']->lastInsertId());
+        }
+
+        else {
+            badRequest();
+        }
     }
 
-    function attemptSetUserData($signup) {
+    function attemptSetUserData($signup, $id) {
 
-        $result = $signup->setUserData();
+        $result = $signup->setUserData($id);
         $valid = $result->rowCount();
     
         // check if set account data insertion was successfull
         if ($valid) {
+
+            // set auth token spot in DB
+            setTokenSpot($id);
 
             // create assoc array containing success response
             $signupData = array(
@@ -112,16 +121,29 @@
         }
 
         else {
-
-            // unable to create user with given credentials
-            // send back error response to request
-            http_response_code(400); // Bad request
-            echo json_encode(
-                array('success' => false,
-                      'timestamp' => $GLOBALS['timestamp'],
-                      'message' => 'Unable to create user with given credentials'
-                )
-            );
+            badRequest();
         }
+    }
+
+    function setTokenSpot($id) {
+
+        // get db connection and new users ID
+        $auth = new Authenticate($GLOBALS['db'], $id);
+
+        // create a new auth token spot
+        $token = $auth->createTokenSpot();
+    }
+
+    function badRequest() {
+
+        // unable to create user with given credentials
+        // send back error response to request
+        http_response_code(400); // Bad request
+        echo json_encode(
+            array('success' => false,
+                'timestamp' => $GLOBALS['timestamp'],
+                'message' => 'Unable to create user with given credentials'
+            )
+        );
     }
 ?>

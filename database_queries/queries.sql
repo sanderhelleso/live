@@ -9,3 +9,9 @@ CREATE TABLE `live`.`users_data` ( `user_id` INT NOT NULL , `first_name` VARCHAR
 
 -- create test user data
 INSERT INTO `users_data` (`user_id`, `first_name`, `last_name`, `age`, `country`, `state`, `street_address`, `phone_number`, `newsletter`) VALUES ('1', 'john', 'doe', '22', 'Norway', 'More And Romsdal', 'Imaginary Street 123', '12345678', '1');
+
+-- create users_auth table
+CREATE TABLE `live`.`users_auth` ( `user_id` INT NOT NULL , `token` VARCHAR(256) NULL , `issued_at` BIGINT NULL , PRIMARY KEY (`user_id`), UNIQUE (`token`)) ENGINE = MyISAM;
+
+-- create test users_auth data
+INSERT INTO `users_auth` (`user_id`, `token`, `issued_at`) VALUES ('1', 'd81e0f58d1ea232c48ac237d885d79c9a2876397dfb5fc61b90949d86de5a4a8c07656563131061e73aa44874016d9c25a1ec55e5ff740baa7cf06b67b68592b', '1542679935801');

@@ -82,12 +82,9 @@ async function attemptLogin(email, password, button) {
     // validate response
     if (data.success) {
 
-        // set username and password in localstorage if option is checked
+        // set auth_token
         if (document.querySelector('input[type="checkbox"]').checked) {
-            localStorage.setItem('credentials', JSON.stringify({
-                email, 
-                password
-            }));
+            localStorage.setItem('auth_token', JSON.stringify(data.token));
         }
 
         // redirect user

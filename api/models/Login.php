@@ -22,7 +22,8 @@
 
             // login query
             $query = "SELECT * 
-                      FROM $this->table 
+                      FROM 
+                      $this->table 
                       WHERE email = '$this->email'
                       AND 
                       password = SHA('$this->password')";

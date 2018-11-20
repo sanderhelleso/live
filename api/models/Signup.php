@@ -80,7 +80,7 @@
         }
 
         // set user data for account
-        public function setUserData() {
+        public function setUserData($id) {
 
             // set user data query
             $query = "INSERT INTO 
@@ -96,7 +96,7 @@
                       `newsletter`
                       ) 
                       VALUES 
-                      (NULL,  
+                      ($id,  
                       '$this->firstName', 
                       '$this->lastName', 
                       '$this->age', 
