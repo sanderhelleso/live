@@ -27,7 +27,8 @@
                       INNER JOIN $this->usersTable
                       ON
                       $this->usersDataTable.user_id = $this->usersTable.user_id
-                      WHERE '$this->id'";
+                      WHERE 
+                      $this->usersTable.user_id = '$this->id'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
