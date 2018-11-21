@@ -7,7 +7,7 @@ export const VALIDATE = {
     clearForm
 }
 
-function formData() {
+function formData(settings) {
 
     const form = {};
 
@@ -24,6 +24,11 @@ function formData() {
             form[input.name] = input.value;
         }
     });
+
+    // if updating settings, also pass in users ID
+    if (settings) {
+        form.id = JSON.parse(localStorage.getItem('auth_token')).id;
+    }
 
     // return form object containing the form data
     return JSON.stringify(form);

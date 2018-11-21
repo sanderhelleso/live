@@ -19,7 +19,19 @@
         public $newsletter;
 
         // constructor with DB and signup data properties
-        public function __construct($db, $firstName, $lastName, $age, $country, $state, $address, $phone, $email, $password, $newsletter) {
+        public function __construct(
+            $db,
+            $firstName,
+            $lastName,
+            $age,
+            $country,
+            $state,
+            $address,
+            $phone,
+            $email,
+            $password,
+            $newsletter
+        ) {
             $this->conn = $db;
             $this->firstName = $firstName;
             $this->lastName = $lastName;

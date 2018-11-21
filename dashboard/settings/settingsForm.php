@@ -1,5 +1,5 @@
 <form id="settings-form-cont" class="column has-text-centered">
-    <div class="columns">
+    <div class="columns animated fadeIn">
         <div class="field is-horizontal column">
             <div class="control has-icons-left">
                 <input class="input is-rounded is-medium firstName-input" name="first_name" type="text" placeholder="First Name">
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="columns">
+    <div class="columns animated fadeIn">
         <div class="field is-horizontal column">
             <div class="control has-icons-left">
                 <input class="input is-rounded is-medium email-input" name="email" type="email" placeholder="E-Mail">
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="columns">
+    <div class="columns animated fadeIn">
         <div class="field is-horizontal column select-field">
             <div class="control has-icons-left">
                 <div class="select is-rounded is-medium">
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div class="columns">
+    <div class="columns animated fadeIn">
             <div class="field is-horizontal column">
                 <div class="control has-icons-left">
                     <input class="input is-rounded is-medium address-input" name="street_address" type="text" placeholder="Street Address">
@@ -95,7 +95,7 @@
             </div>
         </div>
 
-    <div class="columns">
+    <div class="columns animated fadeIn">
         <div class="field is-horizontal column">
             <div class="control has-icons-left">
                 <input class="input is-rounded is-medium password-input" name="password" type="password" placeholder="New Password">

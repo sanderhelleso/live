@@ -39,5 +39,44 @@
             // return statement
             return $stmt;
         }
+
+        // update user data
+        public function updateUserData(
+            $firstName,
+            $lastName, 
+            $age, 
+            $country,
+            $state, 
+            $address, 
+            $phone, 
+            $newsletter
+        ) {
+
+            // update user data query
+            $query = "UPDATE
+                      $this->usersDataTable 
+                      SET 
+                      first_name = '$firstName', 
+                      last_name = '$lastName',
+                      age = '$age', 
+                      country = '$country', 
+                      state = '$state', 
+                      street_address = '$address',
+                      phone_number = '$phone',
+                      newsletter = '$newsletter'
+                      WHERE 
+                      user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+
     }
 ?>

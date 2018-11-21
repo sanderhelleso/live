@@ -27,7 +27,8 @@ function setFormData() {
     });
 
     // set newsletter
-    document.querySelector('input[name="newsletter"]').checked = data.newsletter;
+    const checked = parseInt(data.newsletter) ? true : false; // 0 or 1
+    document.querySelector('input[name="newsletter"]').checked = checked;
 
     // set user avatar
     const avatar = document.querySelector('#user-avatar-upload-img');
@@ -84,7 +85,7 @@ async function updateUserData(button) {
 
     // set loading status
     button.classList.add('is-loading');
-    const body = VALIDATE.formData();
+    const body = VALIDATE.formData(true);
 
     console.log(body);
 
@@ -111,9 +112,11 @@ async function updateUserData(button) {
         localStorage.removeItem('user_data');
 
         // set the updated data
-        DATA.setNavbarData(DATA.loadUserData());
+        const data = await DATA.loadUserData();
+        DATA.setNavbarData(data);
+
     }
-    
+
     // display response message
     toast(data.message, data.success, 3000);
     setTimeout(() => {
