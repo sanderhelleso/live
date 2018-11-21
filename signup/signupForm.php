@@ -118,7 +118,7 @@
     </div>
 
     <div class="control has-text-centered is-medium">
-        <button id="signup-btn" class="button is-primary is-disabled">Sign Up And Create Account</button>
+        <button id="signup-btn" class="button is-primary">Sign Up And Create Account</button>
     </div>
     <div class="checkbox-cont">
         <label class="checkbox">

@@ -108,12 +108,24 @@
 
         <div class="field is-horizontal column">
             <div class="control has-icons-left">
-                <input class="input is-rounded is-medium newPassword-input" name="password" type="password" placeholder="Confirm New Password">
+                <input class="input is-rounded is-medium confirmPassword-input" name="password" type="password" placeholder="Confirm New Password">
                 <span class="icon is-left">
                 <i data-feather="unlock"></i>
                 </span>
                 <p class="help is-danger has-text-left"></p>
             </div>
         </div>
+    </div>
+
+    <div class="checkbox-cont">
+        <label class="checkbox">
+        <input type="checkbox" name="newsletter">
+        Subscribe to our newsletter
+        </label>
+    </div>
+
+    <div id="confirm-settings-col" class="columns level-left">
+        <button id="settings-btn" class="button is-primary">Update Settings</button>
+        <p>Current password must be confirmed in order to update password</p>
     </div>
 </form>

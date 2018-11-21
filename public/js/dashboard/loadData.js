@@ -51,8 +51,6 @@ async function loadUserData() {
 // set users navbar data
 function setNavbarData(data) {
 
-    console.log(data);
-
     // navbar username
     document.querySelector('#nav-user-name').innerHTML = data.email;
 
