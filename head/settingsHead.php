@@ -44,6 +44,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="../../public/js/dashboard/dashboardNavbar.js" type="module"></script>
+    <script src="../../public/js/dashboard/settings.js" type="module"></script>
 
     <title>Settings</title>
 </head>

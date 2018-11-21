@@ -37,7 +37,7 @@
 }
 
 .navbar-link:not(.is-arrowless)::after {
-    border-color: #e57373;
+    border-color: rgba(253, 164, 91, 0.9);
     margin-top: -.375em;
     right: 1.125em;
 }
