@@ -79,26 +79,6 @@
             return $stmt;
         }
 
-        public function updatePassword($password) {
-
-            // update user password query
-            $query = "UPDATE
-                      $this->usersTable
-                      SET 
-                      password = '$password', 
-                      WHERE 
-                      user_id = '$this->id'";
-
-            // prepeare statement
-            $stmt = $this->conn->prepare($query);
-
-            // exceute query
-            $stmt->execute();
-
-            // return statement
-            return $stmt;
-        }
-
         // update user data
         public function updateUserData(
             $firstName,
@@ -123,6 +103,48 @@
                       street_address = '$address',
                       phone_number = '$phone',
                       newsletter = '$newsletter'
+                      WHERE 
+                      user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        // compare and validate if password is equal to users current password
+        public function comparePassword($password) {
+
+            // check password query
+            $query = "SELECT * 
+                      FROM $this->usersTable 
+                      WHERE  
+                      user_id = '$this->id' 
+                      AND
+                      password = SHA('$password')";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        // update a users password
+        public function updatePassword($password) {
+
+            // update user password query
+            $query = "UPDATE
+                      $this->usersTable
+                      SET 
+                      password = SHA('$password')  
                       WHERE 
                       user_id = '$this->id'";
 

@@ -15,7 +15,7 @@
     margin: 2rem auto 4rem auto;
 }
 
-#settings-btn {
+#settings-btn, #password-btn {
     min-width: 200px;
     max-width: 200px;
     margin: 2.5rem 1rem;
@@ -27,7 +27,12 @@
     background: #FF5F6D;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    text-align: right;
+}
+
+#password-btn {
+    background: #B24592;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 }
 
 #user-avatar-upload {
@@ -79,7 +84,7 @@
     font-weight: 800;
 }
 
-#settings-btn:hover {
+#settings-btn:hover, #password-btn:hover {
     box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
 }
 
@@ -134,10 +139,57 @@
     border-top: 1px solid #eeeeee;
 }
 
-#settings #confirm-settings-col p {
+#settings #change-password-txt p {
     color: #9e9e9e;
-    font-size: 0.7rem;
-    margin-right: 1rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     margin: 0 auto;
+}
+
+.modal-card-title {
+    text-align: left;
+    font-weight: 800;
+}
+
+.modal-card-body {
+    padding: 2.5rem 0;
+}
+
+.modal-card-body .columns {
+    max-width: 65%;
+    margin: 0.5rem auto;
+}
+
+.modal-card-foot {
+    justify-content: flex-end;
+}
+
+.modal-card-body .enter-current-password {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eeeeee;
+}
+
+@media screen and (max-height: 900px) {
+    .site-content {
+        min-height: 240vh;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .site-content {
+        min-height: 280vh;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .site-content {
+        min-height: 325vh;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .site-content {
+        min-height: 370vh;
+    }
 }
