@@ -27,7 +27,8 @@ function setFormData() {
     });
 
     // set newsletter
-    document.querySelector('input[name="newsletter"]').checked = data.newsletter;
+    const checked = parseInt(data.newsletter) ? true : false; // 0 or 1
+    document.querySelector('input[name="newsletter"]').checked = checked;
 
     // set user avatar
     const avatar = document.querySelector('#user-avatar-upload-img');
@@ -45,6 +46,7 @@ function validateForm(e) {
 
     // set form status to invalid
     let isValid = false;
+    let isEmpty = false;
 
     // prevent page from reloading
     e.preventDefault();
@@ -59,23 +61,44 @@ function validateForm(e) {
             // check if any form fields are empty
             if (!input.value) {
 
-                // set status and message
                 if (input.type !== 'password' || (document.querySelector('.password-input').value && input.type === 'password')) {
+                if (input.type !== 'password') {
+
                     input.classList.add('is-danger');
                     VALIDATE.setHelpMessage(input, 'empty');
                     isValid = false;
+                    isEmpty = true;
                 }
+
+                else {
+
+                    // validate password attempt
+                    if ((document.querySelector('.password-input').value && input.type === 'password')) {
+
+                        // set status and message
+                        input.classList.add('is-danger');
+                        VALIDATE.setHelpMessage(input, 'empty');
+                        isValid = false;
+                        isEmpty = true;
+                    }
+                    
+                }
+
             }
+            
 
             // attempt to validate fields, if any field fails required test, form is set to invalid
-            else {
-                
+            else  {
+
                 isValid = VALIDATE.validate(input);
+                if (!isValid) {
+                    isEmpty = true;
+                }
             }
         }
     });
 
-    if (isValid) {
+    if (isValid && !isEmpty) {
         updateUserData(this);
     }
 }
@@ -84,7 +107,7 @@ async function updateUserData(button) {
 
     // set loading status
     button.classList.add('is-loading');
-    const body = VALIDATE.formData();
+    const body = VALIDATE.formData(true);
 
     console.log(body);
 
@@ -111,9 +134,19 @@ async function updateUserData(button) {
         localStorage.removeItem('user_data');
 
         // set the updated data
-        DATA.setNavbarData(DATA.loadUserData());
+        const data = await DATA.loadUserData();
+        DATA.setNavbarData(data);     
     }
-    
+
+    // clear form
+    Array.from(document.querySelectorAll('input, select, .select')).forEach(input => {
+
+        // get all fields except checkbox
+        if (input.type !== 'checkbox') {
+            VALIDATE.clearForm(input);
+        }
+    });
+
     // display response message
     toast(data.message, data.success, 3000);
     setTimeout(() => {
