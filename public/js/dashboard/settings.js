@@ -50,7 +50,6 @@ function setFormData() {
 function validatePassword(e) {
 
     e.preventDefault();
-
     PASSWORD.open();
 }
 

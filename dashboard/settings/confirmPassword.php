@@ -1,6 +1,6 @@
 <div class="modal animated fadeIn">
     <div class="modal-background animated fadeIn hide-modal"></div>
-    <div class="modal-card animated fadeInUp">
+    <div class="modal-card animated fadeIn">
         <header class="modal-card-head">
             <p class="modal-card-title">Change Password</p>
             <button class="delete hide-modal" aria-label="close"></button>
@@ -34,7 +34,7 @@
             <div class="columns is-centered enter-current-password">
                 <div class="field column">
                     <div class="control has-icons-left">
-                        <input class="input is-rounded is-medium confirmPassword-input" name="password" type="password" placeholder="Enter Password">
+                        <input class="input is-rounded is-medium currentPassword-input" name="password" type="password" placeholder="Enter Password">
                         <span class="icon is-left">
                         <i data-feather="check-circle"></i>
                         </span>
@@ -46,7 +46,7 @@
         </section>
         <footer class="modal-card-foot">
             <button class="button hide-modal">Cancel</button>
-            <button class="button is-primary">Update Password</button>
+            <button id="confirm-update-password" class="button is-primary">Update Password</button>
         </footer>
     </div>
 </div>

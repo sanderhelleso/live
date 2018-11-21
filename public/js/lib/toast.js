@@ -1,11 +1,16 @@
 // display a toast message
-export function toast(message, type, duration) {
+export function toast(message, type, duration, zIndex) {
 
     // create toast
     const toast = document.createElement('div');
     toast.addEventListener('click', dismissToast);
     toast.innerHTML = `<p>${type ? '<i data-feather="check-circle">' : '<i data-feather="x-circle">'}</i> ${message}</p>`;
     toast.className = `toast toast-${type ? 'success' : 'error'} animated fadeInUp`;
+
+    // set Z-index (view layer) of toast if set
+    if (zIndex) {
+        toast.style.zIndex = '1337';
+    }
 
     // set toast and start timeout
     document.querySelector('main').appendChild(toast);
