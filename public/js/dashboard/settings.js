@@ -3,6 +3,8 @@ import { LOCATION } from '../lib/countriesAndStates/formLocation';
 import { VALIDATE } from '../helpers/validateForm';
 import { HEADER } from '../helpers/authHeader';
 import { DATA } from './loadData';
+import { PASSWORD } from '../helpers/changePassword';
+
 
 window.onload = initialize;
 
@@ -40,6 +42,16 @@ function setFormData() {
 
     // prepeare form validation when attempting to submit form
     document.querySelector('#settings-btn').addEventListener('click', validateForm);
+
+    // prepeare form validation when change password is triggered
+    document.querySelector('#password-btn').addEventListener('click', validatePassword)
+}
+
+function validatePassword(e) {
+
+    e.preventDefault();
+
+    PASSWORD.open();
 }
 
 function validateForm(e) {
@@ -52,7 +64,7 @@ function validateForm(e) {
     e.preventDefault();
 
     // itterate over all form fields
-    Array.from(document.querySelectorAll('input, select')).forEach(input => {
+    Array.from(document.querySelector('#settings').querySelectorAll('input, select')).forEach(input => {
 
         // get all fields except checkbox
         if (input.type !== 'checkbox') {
@@ -61,29 +73,11 @@ function validateForm(e) {
             // check if any form fields are empty
             if (!input.value) {
 
-                if (input.type !== 'password' || (document.querySelector('.password-input').value && input.type === 'password')) {
-                if (input.type !== 'password') {
-
-                    input.classList.add('is-danger');
-                    VALIDATE.setHelpMessage(input, 'empty');
-                    isValid = false;
-                    isEmpty = true;
-                }
-
-                else {
-
-                    // validate password attempt
-                    if ((document.querySelector('.password-input').value && input.type === 'password')) {
-
-                        // set status and message
-                        input.classList.add('is-danger');
-                        VALIDATE.setHelpMessage(input, 'empty');
-                        isValid = false;
-                        isEmpty = true;
-                    }
-                    
-                }
-
+                 // set status and message
+                input.classList.add('is-danger');
+                VALIDATE.setHelpMessage(input, 'empty');
+                isValid = false;
+                isEmpty = true;
             }
             
 

@@ -74,33 +74,11 @@
     </div>
 
     <div class="columns animated fadeIn">
-            <div class="field is-horizontal column">
-                <div class="control has-icons-left">
-                    <input class="input is-rounded is-medium address-input" name="street_address" type="text" placeholder="Street Address">
-                    <span class="icon is-small is-left">
-                    <i data-feather="flag"></i>
-                    </span>
-                    <p class="help is-danger has-text-left"></p>
-                </div>
-            </div>
-
-            <div class="field is-horizontal column">
-                <div class="control has-icons-left">
-                    <input class="input is-rounded is-medium phone-input" name="phone_number" type="tlf" placeholder="Phone Number">
-                    <span class="icon is-small is-left">
-                    <i data-feather="phone"></i>
-                    </span>
-                    <p class="help is-danger has-text-left"></p>
-                </div>
-            </div>
-        </div>
-
-    <div class="columns animated fadeIn">
         <div class="field is-horizontal column">
             <div class="control has-icons-left">
-                <input class="input is-rounded is-medium password-input" name="password" type="password" placeholder="New Password">
-                <span class="icon is-left">
-                <i data-feather="lock"></i>
+                <input class="input is-rounded is-medium address-input" name="street_address" type="text" placeholder="Street Address">
+                <span class="icon is-small is-left">
+                <i data-feather="flag"></i>
                 </span>
                 <p class="help is-danger has-text-left"></p>
             </div>
@@ -108,9 +86,9 @@
 
         <div class="field is-horizontal column">
             <div class="control has-icons-left">
-                <input class="input is-rounded is-medium confirmPassword-input" name="password" type="password" placeholder="Confirm New Password">
-                <span class="icon is-left">
-                <i data-feather="unlock"></i>
+                <input class="input is-rounded is-medium phone-input" name="phone_number" type="tlf" placeholder="Phone Number">
+                <span class="icon is-small is-left">
+                <i data-feather="phone"></i>
                 </span>
                 <p class="help is-danger has-text-left"></p>
             </div>
@@ -124,8 +102,11 @@
         </label>
     </div>
 
-    <div id="confirm-settings-col" class="columns level-left">
+    <div id="confirm-settings-col" class="columns is-centered">
         <button id="settings-btn" class="button is-primary">Update Settings</button>
+        <button id="password-btn" class="button is-primary">Change Password</button>
+    </div>
+    <div id="change-password-txt">
         <p>Current password must be confirmed in order to update password</p>
     </div>
 </form>
