@@ -9,7 +9,7 @@
         // user properties
         public $id;
 
-        // constructor with DB and login properties
+        // constructor with DB and user id
         public function __construct($db, $id) {
             $this->conn = $db;
             $this->id = $id;
@@ -29,6 +29,65 @@
                       $this->usersDataTable.user_id = $this->usersTable.user_id
                       WHERE 
                       $this->usersTable.user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+
+        // see if email is free
+        public function isEmailFree($email) {
+
+            // check for exsisting email query
+            $query = "SELECT * 
+                      FROM $this->usersTable 
+                      WHERE email = '$email'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        public function updateEmail($email) {
+
+            // update user email query
+            $query = "UPDATE
+                      $this->usersTable
+                      SET 
+                      email = '$email'
+                      WHERE 
+                      user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        public function updatePassword($password) {
+
+            // update user password query
+            $query = "UPDATE
+                      $this->usersTable
+                      SET 
+                      password = '$password', 
+                      WHERE 
+                      user_id = '$this->id'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
@@ -76,7 +135,5 @@
             // return statement
             return $stmt;
         }
-
-
     }
 ?>

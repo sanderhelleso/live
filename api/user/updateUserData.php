@@ -38,7 +38,7 @@
     // set JSON header 
     header('Content-Type: application/json');
 
-    // include required db config, login and auth model
+    // include required db config, user and auth model
     include_once '../config/Database.php';
     include_once '../models/user/User.php';
     include_once '../models/Authenticate.php';
@@ -67,7 +67,33 @@
         // instantiate user object
         $user = new User($db, $data['id']);
 
-        // attempt to retrieve user data
+        // attempt to update email if present
+        $email;
+        $emailUpdated = false;
+        if (isset($data['email'])) {
+            $result = $user->isEmailFree($data['email']);
+            if ($result->rowCount()) {
+    
+                // email is allready in use by another account
+                $userDataUpdateRes = array(
+                    'success' => false,
+                    'message' => 'Unable to update E-Mail. E-Mail is allready in use',
+                    'timestamp' => $timestamp
+                );
+    
+                // send back response to request
+                http_response_code(409); // Request was fulfilled
+                echo json_encode($userDataUpdateRes);
+                return;
+            }
+    
+            // update email
+            $email = $user->updateEmail($data['email']);
+            $emailUpdated = true;
+        }
+    
+
+        // attempt to update user data
         $result = $user->updateUserData(
             $data['first_name'],
             $data['last_name'],
@@ -99,10 +125,28 @@
 
         else {
 
+            if ($emailUpdated) {
+
+                if ($email->rowCount()) {
+
+                    // data attempted to update was equal to allready sat data
+                    $userDataUpdateRes = array(
+                        'success' => true,
+                        'message' => 'Settings successfully updated',
+                        'timestamp' => $timestamp
+                    );
+
+                    // send back response to request
+                    http_response_code(200); // Request was fulfilled
+                    echo json_encode($userDataUpdateRes);
+                    return;
+                }
+            }
+
             // data attempted to update was equal to allready sat data
             $userDataUpdateRes = array(
                 'success' => true,
-                'message' => 'No need to update! Your settings are equal to what you tried to update',
+                'message' => 'No need to update! No changes was made',
                 'timestamp' => $timestamp
             );
 
