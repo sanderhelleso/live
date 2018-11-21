@@ -135,7 +135,7 @@ function validateEmail(input) {
 function validateAge(input) {
 
     // validate age value, must be atleast of age 14 and no older than 100
-    if (input.value < 13) {
+    if (input.value < 14) {
 
         // set status and message
         input.classList.add('is-danger');

@@ -60,7 +60,7 @@ async function createAccount(button) {
     button.classList.add('is-loading');
     const body = VALIDATE.formData();
 
-    // send POST request login endpoint
+    // send POST request signup endpoint
     const response = await fetch('/api/signup/signup.php', {
         method: 'POST',
         mode: 'same-origin',

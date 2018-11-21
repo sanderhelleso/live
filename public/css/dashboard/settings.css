@@ -1,6 +1,6 @@
 
 .site-content {
-    min-height: 125vh;
+    min-height: 145vh;
 }
 
 #settings-border {
@@ -15,11 +15,32 @@
     margin: 2rem auto 4rem auto;
 }
 
+#settings-btn {
+    min-width: 200px;
+    max-width: 200px;
+    margin: 2.5rem 1rem;
+    min-height: 3.5rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: right;
+}
+
 #user-avatar-upload {
-    min-height: 50vh;
-    padding-right: 3.5em;
-    margin-right: 1.5rem;
-    border-right: 1px solid #eeeeee;
+    margin-right: 1rem;
+}
+
+#user-settings-name {
+    margin-top: 2rem;
+    display: block;
+    word-break: break-all;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 #settings .columns {
@@ -58,20 +79,6 @@
     font-weight: 800;
 }
 
-#settings-btn {
-    min-width: 50%;
-    margin: 2.25rem 0 1rem 0;
-    min-height: 3.5rem;
-    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
-    transition: 0.3s ease-in-out;
-    border: none;
-    font-weight: 600;
-    background: #FF5F6D;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-
 #settings-btn:hover {
     box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
 }
@@ -87,9 +94,8 @@
 }
 
 #settings .checkbox-cont {
-    margin: 2rem 0;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #eeeeee;
+    margin: 0.5rem 0;
+    padding-bottom: 1rem;
     color: #9e9e9e;
 }
 
@@ -119,6 +125,19 @@
 
 #user-avatar-upload figure img {
     min-height: 100%;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+#settings #confirm-settings-col {
+    margin-top: 1rem;
+    border-top: 1px solid #eeeeee;
+}
+
+#settings #confirm-settings-col p {
+    color: #9e9e9e;
+    font-size: 0.7rem;
+    margin-right: 1rem;
+    opacity: 0.8;
+    margin: 0 auto;
 }
