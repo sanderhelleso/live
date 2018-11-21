@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../public/css/lib/bulma.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../../public/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../../public/css/dashboard/dashboardNavbar.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../public/css/dashboard/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../public/css/dashboard/settings.css" />
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="../../public/js/dashboard/dashboardNavbar.js" type="module"></script>

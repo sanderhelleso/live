@@ -1,8 +1,8 @@
-<form id="signup-form-cont">
+<form id="settings-form-cont" class="column has-text-centered">
     <div class="columns">
         <div class="field is-horizontal column">
-            <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium firstName-input" name="firstName" type="text" placeholder="First Name">
+            <div class="control has-icons-left">
+                <input class="input is-rounded is-medium firstName-input" name="first_name" type="text" placeholder="First Name">
                 <span class="icon is-small is-left">
                 <i data-feather="user"></i>
                 </span>
@@ -11,8 +11,8 @@
         </div>
 
         <div class="field is-horizontal column">
-            <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium lastName-input" name="lastName" type="text" placeholder="Last Name">
+            <div class="control has-icons-left">
+                <input class="input is-rounded is-medium lastName-input" name="last_name" type="text" placeholder="Last Name">
                 <span class="icon is-left">
                 <i data-feather="users"></i>
                 </span>
@@ -23,7 +23,7 @@
 
     <div class="columns">
         <div class="field is-horizontal column">
-            <div class="control has-icons-left has-icons-right">
+            <div class="control has-icons-left">
                 <input class="input is-rounded is-medium email-input" name="email" type="email" placeholder="E-Mail">
                 <span class="icon is-small is-left">
                 <i data-feather="mail"></i>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="field is-horizontal column">
-            <div class="control has-icons-left has-icons-right">
+            <div class="control has-icons-left">
                 <input class="input is-rounded is-medium age-input" name="age" type="number" placeholder="Age">
                 <span class="icon is-small is-left">
                 <i data-feather="calendar"></i>
@@ -45,7 +45,7 @@
 
     <div class="columns">
         <div class="field is-horizontal column select-field">
-            <div class="control has-icons-left has-icons-right">
+            <div class="control has-icons-left">
                 <div class="select is-rounded is-medium">
                     <select id="select-country" name="country">
                         <option disabled>Select Country</option>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="field is-horizontal column select-field">
-            <div class="control has-icons-left has-icons-right">
+            <div class="control has-icons-left">
                 <div class="select is-rounded is-medium">
                     <select id="select-state" name="state">
                         <option disabled>Select State</option>
@@ -75,8 +75,8 @@
 
     <div class="columns">
             <div class="field is-horizontal column">
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input is-rounded is-medium address-input" name="address" type="text" placeholder="Street Address">
+                <div class="control has-icons-left">
+                    <input class="input is-rounded is-medium address-input" name="street_address" type="text" placeholder="Street Address">
                     <span class="icon is-small is-left">
                     <i data-feather="flag"></i>
                     </span>
@@ -85,8 +85,8 @@
             </div>
 
             <div class="field is-horizontal column">
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input is-rounded is-medium phone-input" name="phone" type="tlf" placeholder="Phone Number">
+                <div class="control has-icons-left">
+                    <input class="input is-rounded is-medium phone-input" name="phone_number" type="tlf" placeholder="Phone Number">
                     <span class="icon is-small is-left">
                     <i data-feather="phone"></i>
                     </span>
@@ -97,8 +97,8 @@
 
     <div class="columns">
         <div class="field is-horizontal column">
-            <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium password-input" name="password" type="password" placeholder="Password">
+            <div class="control has-icons-left">
+                <input class="input is-rounded is-medium password-input" name="password" type="password" placeholder="New Password">
                 <span class="icon is-left">
                 <i data-feather="lock"></i>
                 </span>
@@ -107,8 +107,8 @@
         </div>
 
         <div class="field is-horizontal column">
-            <div class="control has-icons-left has-icons-right">
-                <input class="input is-rounded is-medium confirmPassword-input" name="password" type="password" placeholder="Confirm Password">
+            <div class="control has-icons-left">
+                <input class="input is-rounded is-medium newPassword-input" name="password" type="password" placeholder="Confirm New Password">
                 <span class="icon is-left">
                 <i data-feather="unlock"></i>
                 </span>

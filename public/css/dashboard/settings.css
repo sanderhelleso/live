@@ -1,0 +1,124 @@
+
+.site-content {
+    min-height: 125vh;
+}
+
+#settings-border {
+    height: 8px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    margin: 2rem auto 4rem auto;
+}
+
+#user-avatar-upload {
+    min-height: 50vh;
+    padding-right: 3.5em;
+    margin-right: 1.5rem;
+    border-right: 1px solid #eeeeee;
+}
+
+#settings .columns {
+    max-width: 100%;
+    margin-left: 2rem;
+}
+
+#settings .control, #settings .select, #settings select {
+    min-width: 17.5rem;
+    max-width: 17.5rem;
+}
+
+#settings-form-cont {
+    max-width: 100%;
+    transform: scale(0.9);
+}
+
+#settings select {
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+}
+
+#settings {
+    max-width: 70%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#settings .columns {
+    margin:  0 auto;
+}
+
+#settings h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+#settings-btn {
+    min-width: 50%;
+    margin: 2.25rem 0 1rem 0;
+    min-height: 3.5rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+#settings-btn:hover {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+#settings .field {
+    margin-bottom: 0.25rem;
+    max-width: 17.5rem !important;
+    margin-right: 2rem;
+}
+
+#settings .select {
+    margin-bottom: 1rem;
+}
+
+#settings .checkbox-cont {
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eeeeee;
+    color: #9e9e9e;
+}
+
+#settings a {
+    color: #9e9e9e;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+#settings a:hover {
+    color: #4a4a4a;
+}
+
+#settings .help {
+    margin: 0.5rem 1.35rem;
+    color: #e57373;
+    min-height: 6px;
+    width: 100%;
+    display: block;
+}
+
+#user-avatar-upload figure {
+    height: 160px;
+    width: 160px;
+    margin: 2rem auto 0 auto;
+}
+
+#user-avatar-upload figure img {
+    min-height: 100%;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}

@@ -10,8 +10,12 @@
 <?php include("../../nav/dashboardNav.php"); ?>
     <main class="site-content is-centered has-text-centered">
         <div id="settings" class="animated fadeIn">
-            <h1>Settings</h1> 
-            <?php include("settingsForm.php"); ?>
+            <h1>Settings</h1>
+            <div id="settings-border"></div>
+            <div class="columns is-centered">
+                <?php include("avatarUpload.php"); ?>
+                <?php include("settingsForm.php"); ?>
+            </div>
         </div>
     </main>
 <?php include("../../footer/footer.php"); ?>
