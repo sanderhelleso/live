@@ -3,4 +3,5 @@
         <img id="user-avatar-upload-img" class="is-rounded animated fadeIn">
     </figure>
     <span id="user-settings-name" class="animated fadeIn"></span>
+    <input id="avatar-upload" class="file-input" type="file" name="avatar-upload" accept=".jpg, .png">
 </div>

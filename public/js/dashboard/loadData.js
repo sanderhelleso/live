@@ -3,7 +3,8 @@ import { HEADER } from '../helpers/authHeader';
 
 export const DATA = {
     loadUserData,
-    setNavbarData
+    setNavbarData,
+    setAvatar
 }
 
 async function loadUserData() {
@@ -51,15 +52,17 @@ async function loadUserData() {
 // set users navbar data
 function setNavbarData(data) {
 
-    console.log(data);
-
     // navbar username
     document.querySelector('#nav-user-name').innerHTML = data.email;
 
     // set avatar
     const avatar = document.querySelector('#user-avatar');
-    avatar.src = data.avatar ? data.avatar : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
-    avatar.alt = `${data.first_name} ${data.last_name}'s avatar`;
+    setAvatar(avatar, data);
 
     document.querySelector('#nav-user').style.display = 'block';
+}
+
+function setAvatar(image, data) {
+    image.src = data.avatar ? `data:image/png;base64,${data.avatar}` : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
+    image.alt = `${data.first_name} ${data.last_name}'s avatar`;
 }

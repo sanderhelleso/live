@@ -78,7 +78,7 @@ function validate() {
 
 function dismissModal() {
 
-    // unbind prss enter event
+    // unbind press enter event
     modal.removeEventListener('click', sendFormOnEnter, false);
 
     // clear fields

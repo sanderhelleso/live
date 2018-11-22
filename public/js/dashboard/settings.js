@@ -4,12 +4,12 @@ import { VALIDATE } from '../helpers/validateForm';
 import { HEADER } from '../helpers/authHeader';
 import { DATA } from './loadData';
 import { PASSWORD } from '../helpers/changePassword';
+import { AVATAR } from '../helpers/changeAvatar';
 
 
 window.onload = initialize;
 
 function initialize() {
-
     setFormData();
 }
 
@@ -34,7 +34,7 @@ function setFormData() {
 
     // set user avatar
     const avatar = document.querySelector('#user-avatar-upload-img');
-    avatar.src = data.avatar ? data.avatar : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
+    avatar.src = data.avatar ? `data:image/png;base64,${data.avatar}` : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
     avatar.alt = `${data.first_name} ${data.last_name}'s avatar`;
 
     // set users full name
@@ -44,7 +44,10 @@ function setFormData() {
     document.querySelector('#settings-btn').addEventListener('click', validateForm);
 
     // prepeare form validation when change password is triggered
-    document.querySelector('#password-btn').addEventListener('click', validatePassword)
+    document.querySelector('#password-btn').addEventListener('click', validatePassword);
+
+    // prepeare avatar validation when user is updating avatar
+    document.querySelector('#user-avatar-upload-img').addEventListener('click', AVATAR.selectAvatar);
 }
 
 function validatePassword(e) {
@@ -63,7 +66,7 @@ function validateForm(e) {
     e.preventDefault();
 
     // itterate over all form fields
-    Array.from(document.querySelector('#settings').querySelectorAll('input, select')).forEach(input => {
+    Array.from(document.querySelector('#settings-form-cont').querySelectorAll('input, select')).forEach(input => {
 
         // get all fields except checkbox
         if (input.type !== 'checkbox') {
@@ -100,9 +103,9 @@ async function updateUserData(button) {
 
     // set loading status
     button.classList.add('is-loading');
-    const body = VALIDATE.formData(true);
 
-    console.log(body);
+    // create request body
+    const body = VALIDATE.formData(true);
 
     // send POST request update user endpoint
     const response = await fetch('/api/user/updateUserData.php', {
@@ -132,7 +135,7 @@ async function updateUserData(button) {
     }
 
     // clear form
-    Array.from(document.querySelectorAll('input, select, .select')).forEach(input => {
+    Array.from(document.querySelector('#settings-form-cont').querySelectorAll('input, select, .select')).forEach(input => {
 
         // get all fields except checkbox
         if (input.type !== 'checkbox') {
