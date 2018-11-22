@@ -3,44 +3,11 @@ import { HEADER } from '../helpers/authHeader';
 import { VALIDATE } from '../helpers/validateForm';
 
 export const PASSWORD = {
-    open,
     validate
 }
 
-// modal
-const modal = document.querySelector('.modal');
-
-// input fields
-const inputs = Array.from(document.querySelector('.modal').querySelectorAll('input'));
-
-// open modal and ask user to enter current password
-function open() {
-
-    // opem modal
-    modal.classList.add('is-active');
-
-    // focus first input to allow user to "tab" inputs immediatly
-    inputs[0].focus();
-
-    // allow user to dismiss modal by clicking on "cancel" or background
-    Array.from(document.querySelectorAll('.hide-modal')).forEach(dismiss => {
-        dismiss.addEventListener('click', () => {
-            dismissModal();
-        });
-    });
-
-    // add event to handle password on "confirm password" click
-    document.querySelector('#confirm-update-password').addEventListener('click', validate);
-
-    // allow user to send form by pressing enter key
-    modal.addEventListener('keydown', sendFormOnEnter)
-}
-
-function sendFormOnEnter(e) {
-    if (e.keyCode === 13) {
-        document.querySelector('#confirm-update-password').click();
-    }
-}
+// modal inputs
+let inputs = document.querySelector('.modal-password').querySelectorAll('input');
 
 function validate() {
 
@@ -49,8 +16,6 @@ function validate() {
 
     // itterate over all form fields
     inputs.forEach(input => {
-
-        // get all fields except checkbox
         VALIDATE.clearForm(input);
 
         // check if any form fields are empty
@@ -74,33 +39,6 @@ function validate() {
     if (isValid && !isEmpty) {
         changePassword(this);
     }
-}
-
-function dismissModal() {
-
-    // unbind press enter event
-    modal.removeEventListener('click', sendFormOnEnter, false);
-
-    // clear fields
-    inputs.forEach(input => {
-        VALIDATE.clearForm(input);
-        input.value = '';
-    });
-
-    // modal bg
-    const bg = document.querySelector('.modal-background');
-    bg.className = 'modal-background animated fadeOut';
-
-    const modalCard = document.querySelector('.modal-card');
-    modalCard.className = 'modal-card animated fadeOut';
-
-    setTimeout(() => {
-        bg.className = 'modal-background animated fadeIn hide-modal';
-        modalCard.className = 'modal-card animated fadeIn';
-
-        // remove modal
-        modal.classList.remove('is-active');
-    }, 1000);
 }
 
 async function changePassword(button) {
