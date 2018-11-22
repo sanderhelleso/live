@@ -36,7 +36,7 @@ async function deleteAccount(button) {
     // create post body
     const body = {
         id: JSON.parse(localStorage.getItem('auth_token')).id,
-        password: document.querySelector('.currentPassword-input').value
+        password: input.value
     }
 
     // send POST request update user password endpoint
@@ -53,5 +53,28 @@ async function deleteAccount(button) {
     });
 
     // get response data
-    //let data = await response.json();
+    let data = await response.json();
+
+    // account successfully deleted
+    if (data.success) {
+
+        // clear localstorage
+        localStorage.clear();
+
+        // set deleted account message
+        localStorage.setItem('account_deleted_successfully', true);
+
+        // redirect to login page
+        window.location.replace('/login/login.php');
+    }  
+
+    // delete account failed
+    else {
+
+        // display response message
+        toast(data.message, data.success, 3000, true);
+        setTimeout(() => {
+            button.classList.remove('is-loading');
+        }, 1000);
+    }
 }

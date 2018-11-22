@@ -5,6 +5,7 @@
         private $conn;
         private $usersTable = 'users';
         private $usersDataTable = 'users_data';
+        private $usersAuthTable = 'users_auth';
 
         // user properties
         public $id;
@@ -167,6 +168,34 @@
                       avatar = '$avatarFile'  
                       WHERE 
                       user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        public function deleteAccount() {
+
+            // delete user account query
+            $query = "DELETE 
+                      $this->usersTable.*,
+                      $this->usersDataTable.*,
+                      $this->usersAuthTable.*
+                      FROM 
+                      $this->usersTable,
+                      $this->usersDataTable,
+                      $this->usersAuthTable
+                      WHERE 
+                      $this->usersTable.user_id = '$this->id'
+                      AND
+                      $this->usersDataTable.user_id = '$this->id'
+                      AND
+                      $this->usersAuthTable.user_id = '$this->id'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
