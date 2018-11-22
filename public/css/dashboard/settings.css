@@ -40,7 +40,7 @@
 }
 
 #user-settings-name {
-    margin-top: 2rem;
+    margin-top: 2.75rem;
     display: block;
     word-break: break-all;
     text-transform: capitalize;
@@ -131,6 +131,7 @@
 }
 
 #user-avatar-upload figure img {
+    display: block;
     cursor: pointer;
     min-height: 180px;
     min-width: 180px;
@@ -180,25 +181,91 @@
     display: none;
 }
 
-@media screen and (max-height: 900px) {
+@media screen and (max-width: 1000px) {
+    #settings-cont {
+        flex-wrap: wrap;
+    }
+
+    #user-avatar-upload {
+        flex: 1;
+    }
+
+    .site-content {
+        min-height: 190vh;
+    }
+}
+
+@media screen and (min-width: 1600px) and (min-height: 1000px) {
+    .site-content {
+        min-height: 110vh;
+    }
+}
+
+@media screen and (max-height: 900px) and (max-width: 600px) {
     .site-content {
         min-height: 240vh;
     }
 }
 
-@media screen and (max-height: 700px) {
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+    #user-avatar-upload {
+        margin-right: 0;
+    }
+
+    #settings .control, #settings .select, #settings select, #settings .field {
+        max-width: 100%;
+    }
+
+    #settings .control {
+        min-width: 100%;
+    }
+
+    .site-content {
+        min-height: 200vh;
+    }
+
+    #settings .field {
+        margin-bottom: 0.25rem;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    #settings .control, #settings .select, #settings select {
+        min-width: 17.5rem;
+        max-width: 17.5rem;
+    }
+
+    .site-content {
+        min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #user-avatar-upload {
+        margin-right: 0;
+    }
+
+    #settings {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-height: 700px) and (max-width: 600px){
     .site-content {
         min-height: 280vh;
     }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 600px) and (max-width: 600px) {
     .site-content {
         min-height: 325vh;
     }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 600px) and (max-width: 600px) {
     .site-content {
         min-height: 370vh;
     }
