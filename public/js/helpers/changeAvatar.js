@@ -10,8 +10,8 @@ export const AVATAR = {
 const fileUpload = document.querySelector('#avatar-upload');
 fileUpload.addEventListener('change', uploadAvatar);
 
-// max file capacity is set to 2MB
-const fileCapacity = 2097152;
+// max file capacity is set to 1MB
+const fileCapacity = 1048576;
 
 function selectAvatar() {
 
@@ -24,15 +24,17 @@ function validFile() {
     // get file from input
     const file = fileUpload.files[0];
 
+    console.log(file);
+
     // only allow png and jpeg
     if (file.type.split('/')[0] !== 'image') {
         toast('Wrong file format. Only images are allowed', false, 3000);
         return false;
     }
 
-    // only allow files less than capacity (2MB)
+    // only allow files less than capacity (1MB)
     if (file.size > fileCapacity) {
-        toast('Image is to large. Only images up to 2MB allowed', false, 3000);
+        toast('Image is to large. Only images up to 1MB allowed', false, 3000);
         return false;
     }
 
