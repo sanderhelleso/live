@@ -10,6 +10,7 @@
 <?php include("../../nav/dashboardNav.php"); ?>
     <main class="site-content is-centered has-text-centered desktop">
         <?php include("confirmPassword.php"); ?>
+        <?php include("confirmDelete.php"); ?>
         <div id="settings" class="animated fadeIn">
             <h1 class="animated fadeIn">Settings</h1>
             <div id="settings-border"></div>

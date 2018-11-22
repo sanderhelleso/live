@@ -15,7 +15,7 @@
     margin: 2rem auto 4rem auto;
 }
 
-#settings-btn, #password-btn {
+#settings-btn, #password-btn, #delete-btn {
     min-width: 200px;
     max-width: 200px;
     margin: 2.5rem 1rem;
@@ -33,6 +33,16 @@
     background: #B24592;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+#delete-btn {
+    background: transparent;
+    border: 1.5px solid #e57373;
+    color: #e57373;
+    opacity: 0.5;
+    box-shadow: none;
+    transition: 0.3s ease-in-out;
+
 }
 
 #user-avatar-upload {
@@ -54,8 +64,8 @@
 }
 
 #settings .control, #settings .select, #settings select {
-    min-width: 17.5rem;
-    max-width: 17.5rem;
+    min-width: 20rem;
+    max-width: 20rem;
 }
 
 #settings-form-cont {
@@ -88,9 +98,13 @@
     box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
 }
 
+#delete-btn:hover {
+    opacity: 1;
+}
+
 #settings .field {
     margin-bottom: 0.25rem;
-    max-width: 17.5rem !important;
+    max-width: 20rem !important;
     margin-right: 2rem;
 }
 
@@ -114,7 +128,7 @@
     color: #4a4a4a;
 }
 
-#settings .help {
+#settings .help, .modal .help {
     margin: 0.5rem 1.35rem;
     color: #e57373;
     min-height: 6px;
@@ -131,7 +145,9 @@
 }
 
 #user-avatar-upload figure img {
-    display: block;
+    background: #c2e59c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     cursor: pointer;
     min-height: 180px;
     min-width: 180px;
@@ -168,13 +184,44 @@
 }
 
 .modal-card-foot {
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .modal-card-body .enter-current-password {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #eeeeee;
+}
+
+.delete-info p, .password-info p {
+    color: #9e9e9e;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.delete-info h5 {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.delete-info span svg, .password-info span svg {
+    height: 2.5rem;
+    width: 2.5rem;
+    stroke: #E94057;
+    margin-bottom: 2rem;
+}
+
+.password-info span svg {
+    stroke: #00d1b2;
+}
+
+.modal-card-foot button {
+    min-width: 175px;
+}
+
+.modal-card-body .passowrd-info-col {
+    max-width: 70%;
 }
 
 #avatar-upload {
@@ -188,10 +235,22 @@
 
     #user-avatar-upload {
         flex: 1;
+        margin-right: 0;
     }
 
     .site-content {
         min-height: 190vh;
+    }
+
+    #settings .control, #settings .select, #settings select {
+        min-width: 17.5rem;
+        max-width: 17.5rem;
+    }
+}
+
+@media screen and (max-width: 900px) and (max-height: 760px) {
+    .site-content {
+        min-height: 250vh;
     }
 }
 
@@ -203,7 +262,7 @@
 
 @media screen and (max-height: 900px) and (max-width: 600px) {
     .site-content {
-        min-height: 240vh;
+        min-height: 260vh;
     }
 }
 
@@ -251,22 +310,27 @@
     #settings {
         max-width: 100%;
     }
+
+    .modal-card-foot button {
+        min-width: 125px;
+    }
 }
+
 
 @media screen and (max-height: 700px) and (max-width: 600px){
     .site-content {
-        min-height: 280vh;
+        min-height: 290vh;
     }
 }
 
 @media screen and (max-height: 600px) and (max-width: 600px) {
     .site-content {
-        min-height: 325vh;
+        min-height: 335vh;
     }
 }
 
 @media screen and (max-height: 600px) and (max-width: 600px) {
     .site-content {
-        min-height: 370vh;
+        min-height: 385vh;
     }
 }

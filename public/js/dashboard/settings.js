@@ -3,18 +3,14 @@ import { LOCATION } from '../lib/countriesAndStates/formLocation';
 import { VALIDATE } from '../helpers/validateForm';
 import { HEADER } from '../helpers/authHeader';
 import { DATA } from './loadData';
-import { PASSWORD } from '../helpers/changePassword';
+import { MODAL } from '../helpers/modal';
 import { AVATAR } from '../helpers/changeAvatar';
+import { DELETE } from '../helpers/deleteAccount';
 
 
 window.onload = initialize;
 
 function initialize() {
-    setFormData();
-}
-
-// fill in the users data into settings form
-function setFormData() {
 
     // fetch country and state data for select options
     LOCATION.countryAndStates(true);
@@ -34,8 +30,10 @@ function setFormData() {
 
     // set user avatar
     const avatar = document.querySelector('#user-avatar-upload-img');
-    avatar.src = data.avatar ? `data:image/png;base64,${data.avatar}` : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
-    avatar.alt = `${data.first_name} ${data.last_name}'s avatar`;
+    DATA.setAvatar(avatar, data);
+
+    // set name
+    DATA.setName(data);
 
     // set users full name
     document.querySelector('#user-settings-name').innerHTML = `${data.first_name} ${data.last_name}`;
@@ -46,14 +44,23 @@ function setFormData() {
     // prepeare form validation when change password is triggered
     document.querySelector('#password-btn').addEventListener('click', validatePassword);
 
+    // prepeare for account delete event
+    document.querySelector('#delete-btn').addEventListener('click', validateDelete);
+
     // prepeare avatar validation when user is updating avatar
     document.querySelector('#user-avatar-upload-img').addEventListener('click', AVATAR.selectAvatar);
 }
 
+// open password modal
 function validatePassword(e) {
-
     e.preventDefault();
-    PASSWORD.open();
+    MODAL.open('password');
+}
+
+// open delete modal
+function validateDelete(e) {
+    e.preventDefault();
+    MODAL.open('delete');
 }
 
 function validateForm(e) {
@@ -131,7 +138,8 @@ async function updateUserData(button) {
 
         // set the updated data
         const data = await DATA.loadUserData();
-        DATA.setNavbarData(data);     
+        DATA.setNavbarData(data);
+        DATA.setName(data);    
     }
 
     // clear form

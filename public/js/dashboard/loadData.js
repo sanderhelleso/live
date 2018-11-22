@@ -4,7 +4,8 @@ import { HEADER } from '../helpers/authHeader';
 export const DATA = {
     loadUserData,
     setNavbarData,
-    setAvatar
+    setAvatar,
+    setName
 }
 
 async function loadUserData() {
@@ -47,6 +48,12 @@ async function loadUserData() {
             toast(data.message, data.success, 3000);
         }
     }
+}
+
+function setName(data) {
+
+    // set users full name
+    document.querySelector('#user-settings-name').innerHTML = `${data.first_name} ${data.last_name}`;
 }
 
 // set users navbar data

@@ -105,8 +105,9 @@
     <div id="confirm-settings-col" class="columns is-centered">
         <button id="settings-btn" class="button is-primary">Update Settings</button>
         <button id="password-btn" class="button is-primary">Change Password</button>
+        <button id="delete-btn" class="button is-primary">Delete Account</button>
     </div>
     <div id="change-password-txt">
-        <p>Current password must be confirmed in order to update password</p>
+        <p>Current password must be confirmed in order to update password or delete account</p>
     </div>
 </form>

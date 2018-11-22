@@ -1,4 +1,4 @@
-<div class="modal animated fadeIn">
+<div class="modal animated fadeIn modal-password">
     <div class="modal-background animated fadeIn hide-modal"></div>
     <div class="modal-card animated fadeIn">
         <header class="modal-card-head">
@@ -6,6 +6,15 @@
             <button class="delete hide-modal" aria-label="close"></button>
         </header>
         <section class="modal-card-body has-text-centered">
+
+            <div class="columns is-centered passowrd-info-col">
+                <div class="column">
+                <div class="field column password-info">
+                    <span><i data-feather="shield"></i></span>
+                    <p>A secure password is very important. We reccommend changing your password every other week.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="columns is-centered">
                 <div class="field column">
@@ -46,7 +55,7 @@
         </section>
         <footer class="modal-card-foot">
             <button class="button hide-modal">Cancel</button>
-            <button id="confirm-update-password" class="button is-primary">Update Password</button>
+            <button id="confirm-update-password" class="button is-primary confirm">Update Password</button>
         </footer>
     </div>
 </div>
