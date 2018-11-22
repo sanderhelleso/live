@@ -157,5 +157,25 @@
             // return statement
             return $stmt;
         }
+
+        public function updateAvatar($avatarFile) {
+
+            // update user avatar query
+            $query = "UPDATE
+                      $this->usersDataTable
+                      SET 
+                      avatar = '$avatarFile'  
+                      WHERE 
+                      user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
     }
 ?>

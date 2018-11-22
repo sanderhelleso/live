@@ -123,13 +123,19 @@
 }
 
 #user-avatar-upload figure {
-    height: 160px;
-    width: 160px;
+    min-height: 180px;
+    min-width: 180px;
+    max-height: 180px;
+    max-width: 180px;
     margin: 2rem auto 0 auto;
 }
 
 #user-avatar-upload figure img {
-    min-height: 100%;
+    cursor: pointer;
+    min-height: 180px;
+    min-width: 180px;
+    max-height: 180px;
+    max-width: 180px;
     -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
     box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
 }
@@ -168,6 +174,10 @@
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #eeeeee;
+}
+
+#avatar-upload {
+    display: none;
 }
 
 @media screen and (max-height: 900px) {
