@@ -8,14 +8,16 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * Signup Sytem
 * Login System
 * Logout System
+* Forgot Password System
 * Token Based Authentication
-* API Server
+* API REST Server
 * API Auth Header Validation
 * File / Avatar Upload
 * Update User Settings and Data
 * Change Password
 * Delete Account
-* LocalStorage and Cookie connection
+* LocalStorage and Cookie Releation
+* SMTP and dynamic E-Mail Sending
 
 
 ## Built With
