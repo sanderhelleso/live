@@ -80,7 +80,7 @@
     // create assoc array containing success response
     $forgotPasswordData = array(
         'success' => true,
-        'message' => 'If a matching account was found an email was sent to <strong>' . $data['email'] . '</strong><br>to allow you to reset your password.',
+        'message' => 'If a matching account was found an email was sent to<br><strong>' . $data['email'] . '</strong><br>to allow you to reset your password.<br>Remember to check your spam folder.',
         'timestamp' => $timestamp
     );
 

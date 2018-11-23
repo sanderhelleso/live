@@ -5,7 +5,7 @@
     padding: 1rem 2rem 1.5rem 2rem;
     position: fixed;
     left: 5%;
-    top: 82.5%;
+    top: 77.5%;
     font-weight: 100;
     cursor: pointer;
     text-align: center;
@@ -13,6 +13,11 @@
     -webkit-box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
     box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
     transition: 0.3s ease-in-out;
+}
+
+.toast strong {
+    font-weight: 800;
+    color: #ffffff;
 }
 
 .toast svg {
