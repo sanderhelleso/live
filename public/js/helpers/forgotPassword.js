@@ -1,5 +1,4 @@
 import { toast } from '../lib/toast';
-import { HEADER } from '../helpers/authHeader';
 import { VALIDATE } from '../helpers/validateForm';
 
 
@@ -42,41 +41,34 @@ async function sendForgotPassword(button) {
     // set loading status
     button.classList.add('is-loading');
     
-    /*// create post body
-    const body = {
-        id: JSON.parse(localStorage.getItem('auth_token')).id,
-        password: input.value
-    }
-
     // send POST request update user password endpoint
-    const response = await fetch('/api/user/deleteAccount.php', {
+    const response = await fetch('/api/forgotPassword/forgotPassword.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
         headers: {
-            ...HEADER(),
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify({
+            email: input.value
+        })
     });
 
     // get response data
     let data = await response.json();
 
-    // email successfully sendt
-    if (data.success) {
 
-        console.log(123);
-    }  
+    // reset fields
+    VALIDATE.clearForm(input);
+    input.value = '';
 
-    // email sending failed
-    else {
+    // dismiss modal
+    document.querySelector('.hide-modal').click();
 
-        // display response message
-        toast(data.message, data.success, 3000, true);
-        setTimeout(() => {
-            button.classList.remove('is-loading');
-        }, 1000);
-    }*/
+    // display response message
+    toast(data.message, data.success, 6000, true);
+    setTimeout(() => {
+        button.classList.remove('is-loading');
+    }, 1000);
 }
