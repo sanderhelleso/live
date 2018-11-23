@@ -3,7 +3,7 @@ import { HEADER } from '../helpers/authHeader';
 import { VALIDATE } from '../helpers/validateForm';
 
 
-export const DELETE = {
+export const FORGOTPASSWORD = {
     confirm
 }
 
@@ -13,8 +13,8 @@ let input;
 function confirm() {
 
     // set inputs
-    if (document.querySelector('.modal-delete') !== null) {
-        input = document.querySelector('.modal-delete').querySelector('input');
+    if (document.querySelector('.modal-forgot') !== null) {
+        input = document.querySelector('.modal-forgot').querySelector('input');
     }
 
     // reset field error
@@ -29,16 +29,20 @@ function confirm() {
         return;
     }
 
-    // attempt to delete account
-    deleteAccount(this);
+    else if (!VALIDATE.validate(input)) {;
+        return;
+    }
+
+    // attempt to send reset password link
+    sendForgotPassword(this);
 }
 
-async function deleteAccount(button) {
+async function sendForgotPassword(button) {
 
     // set loading status
     button.classList.add('is-loading');
     
-    // create post body
+    /*// create post body
     const body = {
         id: JSON.parse(localStorage.getItem('auth_token')).id,
         password: input.value
@@ -60,20 +64,13 @@ async function deleteAccount(button) {
     // get response data
     let data = await response.json();
 
-    // account successfully deleted
+    // email successfully sendt
     if (data.success) {
 
-        // clear localstorage
-        localStorage.clear();
-
-        // set deleted account message
-        localStorage.setItem('account_deleted_successfully', true);
-
-        // redirect to login page
-        window.location.replace('/login/login.php');
+        console.log(123);
     }  
 
-    // delete account failed
+    // email sending failed
     else {
 
         // display response message
@@ -81,5 +78,5 @@ async function deleteAccount(button) {
         setTimeout(() => {
             button.classList.remove('is-loading');
         }, 1000);
-    }
+    }*/
 }

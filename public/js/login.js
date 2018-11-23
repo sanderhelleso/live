@@ -1,5 +1,6 @@
 import { toast } from './lib/toast';
 import { REGEX } from './helpers/regex';
+import { MODAL } from './helpers/modal';
 
 window.onload = initializeForm;
 
@@ -12,6 +13,15 @@ function initializeForm() {
 
     // initialize "login" button with login event
     document.querySelector('#login-btn').addEventListener('click', login);
+
+    // initialize "forgot password"
+    document.querySelector('#forgot-password').addEventListener('click', validateForgotPassword)
+}
+
+// open forgot password modal
+function validateForgotPassword(e) {
+    e.preventDefault();
+    MODAL.open('forgot');
 }
 
 function deletedUser() {
@@ -138,14 +148,14 @@ async function attemptLogin(email, password, button) {
 function validateEmail() {
 
     // fetch email input
-    const email = document.querySelector('input[type="email"');
+    const email = document.querySelector('#login').querySelector('input[type="email"');
 
     // validate email value with regex
     if (!REGEX.email().test(String(email.value).toLowerCase())) {    
 
         // if email format is invalid, set error message and state
         email.classList.add('is-danger');
-        document.querySelector('.email-help').innerHTML = 'Invalid E-Mail format';
+        document.querySelector('#login').querySelector('.email-help').innerHTML = 'Invalid E-Mail format';
         return false;
     }
       
@@ -157,14 +167,14 @@ function validateEmail() {
 function validatePassword() {
 
     // fetch password input
-    const password = document.querySelector('input[type="password"');
+    const password = document.querySelector('#login').querySelector('input[type="password"');
 
     // check if password is empty
     if (!password.value) {
 
         // if password is empty set error message and state
         password.classList.add('is-danger');
-        document.querySelector('.password-help').innerHTML = 'Password cant be empty';
+        document.querySelector('#login').querySelector('.password-help').innerHTML = 'Password cant be empty';
         return false;
     }
 
