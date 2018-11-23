@@ -82,10 +82,66 @@
     color: #4a4a4a;
 }
 
-#login .help {
+#login .help, .modal .help {
     margin: 0.5rem 1.35rem;
     color: #e57373;
     min-height: 6px;
+}
+
+.modal-card-title {
+    text-align: left;
+    font-weight: 800;
+}
+
+.modal-card-body {
+    padding: 2.5rem 0;
+}
+
+.modal-card-body .columns {
+    max-width: 65%;
+    margin: 0.5rem auto;
+}
+
+.modal-card-foot {
+    justify-content: space-between;
+}
+
+.modal-card-body .enter-email {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eeeeee;
+}
+
+.forgot-info p{
+    color: #9e9e9e;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.forgot-info span svg {
+    height: 2.5rem;
+    width: 2.5rem;
+    stroke: #E94057;
+    margin-bottom: 2rem;
+}
+
+.forgot-info span svg {
+    stroke: #00d1b2;
+}
+
+.modal-card-foot button {
+    min-width: 175px;
+}
+
+.modal-card-body .forgot-info-col {
+    max-width: 75%;
+}
+
+@media screen and (max-width: 900px) {
+    .modal-card-foot button {
+        min-width: 125px;
+    }
 }
 
 @media screen and (max-height: 800px) {

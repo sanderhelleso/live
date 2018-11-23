@@ -27,7 +27,7 @@
         Remember me
         </label>
     </div>
-    <a href="#">Forgott password?</a>
+    <a id="forgot-password">Forgott password?</a>
     <span class="login-options">or</span>
     <a href="/signup/signup.php">Dont have an account?</a>
 </form>

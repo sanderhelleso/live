@@ -1,6 +1,7 @@
 import { VALIDATE } from '../helpers/validateForm';
 import { PASSWORD } from '../helpers/changePassword';
 import { DELETE } from './deleteAccount';
+import { FORGOTPASSWORD } from './forgotPassword';
 
 export const MODAL = {
     open,
@@ -36,7 +37,19 @@ function open(modalType) {
     });
 
     // add event to handle confirmation
-    const event = modalType === 'password' ? PASSWORD.validate : DELETE.confirm;
+    let event;
+    if (modalType === 'password') {
+        event = PASSWORD.validate;
+    }
+
+    else if (modalType === 'delete') {
+        event = DELETE.confirm;
+    }
+
+    else if (modalType === 'forgot') { 
+        event = FORGOTPASSWORD.confirm;
+    }
+
     modal.querySelector('.confirm').addEventListener('click', event);
 
     // allow user to send form by pressing enter key

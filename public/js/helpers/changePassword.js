@@ -7,9 +7,14 @@ export const PASSWORD = {
 }
 
 // modal inputs
-let inputs = document.querySelector('.modal-password').querySelectorAll('input');
+let inputs;
 
 function validate() {
+
+    // set inputs
+    if (document.querySelector('.modal-password') !== null) {
+        inputs = document.querySelector('.modal-password').querySelectorAll('input');
+    }
 
     let isValid = false;
     let isEmpty = false;

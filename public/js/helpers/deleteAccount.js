@@ -8,9 +8,14 @@ export const DELETE = {
 }
 
 // modal input
-let input = document.querySelector('.modal-delete').querySelector('input');
+let input;
 
 function confirm() {
+
+    // set inputs
+    if (document.querySelector('.modal-delete') !== null) {
+        input = document.querySelector('.modal-delete').querySelector('input');
+    }
 
     // reset field error
     VALIDATE.clearForm(input);

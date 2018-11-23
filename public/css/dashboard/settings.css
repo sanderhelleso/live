@@ -41,8 +41,7 @@
     color: #e57373;
     opacity: 0.5;
     box-shadow: none;
-    transition: 0.3s ease-in-out;
-
+    transition: none;
 }
 
 #user-avatar-upload {
@@ -220,7 +219,7 @@
     min-width: 175px;
 }
 
-.modal-card-body .passowrd-info-col {
+.modal-card-body .password-info-col {
     max-width: 70%;
 }
 
