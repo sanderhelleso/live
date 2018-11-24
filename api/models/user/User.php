@@ -182,20 +182,11 @@
         public function deleteAccount() {
 
             // delete user account query
-            $query = "DELETE 
-                      $this->usersTable.*,
-                      $this->usersDataTable.*,
-                      $this->usersAuthTable.*
+            $query = "DELETE
                       FROM 
-                      $this->usersTable,
-                      $this->usersDataTable,
-                      $this->usersAuthTable
+                      $this->usersTable
                       WHERE 
-                      $this->usersTable.user_id = '$this->id'
-                      AND
-                      $this->usersDataTable.user_id = '$this->id'
-                      AND
-                      $this->usersAuthTable.user_id = '$this->id'";
+                      user_id = '$this->id'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
