@@ -132,7 +132,7 @@ async function attemptLogin(email, password, button) {
         localStorage.setItem('remember_me', rememberMe);
 
         // redirect user
-        window.location.replace('/dashboard/dashboard.php');
+        window.location.replace('/dashboard');
     }
 
     else {

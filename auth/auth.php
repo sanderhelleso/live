@@ -6,14 +6,14 @@
     function canAccessRoute() {
         if (!isset($_COOKIE['auth_token'])) {
             http_response_code(401); // Unautorized
-            header("Location: /login/login.php"); 
+            header("Location: /login"); 
         }
     }    
 
     // if user is logged in, redirect user to dashboard
     function isLoggedIn() {
         if (isset($_COOKIE['auth_token'])) {
-            header("Location: /dashboard/dashboard.php"); 
+            header("Location: /dashboard"); 
         }
     }
 

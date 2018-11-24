@@ -4,7 +4,7 @@
         <div id="hero-banner" class="has-text-centered animated fadeIn">
             <h1 class="animated fadeInUp">LIVE</h1>
             <h5>Live your life. Find qualified and passionate people to take care of those you care about.</h5>
-            <a class="button animated fadeInDown" href="/signup/signup.php">Get started today</a>
+            <a class="button animated fadeInDown" href="/signup">Get started today</a>
         </div>
     </div>
     <section class="section has-text-centered">
@@ -72,7 +72,7 @@
             <div class="columns is-mobile is-centered is-vcentered">
                 <div class="column">
                     <h2 class="title">Ready to get started?</h1>
-                    <a class="button" href="/signup/signup.php">Sign Up Now</a>
+                    <a class="button" href="/signup">Sign Up Now</a>
                 </div>
             </div>
         </div>

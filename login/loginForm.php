@@ -29,5 +29,5 @@
     </div>
     <a id="forgot-password">Forgott password?</a>
     <span class="login-options">or</span>
-    <a href="/signup/signup.php">Dont have an account?</a>
+    <a href="/signup">Dont have an account?</a>
 </form>

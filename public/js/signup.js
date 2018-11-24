@@ -82,7 +82,7 @@ async function createAccount(button) {
         localStorage.setItem('account_created_successfully', JSON.parse(body).firstName);
 
         // redirect user if account was successfully created
-        window.location.replace('/login/login.php');
+        window.location.replace('/login');
         return;
     }
 

@@ -27,6 +27,6 @@ export const LOGOUT = async () => {
         localStorage.setItem('logout_successfull', true);
 
         // redirect user
-        window.location.replace('/login/login.php');
+        window.location.replace('/login');
     }
 };
