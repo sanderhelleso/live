@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <?php 
-    include("../auth/auth.php");
-    activeResetPassword(); // check if reset password code is valid
-    include("../head/loginHead.php"); // replace with reset password head
+    include("../head/resetPasswordHead.php");
 ?>
 <html>
 <body class="site">
 <?php include("../nav/nav.php"); ?>
     <main class="site-content is-centered has-text-centered">
-        <h1> Reset password </h1>
+        <div id="reset-password-cont">
+            <h1> Reset password </h1>
+            <?php 
+                    include("../auth/auth.php");
+                    validateResetPassword(); // check if reset password code is valid
+                ?>
+        </div>
     </main>
 <?php include("../footer/footer.php"); ?>
 </body>
