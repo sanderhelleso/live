@@ -18,6 +18,7 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * Delete Account
 * LocalStorage and Cookie Releation
 * SMTP and dynamic E-Mail Sending
+* HTACCESS and 404 / Invalid route handling
 
 
 ## Built With
