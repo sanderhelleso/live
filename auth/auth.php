@@ -81,10 +81,11 @@
 
             // if response failed, redirect user to homepage
             if (!$data['success']) {
+                http_response_code(401); // Unautorized
                 header('Location: /');
             }
 
-            // create new session containing users ID
+            // create new session containing users ID and URL
             else {
                 session_start();
                 $_SESSION['reset_password_id'] = $data['id'];

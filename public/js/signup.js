@@ -6,6 +6,9 @@ window.onload = initialize;
 
 function initialize() {
 
+    // focus first input on load
+    document.querySelector('#signup').querySelector('input').focus();
+
     // fetch country and state data for select options
     LOCATION.countryAndStates();
 

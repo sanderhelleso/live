@@ -30,6 +30,7 @@
     left: 50%;
     transform: translate(-50%);
     min-width: 425px;
+    max-width: 425px;
     box-shadow: 0 32px 62px rgba(10, 10, 10, .2);
     padding: 3rem 2.5rem 3rem 2.5rem;
     border-radius: 6px;

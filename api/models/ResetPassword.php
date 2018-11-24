@@ -35,5 +35,24 @@
             // return statement
             return $stmt;
         }
+
+        // delete a specific reset url
+        public function deleteUrl() {
+
+            // delete reset url query
+            $query = "DELETE
+                      FROM 
+                      $this->forgotPasswordTable
+                      WHERE reset_url = '$this->reset_url'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
     }
 ?>

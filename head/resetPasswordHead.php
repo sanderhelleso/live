@@ -43,6 +43,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="../public/js/navbar.js"></script>
+    <script src="../public/js/resetPassword.js" type="module"></script>
 
     <title>Reset Password</title>
 </head>

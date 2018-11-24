@@ -22,7 +22,7 @@
      *  RECIEVE AND VALIDATE RESET PASSWORD URL 
      * 
     **/
-
+    
     if ($contentType === 'application/x-www-form-urlencoded') {
 
         // set data to given reset_url recieved in post reqyest
@@ -36,6 +36,9 @@
 
         // see if url is valid
         if ($valid->rowCount()) {
+
+            // delete url from database to make it no longer available
+            $resetPassword->deleteUrl();
 
             // retrieve forgot password data
             $valid = $valid->fetch(PDO::FETCH_ASSOC);
@@ -125,6 +128,12 @@
             // send back response to request
             http_response_code(200); // Request was fulfilled
             echo json_encode($passwordData);
+
+            // unset and destory session data
+            if (isset($_SESSION)) {
+                session_unset(); 
+                session_destroy();
+            }
         }
 
         // something went wrong when attempting to update password
@@ -138,12 +147,6 @@
                     'timestamp' => $timestamp
                 )
             );
-        }
-
-        // unset and destory session if present
-        if (isset($_SESSION)) {
-            session_unset(); 
-            session_destroy();
         }
     }
 ?>
