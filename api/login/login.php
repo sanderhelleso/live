@@ -128,7 +128,7 @@
             http_response_code(403); // Forbidden
             echo json_encode(
                 array('success' => false,
-                    'timestamp' => $GLOBALs['timestamp'],
+                    'timestamp' => $GLOBALS['timestamp'],
                     'message' => 'Unable to log in at this time. Please try again.'
                 )
             );

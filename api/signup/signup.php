@@ -39,11 +39,9 @@
     // set JSON header 
     header('Content-Type: application/json');
 
-    // include required db config, signup and auth model
+    // include required db config, signup, auth and forgot password model
     include_once '../config/Database.php';
     include_once '../models/Signup.php';
-    include_once '../models/Authenticate.php';
-
 
     // instantiate database and connect
     $databse = new Database();
@@ -104,9 +102,6 @@
         // check if set account data insertion was successfull
         if ($valid) {
 
-            // set auth token spot in DB
-            setTokenSpot($id);
-
             // create assoc array containing success response
             $signupData = array(
                 'success' => true,
@@ -120,18 +115,10 @@
 
         }
 
+        // if insertion failed, send bad request
         else {
             badRequest();
         }
-    }
-
-    function setTokenSpot($id) {
-
-        // get db connection and new users ID
-        $auth = new Authenticate($GLOBALS['db'], $id);
-
-        // create a new auth token spot
-        $token = $auth->createTokenSpot();
     }
 
     function badRequest() {
