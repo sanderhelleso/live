@@ -67,12 +67,19 @@
         // add url to forgot_password table
         public function setForgotPasswordUrl() {
 
-            $query = "UPDATE
+            $query = "INSERT INTO
                       $this->forgotPasswordTable
-                      SET 
-                      reset_url = '$this->url' 
-                      WHERE 
-                      user_id = '$this->id'";
+                      (
+                      `user_id`, 
+                      `reset_url`
+                      ) 
+                      VALUES
+                      (
+                      '$this->id',
+                      '$this->url'
+                      )
+                      ON DUPLICATE KEY UPDATE
+                      reset_url = '$this->url'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);

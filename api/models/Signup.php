@@ -72,11 +72,14 @@
             // create account query
             $query = "INSERT INTO 
                       $this->usersTable
-                      (`user_id`,
+                      (
+                      `user_id`,
                       `email`,
-                      `password`)
+                      `password`
+                      )
                       VALUES
-                      (NULL,
+                      (
+                      NULL,
                       '$this->email',
                       SHA1('$this->password')
                       )";
@@ -97,7 +100,8 @@
             // set user data query
             $query = "INSERT INTO 
                       $this->usersDataTable
-                      (`user_id`, 
+                      (
+                      `user_id`, 
                       `first_name`, 
                       `last_name`, 
                       `age`, 
@@ -109,7 +113,8 @@
                       `newsletter`
                       ) 
                       VALUES 
-                      ($id,  
+                      (
+                      '$id',  
                       '$this->firstName', 
                       '$this->lastName', 
                       '$this->age', 

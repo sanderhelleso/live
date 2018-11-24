@@ -58,7 +58,6 @@ async function sendForgotPassword(button) {
     // get response data
     let data = await response.json();
 
-
     // reset fields
     VALIDATE.clearForm(input);
     input.value = '';

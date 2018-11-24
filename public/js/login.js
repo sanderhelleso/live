@@ -48,7 +48,7 @@ function newUser() {
     if (localStorage.getItem('account_created_successfully') !== null) {
 
         // focus first input
-        document.querySelector('input').focus();
+        document.querySelector('#login').querySelector('input').focus();
 
         // display message
         toast(`Welcome to LIVE ${localStorage.getItem('account_created_successfully')}! Please login to continue`, true, 4000);

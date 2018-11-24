@@ -32,11 +32,14 @@
             // create token query
             $query = "INSERT INTO 
                      $this->table 
-                     (`user_id`,
+                     (
+                     `user_id`,
                      `token`,
-                     `issued_at`)
+                     `issued_at`
+                     )
                      VALUES
-                     ('$this->id',
+                     (
+                     '$this->id',
                      '$this->token',
                      '$this->issuedAt'
                      )
