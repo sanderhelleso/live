@@ -1,0 +1,5 @@
+# remove .php extensions
+RewriteEngine On
+
+# redirect to custom 404 page
+ErrorDocument 404 http://liveapp/404

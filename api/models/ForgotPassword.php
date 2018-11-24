@@ -126,7 +126,7 @@
         private function emailBody() {
 
             // reset password full url
-            $url = 'http://' . $this->domain . '/forgot-password' . '/' . $this->url;
+            $url = 'http://' . $this->domain . '/reset-password?' . $this->url;
 
             // email body
             $body = '<html><main>';

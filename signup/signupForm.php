@@ -126,5 +126,5 @@
         Subscribe to our newsletter
         </label>
     </div>
-    <a href="/login/login.php">Allready have an account?</a>
+    <a href="/login">Allready have an account?</a>
 </form>

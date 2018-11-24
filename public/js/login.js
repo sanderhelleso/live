@@ -1,15 +1,17 @@
 import { toast } from './lib/toast';
 import { REGEX } from './helpers/regex';
 import { MODAL } from './helpers/modal';
+import { RECENT_ACTION } from './helpers/recentActionNotification';
 
 window.onload = initializeForm;
 
 function initializeForm() {
 
-    // check if user recently signed up, logged out or deleted account
-    newUser();
-    loggedoutUser();
-    deletedUser();
+    // check for recent user actions
+    RECENT_ACTION.didAction();
+
+    // focus first input on load
+    document.querySelector('#login').querySelector('input').focus();
 
     // initialize "login" button with login event
     document.querySelector('#login-btn').addEventListener('click', login);
@@ -22,60 +24,6 @@ function initializeForm() {
 function validateForgotPassword(e) {
     e.preventDefault();
     MODAL.open('forgot');
-}
-
-function deletedUser() {
-
-    // if user got redirected from dashboard because account was deleted,
-    // display message and ask user to come back in the future
-    if (localStorage.getItem('account_deleted_successfully') !== null) {
-
-        // display message
-        toast(`We are sad to see you go! Hope to see you again in the future`, true, 4000);
-
-        // clear localstorage
-        localStorage.clear();
-        return true;
-    }
-
-    return false;
-}
-
-function newUser() {
-
-    // if user got redirected from sign up,
-    // display message and ask to login with credentials
-    if (localStorage.getItem('account_created_successfully') !== null) {
-
-        // focus first input
-        document.querySelector('#login').querySelector('input').focus();
-
-        // display message
-        toast(`Welcome to LIVE ${localStorage.getItem('account_created_successfully')}! Please login to continue`, true, 4000);
-
-        // clear localstorage
-        localStorage.clear();
-        return true;
-    }
-
-    return false;
-}
-
-function loggedoutUser() {
-
-    // if user got redirected from successfull logout,
-    // display message and welcome back the user
-    if (localStorage.getItem('logout_successfull') !== null) {
-
-        // display message
-        toast(`Logout successfull! Hope to see you again soon`, true, 4000);
-
-        // clear localstorage
-        localStorage.clear();
-        return true;
-    }
-
-    return false;
 }
 
 function login(e) {
@@ -132,7 +80,7 @@ async function attemptLogin(email, password, button) {
         localStorage.setItem('remember_me', rememberMe);
 
         // redirect user
-        window.location.replace('/dashboard/dashboard.php');
+        window.location.replace('/dashboard');
     }
 
     else {
