@@ -16,7 +16,18 @@
             $this->id = $id;
         }
 
-        public function createTokenSpot() {
+        // generate a new token
+        public function createToken() {
+
+            // generate a new auth token
+            $this->token= bin2hex(openssl_random_pseudo_bytes(64));
+
+            // get timestamp token was issued at
+            $this->issuedAt = round(microtime(true) * 1000);
+
+            /**
+             * NOTE: If entry allready exists in DB, update record instead of creating new
+            **/
 
             // create token query
             $query = "INSERT INTO 
@@ -26,37 +37,12 @@
                      `issued_at`)
                      VALUES
                      ('$this->id',
-                     NULL,
-                     NULL
-                     )";
-
-            // prepeare statement
-            $stmt = $this->conn->prepare($query);
-
-            // exceute query
-            $stmt->execute();
-
-            // return statement
-            return $stmt;
-        }
-
-        public function createToken() {
-
-            // generate a new auth token
-            $this->token= bin2hex(openssl_random_pseudo_bytes(64));
-
-            // get timestamp token was issued at
-            $this->issuedAt = round(microtime(true) * 1000);
-
-            // update token query
-            $query = "UPDATE
-                      $this->table 
-                      SET 
-                      token = '$this->token',
-                      issued_at = '$this->issuedAt'
-                      WHERE 
-                      user_id = '$this->id'";
-
+                     '$this->token',
+                     '$this->issuedAt'
+                     )
+                     ON DUPLICATE KEY UPDATE
+                     token = '$this->token',
+                     issued_at = '$this->issuedAt'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
@@ -71,11 +57,9 @@
         public function removeToken() {
 
             // remove token query
-            $query = "UPDATE
-                      $this->table 
-                      SET 
-                      token = NULL,
-                      issued_at = NULL
+            $query = "DELETE
+                      FROM
+                      $this->table
                       WHERE 
                       user_id = '$this->id'";
 
