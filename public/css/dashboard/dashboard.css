@@ -1,0 +1,129 @@
+#main-cont {
+    max-width: 90%;
+    margin: 25vh auto 15vh auto;
+}
+
+#stat-amount {
+    min-width: 20%;
+    max-width: 20%;
+    margin-top: 3rem;
+}
+
+#stat-amount h5 {
+    font-size: 1.25rem;
+    color: #9e9e9e;
+    font-weight: 100;
+}
+
+#stat-amount h2 {
+    font-size: 7rem;
+    font-weight: 800;
+    margin-top: -20px;
+}
+
+#stat-amount h2 span {
+    font-size: 2.5rem;
+    color: #dddddd;
+    margin-left: 0.5rem;
+}
+
+#helped-cont {
+    margin-bottom: 1rem;
+}
+
+#total-karma {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+#stat-amount svg {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0.75rem;
+}
+
+#karma-cont {
+    border-top: 1px solid #eeeeee;
+    padding-top: 2.5rem;
+}
+
+#helped-cont svg {
+    stroke: #00f5c0
+}
+
+#karma-cont svg {
+    stroke: #b388ff;
+}
+
+
+#actions-cont {
+    min-width: 50%;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    margin: 0 2.5% 0 2.5%;
+}
+
+
+#activity-cont h4 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#activity-cont #activities {
+    max-height: 60vh;
+    overflow-x: auto;
+    margin: 2rem 0 2rem 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+}
+
+#activity-cont #activities::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+#activity-border {
+    height: 4px;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    margin: 0 auto;
+    transform: rotate(180deg);
+}
+
+.activity {
+    padding: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem;
+    margin-left: 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.activity time {
+    color: #9e9e9e;
+    font-size: 0.85rem;
+}
+
+.activity span {
+    float: right;
+    margin-top: -7.5px;
+}
+
+.activity span svg {
+    height: 16px;
+    width: 16px;
+    opacity: 0.6;
+}
+
+.got-help svg {
+    stroke: rgb(43, 212, 212);
+}
+
+.did-help svg {
+    stroke: rgb(165, 33, 242);
+}
+

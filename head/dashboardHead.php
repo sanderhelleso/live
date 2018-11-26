@@ -43,6 +43,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard/dashboard.css" />
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="../public/js/dashboard/dashboardNavbar.js" type="module"></script>
     <script src="../public/js/dashboard/dashboard.js" type="module"></script>
 

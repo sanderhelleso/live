@@ -8,7 +8,7 @@
 <html>
 <body class="site">
 <?php include("../nav/dashboardNav.php"); ?>
-<?php include("main.php"); ?>
+<?php include("main/main.php"); ?>
 <?php include("../footer/footer.php"); ?>
 </body>
 <script>
