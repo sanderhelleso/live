@@ -1,4 +1,4 @@
-<div id="activity-cont" class="column">
+<div id="activity-cont" class="column animated fadeIn">
     <div id="recent-cont">
         <h4>Recent Activity</h4>
         <div id="activity-border"></div>

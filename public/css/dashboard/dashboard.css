@@ -1,11 +1,30 @@
 #main-cont {
-    max-width: 90%;
+    max-width: 85%;
     margin: 25vh auto 15vh auto;
 }
 
+#mobile-col {
+    min-width: 75%;
+    margin: 0 auto;
+}
+
+#dashboard-intro {
+    margin: -4rem 0 3rem 0;
+}
+
+#dashboard-intro h1 {
+    font-size: 1.5rem;
+}
+
+#dashboard-intro h5 {
+    color: #9e9e9e;
+    text-transform: capitalize;
+    min-height: 2rem;
+}
+
 #stat-amount {
-    min-width: 20%;
-    max-width: 20%;
+    min-width: 25%;
+    max-width: 25%;
     margin-top: 3rem;
 }
 
@@ -16,9 +35,8 @@
 }
 
 #stat-amount h2 {
-    font-size: 7rem;
-    font-weight: 800;
-    margin-top: -20px;
+    font-size: 4rem;
+    font-weight: 400;
 }
 
 #stat-amount h2 span {
@@ -33,7 +51,7 @@
 
 #total-karma {
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 400;
 }
 
 #stat-amount svg {
@@ -55,17 +73,8 @@
     stroke: #b388ff;
 }
 
-
-#actions-cont {
-    min-width: 50%;
-    border-left: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
-    margin: 0 2.5% 0 2.5%;
-}
-
-
 #activity-cont h4 {
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -127,3 +136,142 @@
     stroke: rgb(165, 33, 242);
 }
 
+
+#actions-cont {
+    min-width: 50%;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    margin: 3rem 2.5% 0 2.5%;
+    padding: 0 2.5% 0 2.5%;
+}
+
+
+.action-card {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+    border-radius: 6px;
+    background-color: #ffffff;
+    margin: 1.5rem;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.action-card:hover {
+    box-shadow: 0 16px 32px rgba(10, 10, 10, .2);
+}
+
+.action-card h2 {
+    position: absolute;
+    top: 35%;
+    z-index: 10000;
+    left: 35%;
+    transform: translate(-35%);
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.action-intro {
+    padding: 2rem;
+}
+
+.action-intro p {
+    margin-left: 4rem;
+    color: #9e9e9e;
+    font-weight: 100;
+}
+
+.action-intro svg {
+    position: absolute;
+    top: 32.5%;
+    height: 70px;
+    width: 70px;
+    stroke: #dddddd;
+    opacity: 0.7;
+}
+
+.action-card .columns {
+    min-height: 200px;
+}
+
+.card-bg {
+    min-height: 100%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#find-help .card-bg {
+    background: linear-gradient(90deg,
+    rgba(255, 172, 64, 0.8), 
+    rgba(255, 255, 255, 0.8)),
+    url("/public/img/dashboard/card/getHelp.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center; 
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+}
+
+#offer-help .card-bg {
+    background: linear-gradient(90deg,
+    rgba(207, 91, 253, 0.8), 
+    rgba(255, 255, 255, 0.8)),
+    url("/public/img/dashboard/card/offerHelp.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center; 
+    -webkit-clip-path: polygon(0 0, 81% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 81% 0, 100% 100%, 0% 100%);
+}
+
+@media screen and (max-width: 769px) {
+    #stat-amount {
+        min-width: 300px;
+        max-width: 300px;
+        margin: 0 auto 6rem auto;
+    }
+
+    .action-card {
+        margin-bottom: 3rem;
+    }
+    
+    #find-help .card-bg, #offer-help .card-bg { 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        min-height: 300px;
+        border-radius: 6px;
+    }
+
+    .action-intro {
+        padding: 0rem;
+    }
+
+    .action-intro svg {
+        position: absolute;
+        top: 65%;
+        height: 70px;
+        width: 70px;
+        stroke: #ffffff;
+        opacity: 0.7;
+        right: 10%;
+    }
+
+    .action-card h2 {
+        position: absolute;
+        top: 10%;
+        color: #ffffff;        
+    }
+
+    #actions-cont {
+        margin-bottom: 5rem;
+        border-left: 0px solid #eeeeee;
+        border-right: 0px solid #eeeeee;
+    }
+    
+    #mobile-col {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+    
+}
