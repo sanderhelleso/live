@@ -1,4 +1,4 @@
-<!-- Head component -->
+<!-- Forgot Password Head component -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,17 +35,14 @@
     <meta property="og:site_name" content="APP NAME"> 
         
     <link rel="icon" href="/URL/TO/ICON" type="image/gif" sizes="16x16">
-    
+
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/animate.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/bulma.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard/dashboardNavbar.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/404.css" />
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="../public/js/dashboard/dashboardNavbar.js" type="module"></script>
-    <script src="../public/js/dashboard/dashboard.js" type="module"></script>
+    <script src="../public/js/navbar.js"></script>
 
-    <title>Dashboard</title>
+    <title>404 - Page Not Found | LIVE</title>
 </head>

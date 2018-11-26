@@ -41,8 +41,8 @@
         // check if a query is present
         if (count($queryParams) == 1) {
 
-            // direct user to homepage if no query is present
-            header('Location: /');
+            // direct user to 404 if no query is present
+            header('Location: /404');
         }
 
         // query is present
@@ -79,10 +79,10 @@
             // decode recieved data
             $data = json_decode($content, true);
 
-            // if response failed, redirect user to homepage
+            // if response failed, redirect to 404
             if (!$data['success']) {
                 http_response_code(401); // Unautorized
-                header('Location: /');
+                header('Location: /404');
             }
 
             // create new session containing users ID and URL

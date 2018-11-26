@@ -10,7 +10,7 @@
             <div class="columns forgot-info-col">
                 <div class="field column forgot-info">
                     <span><i data-feather="send"></i></span>
-                    <p>If you forgot your password you can recieve instructions on how to resett your password sendt to your accounts registered E-Mail address.</p>
+                    <p>If you forgot your password you can recieve instructions on how to reset your password sendt to your accounts registered E-Mail address.</p>
                     <br>
                 </div>
             </div>
