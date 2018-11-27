@@ -3,57 +3,28 @@
     margin: 25vh auto 15vh auto;
 }
 
-#offer-help-intro-cont {
-    display: none;
-}
-
-#offer-help-intro-cont h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-}
-
-#offer-help-intro-cont p {
-    margin-top: 0.5rem;
-    color: #9e9e9e;
-}
-
-
-#offer-border {
-    height: 8px;
-    width: 250px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
-    background: #8A2387;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    opacity: 0.5;
-    margin: 3rem auto 5rem auto;
-}
-
 #offer-help-form-cont {
     max-width: 75%;
     margin: 0 auto;
 }
 
 .offer-help-section {
-    margin: 2rem 0 2rem 0;
-    padding: 2rem 0 2rem 0;
+    margin: 4rem 0 4rem 0;
+    padding: 4rem 0 4rem 0;
     border-bottom: 1px solid #eeeeee;
 }
 
 .offer-help-section h4 {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
 }
 
 .offer-help-section p {
     color: #9e9e9e;
-    font-weight: 100;
     margin-bottom: 5rem;
+    opacity: 0.7;
 }
 
 .offer-number {
@@ -61,20 +32,26 @@
     margin-right: 3rem;
 }
 
-.offer-number span {
-    font-size: 6rem;
+.offer-cont-section {
+    position: relative;
+}
+
+.offer-number {
+    font-size: 8rem;
     font-weight: 800;
     color: #eeeeee;
-    margin-right: 3rem;
+    position: absolute;
+    top: -10%;
+    z-index: -1;
 }
 
 #areas {
     min-height: 250px;
-    margin-bottom: 2rem;
+    margin: 4rem auto 4rem auto;
 }
 
 #areas div {
-    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
     border-radius: 6px;
     margin: 0 0.75rem 0 0.75rem;
     cursor: pointer;
@@ -83,8 +60,7 @@
 }
 
 #areas div:hover {
-    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
-    z-index: 1337;
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.5);
 }
 
 #areas div span {
@@ -139,16 +115,73 @@
     background-position: center center; 
 }
 
-#offer-description {
-    max-width: 70%;
-    margin: 0 auto;
-}
-
 .textarea {
-    min-height: 200px !important;
-    max-height: 200px !important;
+    min-height: 225px !important;
+    max-height: 225px !important;
 }
 
 .calendar {
     box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+}
+
+.calendar-cont {
+    margin-top: 2rem;
+}
+
+#select-time, #offer-description {
+    margin: 2rem 0 4rem 0;
+}
+
+.textarea-cont {
+    max-width: 70%;
+    margin: 2rem auto 0 auto;
+}
+
+.textarea {
+    background-color: #ffffff;
+}
+
+.fee-col {
+    max-width: 50%;
+    margin: 8rem auto 4rem auto;
+}
+
+.fee-col input {
+    text-align: center;
+    font-weight: 800;
+}
+
+#fee-disclaimer {
+    display: block;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #9e9e9e;
+    opacity: 0.7;
+    font-weight: 100;
+}
+
+#offer-btn {
+    text-transform: capitalize;
+    min-width: 350px;
+    margin-top: 1rem;
+    min-height: 4.5rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#offer-btn:hover {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+.offer-btn-col p {
+    margin: 6rem auto 2rem auto;
+    font-size: 1.35rem;
+    font-weight: 100;
+    color: #9e9e9e;
 }
