@@ -1,15 +1,10 @@
-import { CHART } from './chart';
+import { DATA } from './loadData';
 
 window.onload = initialize;
 
-function initialize() {
-    //CHART.initialize();
+async function initialize() {
 
-    // set user name in dashboard
-    setTimeout(() => {
-        const data = JSON.parse(localStorage.getItem('user_data'));
-        if (data) {
-            document.querySelector('#dashboard-name').innerHTML = `${data.first_name} ${data.last_name}`;
-        }
-    }, 100);
+    // set users name
+    const data = await DATA.loadUserData();
+    DATA.setName(data, 'dashboard-name');
 }

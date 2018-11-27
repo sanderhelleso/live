@@ -9,7 +9,7 @@
 }
 
 #dashboard-intro {
-    margin: -4rem 0 3rem 0;
+    margin: -4rem 2rem 3rem 0;
 }
 
 #dashboard-intro h1 {
@@ -80,7 +80,7 @@
 }
 
 #activity-cont #activities {
-    max-height: 60vh;
+    max-height: 600px;
     overflow-x: auto;
     margin: 2rem 0 2rem 0;
     padding: 1rem;
@@ -223,6 +223,10 @@
     background-position: center center; 
     -webkit-clip-path: polygon(0 0, 81% 0, 100% 100%, 0% 100%);
     clip-path: polygon(0 0, 81% 0, 100% 100%, 0% 100%);
+}
+
+.action-card a {
+    color: #414141;
 }
 
 @media screen and (max-width: 769px) {
