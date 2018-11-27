@@ -39,10 +39,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/animate.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/bulma.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard/dashboardNavbar.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/404.css" />
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="../public/js/navbar.js"></script>
+    <script src="../public/js/dashboard/dashboardNavbar.js" type="module"></script>
 
     <title>404 - Page Not Found | LIVE</title>
 </head>

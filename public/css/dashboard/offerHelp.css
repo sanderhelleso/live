@@ -1,0 +1,154 @@
+#offer-help-cont {
+    max-width: 80%;
+    margin: 25vh auto 15vh auto;
+}
+
+#offer-help-intro-cont {
+    display: none;
+}
+
+#offer-help-intro-cont h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+#offer-help-intro-cont p {
+    margin-top: 0.5rem;
+    color: #9e9e9e;
+}
+
+
+#offer-border {
+    height: 8px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    margin: 3rem auto 5rem auto;
+}
+
+#offer-help-form-cont {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.offer-help-section {
+    margin: 2rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.offer-help-section h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.offer-help-section p {
+    color: #9e9e9e;
+    font-weight: 100;
+    margin-bottom: 5rem;
+}
+
+.offer-number {
+    max-width: 100px;
+    margin-right: 3rem;
+}
+
+.offer-number span {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #eeeeee;
+    margin-right: 3rem;
+}
+
+#areas {
+    min-height: 250px;
+    margin-bottom: 2rem;
+}
+
+#areas div {
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+    border-radius: 6px;
+    margin: 0 0.75rem 0 0.75rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+#areas div:hover {
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
+    z-index: 1337;
+}
+
+#areas div span {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    position: absolute;
+    top: 35%;
+    text-transform: uppercase;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60%;
+}
+
+.child-care {
+    background: linear-gradient(150deg,
+    rgba(253, 164, 91, 0.7), 
+    rgba(196, 68, 255, 0.7)),
+    url("/public/img/dashboard/offerHelp/childcare.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+.elder-care {
+    background: linear-gradient(50deg,
+    rgba(253, 164, 91, 0.7), 
+    rgba(196, 68, 255, 0.7)),
+    url("/public/img/dashboard/offerHelp/eldercare.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+.animal-care {
+    background: linear-gradient(-50deg,
+    rgba(253, 164, 91, 0.7), 
+    rgba(196, 68, 255, 0.7)),
+    url("/public/img/dashboard/offerHelp/animalcare.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+.other {
+    background: linear-gradient(-150deg,
+    rgba(253, 164, 91, 0.7), 
+    rgba(196, 68, 255, 0.7)),
+    url("/public/img/dashboard/offerHelp/other.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+#offer-description {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.textarea {
+    min-height: 200px !important;
+    max-height: 200px !important;
+}
+
+.calendar {
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+}

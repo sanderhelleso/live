@@ -33,7 +33,7 @@ function initialize() {
     DATA.setAvatar(avatar, data);
 
     // set name
-    DATA.setName(data);
+    DATA.setName(data, 'user-settings-name');
 
     // set users full name
     document.querySelector('#user-settings-name').innerHTML = `${data.first_name} ${data.last_name}`;
@@ -139,7 +139,7 @@ async function updateUserData(button) {
         // set the updated data
         const data = await DATA.loadUserData();
         DATA.setNavbarData(data);
-        DATA.setName(data);    
+        DATA.setName(data, 'user-settings-name');    
     }
 
     // clear form

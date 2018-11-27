@@ -22,6 +22,12 @@
                     </div>
 
                     <div class="navbar-dropdown is-right">
+                        <a class="navbar-item" href="#">
+                            <i data-feather="archive"></i> History
+                        </a>
+                        <a class="navbar-item" href="#">
+                            <i data-feather="award"></i> Achivements
+                        </a>
                         <a class="navbar-item" href="/dashboard/settings">
                             <i data-feather="settings"></i> Settings
                         </a>

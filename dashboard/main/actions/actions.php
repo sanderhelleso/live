@@ -5,24 +5,28 @@
     </div>
     <div class="columns">
         <div id="find-help" class="column action-card animated fadeIn">
-            <h2>Find Help</h2>
-            <div class="columns">
-                <div class="column card-bg"></div>
-                <div class="column action-intro">
-                    <i data-feather="arrow-right"></i>
+            <a href="/dashboard/find-help">
+                <h2>Find Help</h2>
+                <div class="columns">
+                    <div class="column card-bg"></div>
+                    <div class="column action-intro">
+                        <i data-feather="arrow-right"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="columns">
         <div id="offer-help" class="column action-card animated fadeIn">
-            <h2>Offer Help</h2>
-            <div class="columns">
-                <div class="column card-bg"></div>
-                <div class="column action-intro">
-                    <i data-feather="arrow-right"></i>
+            <a href="/dashboard/offer-help">
+                <h2>Offer Help</h2>
+                <div class="columns">
+                    <div class="column card-bg"></div>
+                    <div class="column action-intro">
+                        <i data-feather="arrow-right"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>

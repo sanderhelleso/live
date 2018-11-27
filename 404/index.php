@@ -4,7 +4,15 @@
 ?>
 <html>
 <body class="site">
-<?php include("../nav/nav.php"); ?>
+<?php 
+    if (isset($_COOKIE['auth_token'])) {
+        include("../nav/dashboardNav.php"); 
+    }
+
+    else {
+        include("../nav/nav.php"); 
+    }
+?>
     <main class="site-content is-centered has-text-centered">
         <div id="cont">
             <h1>404</h1>

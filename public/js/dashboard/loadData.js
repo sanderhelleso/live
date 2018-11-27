@@ -5,7 +5,8 @@ export const DATA = {
     loadUserData,
     setNavbarData,
     setAvatar,
-    setName
+    setName,
+    setFirstName
 }
 
 async function loadUserData() {
@@ -50,10 +51,16 @@ async function loadUserData() {
     }
 }
 
-function setName(data) {
+function setName(data, ele) {
 
     // set users full name
-    document.querySelector('#user-settings-name').innerHTML = `${data.first_name} ${data.last_name}`;
+    document.querySelector(`#${ele}`).innerHTML = `${data.first_name} ${data.last_name}`;
+}
+
+function setFirstName(data, ele) {
+
+    // set users first name
+    document.querySelector(`#${ele}`).innerHTML = `${data.first_name}`;
 }
 
 // set users navbar data
