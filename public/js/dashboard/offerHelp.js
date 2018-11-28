@@ -1,10 +1,18 @@
 import { DATA } from './loadData';
 import { WORDS } from '../helpers/words';
+import { MODAL } from '../helpers/modal';
 
 window.onload = initialize;
 
 function initialize() {
+
+    // load calendar
     loadCalendar();
+
+    // initialize preview
+    document.querySelector('#offer-btn').addEventListener('click', openPreview);
+    
+
 }
 
 function loadCalendar() {
@@ -25,4 +33,10 @@ function loadCalendar() {
     // attatch calendar to input
     bulmaCalendar.attach('[type="date"]', options);
 
+}
+
+function openPreview() {
+
+    
+    MODAL.open('offer');
 }

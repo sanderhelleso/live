@@ -2,7 +2,6 @@
     include("../../auth/auth.php"); 
     canAccessRoute();
 ?>
-
 <!DOCTYPE html>
 <?php include("../../head/offerHelpHead.php"); ?>
 <html>
@@ -11,6 +10,7 @@
     <main class="site-content is-centered has-text-centered desktop">
         <div id="offer-help-cont">
             <?php include("./offerHelpForm.php") ?>
+            <?php include("./preview.php") ?>
         </div>
     </main>
 <?php include("../../footer/footer.php"); ?>

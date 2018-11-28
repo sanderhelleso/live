@@ -27,7 +27,9 @@ function open(modalType) {
     modal.classList.add('is-active');
 
     // focus first input to allow user to "tab" inputs immediatly
-    inputs[0].focus();
+    if (modalType !== 'offer') {
+        inputs[0].focus();
+    }
 
     // allow user to dismiss modal by clicking on "cancel" or background
     Array.from(modal.querySelectorAll('.hide-modal')).forEach(ele => {
