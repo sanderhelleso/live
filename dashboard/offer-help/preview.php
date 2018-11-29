@@ -2,7 +2,12 @@
     <div class="modal-background animated fadeIn hide-modal"></div>
     <div class="modal-card animated fadeIn">
         <section class="modal-card-body has-text-centered">
-            
+            <div id="preview-cover">
+                <h3 id="preview-name"></h3>
+            </div>
+            <div id="preview-body">
+
+            </div>
             
 
         </section>

@@ -10,8 +10,12 @@
                         <div class="column child-care"><span>Child Care</span></div>
                         <div class="column elder-care"><span>Elder Care</span></div>
                         <div class="column animal-care"><span>Animal Care</span></div>
-                        <div class="column other"><span>Other</span></div>
                     </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div id="selected" class="column">
+                    <h2 id="selected-status">No areas selected</h2>
                 </div>
             </div>
         </div> 
