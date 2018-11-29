@@ -1,0 +1,16 @@
+.map{
+  float:left;
+  height:100%;
+  width:50%;
+  margin:0px;
+  padding:0px;
+}
+.form{
+  background-color:red;
+  float:right;
+  height:100%;
+  width:50%;
+  border:1px black;
+  margin:0px;
+  padding:0px;
+}
