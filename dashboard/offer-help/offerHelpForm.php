@@ -7,9 +7,9 @@
             <div class="columns">
                 <div class="column">
                     <div id="areas" class="columns">
-                        <div class="column child-care"><span>Child Care</span></div>
-                        <div class="column elder-care"><span>Elder Care</span></div>
-                        <div class="column animal-care"><span>Animal Care</span></div>
+                        <div class="column child-care animated"><span>Child Care</span></div>
+                        <div class="column elder-care animated"><span>Elder Care</span></div>
+                        <div class="column animal-care animated"><span>Animal Care</span></div>
                     </div>
                 </div>
             </div>

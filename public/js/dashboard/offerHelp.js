@@ -4,7 +4,11 @@ import { MODAL } from '../helpers/modal';
 import { toast } from '../lib/toast';
 
 // store areas selected
-const AREAS = {};
+const AREAS = [];
+let calendarDate = {
+    start: undefined,
+    from: undefined
+}
 
 window.onload = initialize;
 
@@ -26,11 +30,13 @@ function initializeAreas() {
     const areas =  Array.from(document.querySelector('#areas').querySelectorAll('.column'));
     areas.forEach(area => {
         area.addEventListener('click', () => {
+
+            // add area
+            AREAS.push(area.cloneNode(true));
             area.className = 'selected-area';
+            fadeAreas();
             setSelectedArea(area);
-            setTimeout(() => {
-                area.style.display = 'none';
-            }, 500);
+            area.style.display = 'none';
         });
     });
 }
@@ -43,6 +49,8 @@ function fadeAreas() {
 }
 
 function setSelectedArea(area) {
+
+    // add area
 
     // parent cont and status ele
     const selectedStatus = document.querySelector('#selected-status');
@@ -58,11 +66,12 @@ function setSelectedArea(area) {
         fadeAreas();
 
         // display area
-        area.className = `column ${selected.innerHTML.toLowerCase().split(' ').join('-')} animated fadeInUp`;
+        area.className = `column ${selected.innerHTML.toLowerCase().split(' ').join('-')} animated fadeIn`;
         area.style.display = 'block';
         
         // remove selected element
         selected.remove();
+        AREAS.splice(AREAS.indexOf(area), 1);
         selectedCont.className = 'column';
 
         // check if empty cont
@@ -99,30 +108,59 @@ function loadCalendar() {
     };
 
     // attatch calendar to input
-    bulmaCalendar.attach('[type="date"]', options);
+    const calendars = bulmaCalendar.attach('[type="date"]', options);
+    calendars.forEach(calendar => {
+        calendar.on('date:selected', date => {
+            calendarDate = date;
+        });
+    });
 
 }
 
 function validate() {
 
+    // check areas
+    if (AREAS.length === 0) {
+        document.querySelector('#areas').scrollIntoView(false);
+        window.scrollBy(0, 200);
+        toast('Please select atleast one area to help', false, 4000);
+        return;
+    }
+
+    // check time
+    console.log(calendarDate);
+    if (!calendarDate.start || !calendarDate.end) {
+        document.querySelector('#select-time').scrollIntoView();
+        window.scrollBy(0, -50);
+        toast('Please select the date(s) you are available to help', false, 4000);
+        return;
+    }
+
     // check bio
     const bio = document.querySelector('textarea');
-    if (bio.value.length < 150) {
+    if (bio.value.length < 100 || bio.value.length > 200) {
         bio.scrollIntoView(false);
         window.scrollBy(0, 150);
         bio.focus();
-        toast('To short description! Please write atleast 150 characters.', false, 4000);
+        toast('Please write atleast description between 100 - 200 characters.', false, 4000);
+        return;
     }
 
-    //openPreview();
+    openPreview();
 }
 
+let img;
+let cover;
 function openPreview() {
+    
+    // add scroll event
+    const body = document.querySelector('#preview-body');
+    body.addEventListener('scroll', animateCover);
 
     // set preview cover image
     const data = JSON.parse(localStorage.getItem("user_data"));
-    const img = `url('data:image/png;base64,${data.avatar}')`;
-    const cover = document.querySelector('#preview-cover');
+    img = `url('data:image/png;base64,${data.avatar}')`;
+    cover = document.querySelector('#preview-cover');
     
     cover.style.background = `
         linear-gradient(
@@ -130,12 +168,55 @@ function openPreview() {
         rgba(255, 255, 255, 1)),
         ${img}
     `; 
-    cover.style.backgroundPosition = '0% 50%';
+    cover.style.backgroundPosition = '0% 30%';
     cover.style.backgroundSize = 'cover';
 
     // set name
     DATA.setName(data, 'preview-name');
 
+    // set time
+    document.querySelector('#preview-date').innerHTML = 
+    `<span>From</span>
+    <br>
+    ${calendarDate.start.toLocaleDateString()}
+    <br>
+    <span>To</span>
+    <br>
+    ${calendarDate.end.toLocaleDateString()}
+     `;
+
+     // set price
+     let price = document.querySelector('input[type="number"]').value;
+     if (price) {
+        price = parseInt(price).toFixed(2);
+     }
+
+     else {
+        price = 'FREE';
+     }
+     document.querySelector('#preview-amount').innerHTML = price;
+
+    // set areas after resetting
+    const areaCont = document.querySelector('#preview-areas');
+    areaCont.innerHTML = '';
+    AREAS.forEach(area => {
+        area.style.display = 'block';
+        area.className = `column preview-area ${area.querySelector('span').innerHTML.toLowerCase().split(' ').join('-')}`;
+        areaCont.appendChild(area);
+    });
+
+    // set description
+    document.querySelector('#preview-description').innerHTML = document.querySelector('textarea').value;
 
     MODAL.open('offer');
+}
+
+function animateCover() {
+
+    document.querySelector('#preview-body').style.maxHeight = `${AREAS.length * 185}px`;
+    if (this.scrollTop < 600) {
+        let height = 450;
+        cover.style.height = `${height - this.scrollTop}px`;
+    }
+
 }

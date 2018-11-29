@@ -146,7 +146,7 @@
 
 .all-selected {
     transition: all 0.3s ease-in-out;
-    margin: -300px auto 100px auto;
+    margin: -320px auto 100px auto;
 }
 
 .textarea {
@@ -226,26 +226,128 @@
 
 #preview-cover {
     min-width: 100%;
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 0px;
+    height: 375px;
+    max-height: 375px;
     position: relative;
+    transition: linear 0.1s;
 }
 
-#preview-name {
+#preview-info {
     position: absolute;
     bottom: -5%;
     left: 50%;
     transform: translate(-50%);
-    font-size: 2.5rem;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#preview-info span {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#preview-name {
+    font-size: 2rem;
     font-weight: 800;
+    margin-bottom: 0.6rem;
 }
 
 #preview-body {
-    min-height: 400px;
-    max-height: 400px;
+    margin-top: 60px;
+    min-height: 300px;
+    padding: 0 3rem 0 3rem;
+    overflow-y: auto;
+}
+
+#preview-body::-webkit-scrollbar {
+    width: 0em;
+}
+
+#preview-body span svg {
+    height: 30px;
+    width: 30px;
+    opacity: 0.5;
+}
+
+.modal-card {
+    border-radius: 12px;
+    max-width: 450px;
+    min-height: 720px;
+    max-height: 720px;
 }
 
 .modal-card-body {
     overflow: hidden;
+}
+
+#bio, #preview-stats {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    max-width: 425px;
+    word-break: break-all;
+}
+
+#preview-areas  {
+    margin-top: 50px;
+    max-width: 425px;
+}
+
+#bio svg {
+    stroke: #b388ff;
+}
+
+#bio p {
+    color: #9e9e9e;
+    font-weight: 100;
+    padding: 1rem;
+}
+
+#preview-date, #preview-amount {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    line-height: 27px;
+}
+
+#preview-date span, #preview-price p {
+    font-weight: 800;
+    color: #9e9e9e;
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+#preview-amount {
+    margin: 3.25rem auto 1rem auto;
+    font-size: 2.5rem;
+}
+
+#preview-calendar svg {
+    stroke: #ffb74d;
+}
+
+#preview-price svg {
+    stroke: #1de9b6;
+}
+
+#preview-areas {
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.preview-area {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.3);
+    margin-bottom: 1.5rem;
+    min-height: 150px;
+    flex: 1 100%;
+    pointer-events: none;
+}
+
+.preview-area span {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 800;
+    display: block;
+    margin-top: 50px;
 }
