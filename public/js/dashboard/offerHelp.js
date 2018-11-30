@@ -279,4 +279,10 @@ async function confirmOffer() {
     if (data.success) {
         window.location.replace('/dashboard/overview');
     }
+
+    else {
+        
+        // display response message
+        toast(data.message, data.success, 3000);
+    }
 }
