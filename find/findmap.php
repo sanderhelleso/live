@@ -9,7 +9,6 @@
        * element that contains the map. */
       #map {
         height: 100%;
-        width:100%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -29,8 +28,8 @@
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 36.397, lng: 120.644},
-          zoom: 8
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
 
@@ -63,6 +62,8 @@
         infoWindow.open(map);
       }
     </script>
-    <script async defersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKlOpnC8ZKf2LN1Q6MoP3ZS4TmGTGYeho&callback=initMap"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKlOpnC8ZKf2LN1Q6MoP3ZS4TmGTGYeho&callback=initMap">
+    </script>
   </body>
 </html>
