@@ -3,57 +3,28 @@
     margin: 25vh auto 15vh auto;
 }
 
-#offer-help-intro-cont {
-    display: none;
-}
-
-#offer-help-intro-cont h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-}
-
-#offer-help-intro-cont p {
-    margin-top: 0.5rem;
-    color: #9e9e9e;
-}
-
-
-#offer-border {
-    height: 8px;
-    width: 250px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
-    background: #8A2387;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    opacity: 0.5;
-    margin: 3rem auto 5rem auto;
-}
-
 #offer-help-form-cont {
     max-width: 75%;
     margin: 0 auto;
 }
 
 .offer-help-section {
-    margin: 2rem 0 2rem 0;
-    padding: 2rem 0 2rem 0;
+    margin: 4rem 0 4rem 0;
+    padding: 4rem 0 4rem 0;
     border-bottom: 1px solid #eeeeee;
 }
 
 .offer-help-section h4 {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
 }
 
 .offer-help-section p {
     color: #9e9e9e;
-    font-weight: 100;
     margin-bottom: 5rem;
+    opacity: 0.7;
 }
 
 .offer-number {
@@ -61,20 +32,27 @@
     margin-right: 3rem;
 }
 
-.offer-number span {
-    font-size: 6rem;
+.offer-cont-section {
+    position: relative;
+}
+
+.offer-number {
+    font-size: 8rem;
     font-weight: 800;
     color: #eeeeee;
-    margin-right: 3rem;
+    position: absolute;
+    top: -10%;
+    z-index: -1;
 }
 
 #areas {
     min-height: 250px;
-    margin-bottom: 2rem;
+    margin: 4rem auto 4rem auto;
+    transition: 0.3s ease-in-out;
 }
 
 #areas div {
-    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
     border-radius: 6px;
     margin: 0 0.75rem 0 0.75rem;
     cursor: pointer;
@@ -83,8 +61,8 @@
 }
 
 #areas div:hover {
-    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.3);
-    z-index: 1337;
+    box-shadow: 0 16px 32px rgba(10, 10, 10, 0.5);
+    opacity: 1;
 }
 
 #areas div span {
@@ -97,6 +75,7 @@
     left: 50%;
     transform: translate(-50%);
     width: 60%;
+    transition: 0.3s ease-in-out;
 }
 
 .child-care {
@@ -105,7 +84,7 @@
     rgba(196, 68, 255, 0.7)),
     url("/public/img/dashboard/offerHelp/childcare.jpg");
     background-size: cover;
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-position: center center; 
 }
 
@@ -129,26 +108,252 @@
     background-position: center center; 
 }
 
-.other {
-    background: linear-gradient(-150deg,
-    rgba(253, 164, 91, 0.7), 
-    rgba(196, 68, 255, 0.7)),
-    url("/public/img/dashboard/offerHelp/other.jpg");
-    background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center center; 
+.selected-area {
+    opacity: 0.2;
 }
 
-#offer-description {
-    max-width: 70%;
-    margin: 0 auto;
+.selected-area span {
+    opacity: 0;
+}
+
+#selected {
+    margin-bottom: 2rem;
+}
+
+#selected h2 {
+    opacity: 0.7;
+    font-size: 1.35rem;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+    max-width: 400px;
+    margin: 0 auto 1rem auto;
+    font-weight: 100;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#selected h5 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #00d1b2;
+    cursor: pointer;
+    margin: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+#selected h5:hover {
+    color: #e57373;
+}
+
+.all-selected {
+    transition: all 0.3s ease-in-out;
+    margin: -320px auto 100px auto;
 }
 
 .textarea {
-    min-height: 200px !important;
-    max-height: 200px !important;
+    min-height: 225px !important;
+    max-height: 225px !important;
 }
 
 .calendar {
     box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+}
+
+.calendar-cont {
+    margin-top: 2rem;
+}
+
+#select-time, #offer-description {
+    margin: 2rem 0 4rem 0;
+}
+
+.textarea-cont {
+    max-width: 70%;
+    margin: 2rem auto 0 auto;
+}
+
+.textarea {
+    background-color: #ffffff;
+}
+
+.fee-col {
+    max-width: 50%;
+    margin: 8rem auto 4rem auto;
+}
+
+.fee-col input {
+    text-align: center;
+    font-weight: 800;
+}
+
+#fee-disclaimer {
+    display: block;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #9e9e9e;
+    opacity: 0.7;
+    font-weight: 100;
+}
+
+#offer-btn {
+    text-transform: capitalize;
+    min-width: 350px;
+    margin-top: 1rem;
+    min-height: 4.5rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#offer-btn:hover {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+.offer-btn-col p {
+    margin: 6rem auto 2rem auto;
+    font-size: 1.35rem;
+    font-weight: 100;
+    color: #9e9e9e;
+}
+
+#offer-help-cont .modal-card-body {
+    padding: 0;
+}
+
+#preview-cover {
+    min-width: 100%;
+    min-height: 0px;
+    height: 375px;
+    max-height: 375px;
+    position: relative;
+    transition: linear 0.1s;
+}
+
+#preview-info {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90%;
+    margin: 0 auto;
+}
+
+#preview-info span {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#preview-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+}
+
+#preview-body {
+    margin-top: 60px;
+    min-height: 300px;
+    padding: 0 3rem 0 3rem;
+    overflow-y: auto;
+}
+
+#preview-body::-webkit-scrollbar {
+    width: 0em;
+}
+
+#preview-body span svg {
+    height: 30px;
+    width: 30px;
+    opacity: 0.5;
+}
+
+.modal-card {
+    border-radius: 12px;
+    max-width: 450px;
+    min-height: 720px;
+    max-height: 720px;
+}
+
+.modal-card-body {
+    overflow: hidden;
+}
+
+#bio, #preview-stats {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    max-width: 425px;
+    word-break: break-all;
+}
+
+#preview-areas  {
+    margin-top: 50px;
+    max-width: 425px;
+}
+
+#bio svg {
+    stroke: #b388ff;
+}
+
+#bio p {
+    color: #9e9e9e;
+    font-weight: 100;
+    padding: 1rem;
+}
+
+#preview-date, #preview-amount {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    line-height: 27px;
+}
+
+#preview-date span, #preview-price p {
+    font-weight: 800;
+    color: #9e9e9e;
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+#preview-amount {
+    margin: 3.25rem auto 1rem auto;
+    font-size: 2.5rem;
+}
+
+#preview-calendar svg {
+    stroke: #ffb74d;
+}
+
+#preview-price svg {
+    stroke: #1de9b6;
+}
+
+#preview-areas {
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.preview-area {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.3);
+    margin-bottom: 1.5rem;
+    min-height: 150px;
+    flex: 1 100%;
+    pointer-events: none;
+}
+
+.preview-area span {
+    color: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 800;
+    display: block;
+    margin-top: 50px;
+}
+
+#character-count {
+    margin-top: 0.7rem;
+    float: right;
+    font-weight: 100;
 }
