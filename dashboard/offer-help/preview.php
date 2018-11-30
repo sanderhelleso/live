@@ -35,7 +35,7 @@
         </section>
         <footer class="modal-card-foot">
             <button class="button hide-modal">Cancel</button>
-            <button id="confirm-delete-account" class="button is-primary confirm">Confirm</button>
+            <button id="confirm-offer" class="button is-primary confirm">Confirm</button>
         </footer>
     </div>
 </div>

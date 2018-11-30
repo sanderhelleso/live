@@ -108,6 +108,11 @@
     background-position: center center; 
 }
 
+.areas-help {
+    padding-bottom: 20rem !important;
+    margin-bottom: 10rem !important;
+}
+
 .selected-area {
     opacity: 0.2;
 }
@@ -117,7 +122,9 @@
 }
 
 #selected {
-    margin-bottom: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 #selected h2 {
@@ -350,4 +357,14 @@
     font-weight: 800;
     display: block;
     margin-top: 50px;
+}
+
+#character-count {
+    margin-top: 0.7rem;
+    float: right;
+    font-weight: 100;
+}
+
+.modal-card-foot {
+    justify-content: space-between;
 }
