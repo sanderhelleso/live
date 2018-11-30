@@ -351,3 +351,9 @@
     display: block;
     margin-top: 50px;
 }
+
+#character-count {
+    margin-top: 0.7rem;
+    float: right;
+    font-weight: 100;
+}

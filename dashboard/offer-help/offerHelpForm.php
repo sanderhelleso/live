@@ -41,6 +41,7 @@
                 <div class="column textarea-cont">
                     <div class="control">
                         <textarea class="textarea has-fixed-size is-primary" placeholder="A little bit about me..."></textarea>
+                        <p id="character-count">Character Count: 0 / 200</p>
                     </div>
                 </div>
             </div>

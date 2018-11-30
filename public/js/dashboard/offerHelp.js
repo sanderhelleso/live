@@ -20,9 +20,18 @@ function initialize() {
     // load calendar
     loadCalendar();
 
+    // initialize textarea and chracter counter
+    document.querySelector('textarea').addEventListener('keyup', characterCounter);
+
     // initialize preview
     document.querySelector('#offer-btn').addEventListener('click', validate);
 
+}
+
+function characterCounter(e) {
+
+    const helper = document.querySelector('#character-count');
+    helper.innerHTML = `Characters: ${e.target.value.length} / 200`;
 }
 
 function initializeAreas() {
