@@ -1,5 +1,5 @@
 <div id="offer-help-form-cont">
-    <div class="columns offer-help-section">
+    <div class="columns offer-help-section areas-help">
         <div id="select-area" class="column animated fadeIn offer-cont-section">
             <h4>Select areas you wanna help in</h4>
             <p>Choose one or more area you want to help</p>
@@ -35,7 +35,7 @@
     <div class="columns offer-help-section">
         <div id="offer-description" class="column animated fadeIn offer-cont-section">
             <h4>Introduce yourself and why you care</h4>
-            <p>Keep it short and sweet</p>
+            <p>Write a short description between 100 - 200 characters</p>
             <h3 class="offer-number">3.</h3>
             <div class="columns">
                 <div class="column textarea-cont">
