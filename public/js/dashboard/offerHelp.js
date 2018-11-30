@@ -1,6 +1,7 @@
+import { HEADER } from '../helpers/authHeader';
 import { DATA } from './loadData';
-import { WORDS } from '../helpers/words';
 import { MODAL } from '../helpers/modal';
+import { PREVIEW } from '../helpers/preview';
 import { toast } from '../lib/toast';
 
 // store areas selected
@@ -137,7 +138,6 @@ function validate() {
     }
 
     // check time
-    console.log(calendarDate);
     if (!calendarDate.start || !calendarDate.end) {
         document.querySelector('#select-time').scrollIntoView();
         window.scrollBy(0, -50);
@@ -161,10 +161,8 @@ function validate() {
 let img;
 let cover;
 function openPreview() {
-    
-    // add scroll event
-    const body = document.querySelector('#preview-body');
-    body.addEventListener('scroll', animateCover);
+
+    PREVIEW.initAnimateCover(AREAS);
 
     // set preview cover image
     const data = JSON.parse(localStorage.getItem("user_data"));
@@ -218,14 +216,67 @@ function openPreview() {
     document.querySelector('#preview-description').innerHTML = document.querySelector('textarea').value;
 
     MODAL.open('offer');
+
+    // initialize confirm preview
+    document.querySelector('#confirm-offer').addEventListener('click', confirmOffer);
 }
 
-function animateCover() {
+function getAreas() {
 
-    document.querySelector('#preview-body').style.maxHeight = `${AREAS.length * 185}px`;
-    if (this.scrollTop < 600) {
-        let height = 450;
-        cover.style.height = `${height - this.scrollTop}px`;
+    // instantiate area new area object
+    const areas = {
+        childcare: 0,
+        eldercare: 0,
+        animalcare: 0
+    };
+
+    // fill up area object
+    for (let i = 0; i < AREAS.length; i++) {
+        const areaCategory = AREAS[i].querySelector('span').innerHTML.split(' ').join('').toLowerCase();
+        areas[areaCategory] = true;
     }
 
+    // return area object
+    return areas;
+}
+
+function formatDate(date) {
+    date = date.toLocaleDateString().split('/').reverse();
+    return `${date[0]}-${date[2]}-${date[1]}`;
+}
+
+async function confirmOffer() {
+
+    // create offer data object
+    const userData = await DATA.loadUserData();
+    const offerData = {
+        id: userData.user_id,
+        ...getAreas(),
+        start: formatDate(calendarDate.start),
+        end: formatDate(calendarDate.end),
+        description: document.querySelector('textarea').value,
+        price: document.querySelector('input[type="number"]').value
+    }
+
+    console.log(offerData);
+
+    // send POST request offer data endpoint
+    const response = await fetch('/api/offerHelp/offerHelp.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            ...HEADER(),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(offerData)
+    });
+
+    // get response data
+    let data = await response.json();
+
+    if (data.success) {
+        window.location.replace('/dashboard/overview');
+    }
 }
