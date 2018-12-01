@@ -74,7 +74,9 @@
             $data['start'],
             $data['end'],
             $data['description'],
-            $data['price']
+            $data['price'],
+            $data['latitude'],
+            $data['longitude']
         );
 
         // attempt to set help offer

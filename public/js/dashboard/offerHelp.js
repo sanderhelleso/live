@@ -2,18 +2,29 @@ import { HEADER } from '../helpers/authHeader';
 import { DATA } from './loadData';
 import { MODAL } from '../helpers/modal';
 import { PREVIEW } from '../helpers/preview';
+import { GEO_LOCATION } from '../helpers/geoLocation';
 import { toast } from '../lib/toast';
 
 // store areas selected
 const AREAS = [];
+
+// location
+let geoLocation = {
+    latitude: null,
+    longitude: null
+};
+
+// date
 let calendarDate = {
-    start: undefined,
-    from: undefined
+    start: null,
+    from: null
 }
 
 window.onload = initialize;
 
 function initialize() {
+
+    geoLocation = GEO_LOCATION.getLocation();
 
     // prepeare areas to select
     initializeAreas();
@@ -26,6 +37,10 @@ function initialize() {
 
     // initialize preview
     document.querySelector('#offer-btn').addEventListener('click', validate);
+
+}
+
+function fetchGeoLocation() {
 
 }
 
@@ -52,9 +67,9 @@ function initializeAreas() {
 }
 
 function fadeAreas() {
-    document.querySelector('#areas').className = 'columns animated fadeIn';
+    document.querySelector('#areas').className = 'columns animated fadeIn is-desktop';
     setTimeout(() => {
-        document.querySelector('#areas').className = 'columns';
+        document.querySelector('#areas').className = 'columns is-desktop';
     }, 600);
 }
 
@@ -255,7 +270,9 @@ async function confirmOffer() {
         start: formatDate(calendarDate.start),
         end: formatDate(calendarDate.end),
         description: document.querySelector('textarea').value,
-        price: document.querySelector('input[type="number"]').value
+        price: document.querySelector('input[type="number"]').value,
+        latitude: geoLocation.latitude ? geoLocation.latitude : 0.0,
+        longitude: geoLocation.longitude ? geoLocation.longitude : 0.0
     }
 
     console.log(offerData);

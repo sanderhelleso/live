@@ -14,6 +14,8 @@
         public $endDate;
         public $description;
         public $price;
+        public $latitude;
+        public $longitude;
 
         // constructor with DB and login properties
         public function __construct($db,
@@ -24,7 +26,9 @@
             $startDate,
             $endDate,
             $description,
-            $price
+            $price,
+            $latitude,
+            $longitude
         ) {
             $this->conn = $db;
             $this->id = $id;
@@ -35,6 +39,8 @@
             $this->endDate = $endDate;
             $this->description = $description;
             $this->price = $price;
+            $this->latitude = $latitude;
+            $this->longitude = $longitude;
         }
 
         // attempt offer help
@@ -50,7 +56,9 @@
                       `start_date`,
                       `end_date`,
                       `description`,
-                      `price`
+                      `price`,
+                      `latitude`,
+                      `longitude`
                       ) 
                       VALUES
                       (
@@ -61,7 +69,9 @@
                       '$this->startDate',
                       '$this->endDate',
                       '$this->description',
-                      '$this->price'
+                      '$this->price',
+                      '$this->latitude',
+                      '$this->longitude'
                       )
                       ON DUPLICATE KEY UPDATE
                       child_care = '$this->childCare',
@@ -70,7 +80,9 @@
                       start_date = '$this->startDate',
                       end_date = '$this->endDate',
                       description = '$this->description',
-                      price = '$this->price'";
+                      price = '$this->price',
+                      latitude = '$this->latitude',
+                      longitude = '$this->longitude'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
