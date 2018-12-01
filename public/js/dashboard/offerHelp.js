@@ -40,10 +40,6 @@ function initialize() {
 
 }
 
-function fetchGeoLocation() {
-
-}
-
 function characterCounter(e) {
 
     const helper = document.querySelector('#character-count');
@@ -139,7 +135,6 @@ function loadCalendar() {
             calendarDate = date;
         });
     });
-
 }
 
 function validate() {
@@ -173,28 +168,13 @@ function validate() {
     openPreview();
 }
 
-let img;
-let cover;
 function openPreview() {
 
+    // animate cover
     PREVIEW.initAnimateCover(AREAS);
 
-    // set preview cover image
-    const data = JSON.parse(localStorage.getItem("user_data"));
-    img = `url('data:image/png;base64,${data.avatar}')`;
-    cover = document.querySelector('#preview-cover');
-    
-    cover.style.background = `
-        linear-gradient(
-        rgba(255, 255, 255, 0.3), 
-        rgba(255, 255, 255, 1)),
-        ${img}
-    `; 
-    cover.style.backgroundPosition = '0% 30%';
-    cover.style.backgroundSize = 'cover';
-
-    // set name
-    DATA.setName(data, 'preview-name');
+    // set preview cover image and name
+    PREVIEW.setCover();
 
     // set time
     document.querySelector('#preview-date').innerHTML = 
@@ -275,8 +255,6 @@ async function confirmOffer() {
         longitude: geoLocation.longitude ? geoLocation.longitude : 0.0
     }
 
-    console.log(offerData);
-
     // send POST request offer data endpoint
     const response = await fetch('/api/offerHelp/offerHelp.php', {
         method: 'POST',
@@ -294,6 +272,9 @@ async function confirmOffer() {
     let data = await response.json();
 
     if (data.success) {
+        if (localStorage.getItem('offer_data')) {
+            localStorage.removeItem('offer_data');
+        }
         window.location.replace('/dashboard/overview');
     }
 

@@ -67,40 +67,40 @@
         // instantiate user object
         $user = new User($db, $data['id']);
 
-        // attempt to retrieve user data
-        $result = $user->getUserData();
+        // attempt to retrieve offer data
+        $result = $user->getOfferData();
         $valid = $result->rowCount();
 
         // check if data retrieval was successfull
         if ($valid) {
 
-            // retrieve users data
-            $userData = $result->fetch(PDO::FETCH_ASSOC);
+            // retrieve offer data
+            $offerData = $result->fetch(PDO::FETCH_ASSOC);
 
-            // extract users data
-            extract($userData);
+            // extract offer data
+            extract($offerData);
 
             // create assoc array containing success response
             $userDataRes = array(
                 'success' => true,
-                'message' => 'User data retrieved successfully',
+                'message' => 'Offer data retrieved successfully',
                 'timestamp' => $timestamp,
-                'payload' => $userData
+                'payload' => $offerData
             );
 
             // send back response to request
             http_response_code(200); // Request was fulfilled
             echo json_encode($userDataRes);
-        } 
+        }
 
         else {
 
-            // unable to fetch user data,
+            // unable to fetch offer dara,
             // send back error response to request
             http_response_code(400); // Bad request
             echo json_encode(
                 array('success' => false,
-                    'message' => 'Something went wrong when attempting to fetch user data',
+                    'message' => 'Something went wrong when attempting to fetch offer data',
                     'timestamp' => $timestamp
                 )
             );

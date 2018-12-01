@@ -4,6 +4,8 @@
         // db connection and table
         private $conn;
         private $usersTable = 'users';
+        private $helpersTable = 'helpers';
+        private $helpersStatsTable = 'help_offer_statistics';
         private $usersDataTable = 'users_data';
         private $usersAuthTable = 'users_auth';
 
@@ -30,6 +32,30 @@
                       $this->usersDataTable.user_id = $this->usersTable.user_id
                       WHERE 
                       $this->usersTable.user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        // fetch user data
+        public function getOfferData() {
+
+            // retieve offer data query
+            $query = "SELECT 
+                      $this->helpersTable.*,
+                      $this->helpersStatsTable.*
+                      FROM $this->helpersTable
+                      INNER JOIN $this->helpersStatsTable
+                      ON
+                      $this->helpersTable.user_id = $this->helpersStatsTable.help_id
+                      WHERE 
+                      $this->helpersTable.user_id = '$this->id'";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);

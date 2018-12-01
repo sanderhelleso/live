@@ -85,6 +85,9 @@
         // check if help offer was valid
         if ($valid->rowCount()) {
 
+            // set stats data
+            $offerHelp->setOfferStatistics();
+
             // send back success data
             $offerHelpSuccess = array(
                 'success' => true,

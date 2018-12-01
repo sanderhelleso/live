@@ -3,7 +3,8 @@
 
         // db connection and table
         private $conn;
-        private $table = 'helpers';
+        private $offerHelpTable = 'helpers';
+        private $offerHelpStatsTable = 'help_offer_statistics';
 
         // offer help properties
         public $id;
@@ -17,7 +18,7 @@
         public $latitude;
         public $longitude;
 
-        // constructor with DB and login properties
+        // constructor with DB and offer help properties
         public function __construct($db,
             $id,
             $childCare,
@@ -47,7 +48,7 @@
         public function offerHelp() {
 
             $query = "INSERT INTO
-                      $this->table
+                      $this->offerHelpTable
                       (
                       `user_id`, 
                       `child_care`,
@@ -83,6 +84,36 @@
                       price = '$this->price',
                       latitude = '$this->latitude',
                       longitude = '$this->longitude'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        // attempt offer help
+        public function setOfferStatistics() {
+
+            $query = "INSERT INTO
+                      $this->offerHelpStatsTable
+                      (
+                      `help_id`, 
+                      `last_viewed`,
+                      `total_views`
+                      ) 
+                      VALUES
+                      (
+                      '$this->id',
+                      NULL,
+                      0
+                      )
+                      ON DUPLICATE KEY UPDATE
+                      last_viewed = NULL,
+                      total_views = 0";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
