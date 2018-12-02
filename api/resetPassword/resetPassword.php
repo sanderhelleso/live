@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Releated file for ResetPassword.php class
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * Server and SQL logic is performed using retrieved data
+    */
+
     header('Access-Control-Allow-Methods: POST'); // only allow POST request to hit endpoint
 
     // retrieve content type

@@ -1,4 +1,18 @@
 <?php
+
+    /**
+     * OfferHelp class that allows user to set up a offer for users to see and book
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * This class represent offer help system that allows users to
+    * create an offer and allow other users to search and book
+    * based on what they need. Offer includes areas interested to help,
+    * time available, description and price (optional, an be free)
+    * The system also depends on statistics and will store total views
+    * and last seen date regarding the offer
+    */
+
     class OfferHelp {
 
         // db connection and table
@@ -44,7 +58,9 @@
             $this->longitude = $longitude;
         }
 
-        // attempt offer help
+        /**
+         * Attempt to create offer and store in releation to given user ID
+        */  
         public function offerHelp() {
 
             $query = "INSERT INTO
@@ -95,7 +111,9 @@
             return $stmt;
         }
 
-        // attempt offer help
+        /**
+         * Attempt to create offer statistics and store in releation to given user ID
+        */
         public function setOfferStatistics() {
 
             $query = "INSERT INTO

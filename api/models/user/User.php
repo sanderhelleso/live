@@ -1,4 +1,15 @@
 <?php
+
+    /**
+     * User class that represents a user and its following abilities
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * This class represent a user in our application and allows for core functions as
+    * Data retrieval, E-Mail, Password and data comparison for settings, deleting of account
+    * and updating of user avatar
+    */
+
     class User {
 
         // db connection and table
@@ -19,7 +30,9 @@
         }
 
 
-        // fetch user data
+        /**
+         * Attempt to fetch users releated data in releation to given users ID
+        */
         public function getUserData() {
 
             // retieve users data query
@@ -43,7 +56,9 @@
             return $stmt;
         }
 
-        // fetch user data
+        /**
+         * Attempt to fetch users releated offer help data in releation to given users ID
+        */
         public function getOfferData() {
 
             // retieve offer data query
@@ -68,7 +83,9 @@
         }
 
 
-        // see if email is free
+        /**
+         * Check if given E-Mail is free in the system, used in update E-Mail (settings)
+        */
         public function isEmailFree($email) {
 
             // check for exsisting email query
@@ -86,6 +103,9 @@
             return $stmt;
         }
 
+        /**
+         * Update the users current E-Mail with the new recieved
+        */
         public function updateEmail($email) {
 
             // update user email query
@@ -106,7 +126,9 @@
             return $stmt;
         }
 
-        // update user data
+        /**
+         * Update the users current changed data with exception of password, E-Mail and avatar
+        */
         public function updateUserData(
             $firstName,
             $lastName, 
@@ -143,7 +165,9 @@
             return $stmt;
         }
 
-        // compare and validate if password is equal to users current password
+        /**
+         * Compare and validate if password is equal to users current password
+        */
         public function comparePassword($password) {
 
             // check password query
@@ -164,7 +188,9 @@
             return $stmt;
         }
 
-        // update a users password
+        /**
+         * Update the current users password of criterias are met
+        */
         public function updatePassword($password) {
 
             // update user password query
@@ -185,6 +211,9 @@
             return $stmt;
         }
 
+        /**
+         * Update the current users avatar
+        */
         public function updateAvatar($avatarFile) {
 
             // update user avatar query
@@ -205,6 +234,11 @@
             return $stmt;
         }
 
+        /**
+         * Delete the users account from the system,
+         * removing all traces and data due to "ON DELETE CASCADE"
+         * with foregin key constraints on users Primary Key
+        */
         public function deleteAccount() {
 
             // delete user account query
@@ -224,6 +258,10 @@
             return $stmt;
         }
 
+        /**
+         * Delete the users current active offer help.
+         * Also removes the offers releated statistics
+        */
         public function deleteOfferHelp() {
 
             // delete current offer query

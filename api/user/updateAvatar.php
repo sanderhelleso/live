@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Releated file for User.php class
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * Server and SQL logic is performed using retrieved data
+    */
+
     // set required headers
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}"); // only allow same domain requests
     header('Access-Control-Allow-Methods: POST'); // only allow POST request to hit endpoint

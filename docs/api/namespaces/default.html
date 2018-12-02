@@ -58,7 +58,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">187</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">142</span>
                                 </a>
                             </li>
                             <li>
@@ -88,10 +88,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1682750657"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-583484158"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1682750657" class="accordion-body collapse in">
+            <div id="namespace-583484158" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -128,35 +128,35 @@
                     <table class="table table-hover">
                                             <tr>
                             <td><a href="../classes/Authenticate.html">Authenticate</a></td>
-                            <td><em></em></td>
+                            <td><em>Authentication class to handle authentication aspects of the application</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/Database.html">Database</a></td>
-                            <td><em></em></td>
+                            <td><em>Database class that connects the application to the given database</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/ForgotPassword.html">ForgotPassword</a></td>
-                            <td><em></em></td>
+                            <td><em>Forgot Password class that allows for resetting of user password</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/Login.html">Login</a></td>
-                            <td><em></em></td>
+                            <td><em>Login class to handle login users of the system</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/OfferHelp.html">OfferHelp</a></td>
-                            <td><em></em></td>
+                            <td><em>OfferHelp class that allows user to set up a offer for users to see and book</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/ResetPassword.html">ResetPassword</a></td>
-                            <td><em></em></td>
+                            <td><em>ResetPassword class that allows user to reset their password</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/Signup.html">Signup</a></td>
-                            <td><em></em></td>
+                            <td><em>Signup class that allows users to sign up and create an account for our application</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/User.html">User</a></td>
-                            <td><em></em></td>
+                            <td><em>User class that represents a user and its following abilities</em></td>
                         </tr>
                                         </table>
                                     </div>
@@ -186,7 +186,7 @@
                 <h3 class=" ">attemptCreateAccount()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">attemptCreateAccount(  <span class="argument">$signup</span>) </pre>
-                <p><em></em></p>
+                <p><em>Attempt to create a new account with gived data</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -229,7 +229,7 @@
                 <h3 class=" ">attemptSetUserData()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">attemptSetUserData(  <span class="argument">$signup</span>,   <span class="argument">$id</span>) </pre>
-                <p><em></em></p>
+                <p><em>Attempt to set the given user data recieved from client to releated user with given ID</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -272,12 +272,47 @@
 
                                         <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_badRequest" name="method_badRequest" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">badRequest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">badRequest() </pre>
+                <p><em>Unable to create user with given credentials.</em></p>
+                <p>Send back error response to request</p>
+
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/signup.signup.html"><div class="path-wrapper">signup\signup.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_emailInUse" name="method_emailInUse" class="anchor"></a>
             <article class="method">
                 <h3 class=" ">emailInUse()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">emailInUse(  <span class="argument">$signup</span>) </pre>
-                <p><em></em></p>
+                <p><em>Validate E-Mail and check if it is allready in use, utilizing the class function &quot;validate&quot;</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -320,7 +355,7 @@
                 <h3 class=" ">setToken()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setToken(  <span class="argument">$id</span>,   <span class="argument">$expire</span>) </pre>
-                <p><em></em></p>
+                <p><em>Attempt to set the users token if login was successfull</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -401,7 +436,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 2nd, 2018 at 11:45.
+                    on December 2nd, 2018 at 20:52.
                 </section>
             </section>
         </section>

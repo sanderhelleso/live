@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">187</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">142</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1296224525"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-676847311"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1296224525" class="accordion-body collapse in">
+            <div id="namespace-676847311" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -170,8 +170,11 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
                     <h1><small>\</small>User</h1>
-                    <p><em></em></p>
-                    
+                    <p><em>User class that represents a user and its following abilities</em></p>
+                    <p>@author Sander Hellesø <a href="mailto:shellesoe@csumb.edu">shellesoe@csumb.edu</a></p>
+<p>This class represent a user in our application and allows for core functions as
+Data retrieval, E-Mail, Password and data comparison for settings, deleting of account
+and updating of user avatar</p>
                     
                                         
                     <section id="summary">
@@ -494,7 +497,7 @@
                 <h3 class="public ">getUserData()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getUserData() </pre>
-                <p><em></em></p>
+                <p><em>Attempt to fetch users releated data in releation to given users ID</em></p>
                 
 
                 
@@ -522,7 +525,7 @@
                 <h3 class="public ">getOfferData()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getOfferData() </pre>
-                <p><em></em></p>
+                <p><em>Attempt to fetch users releated offer help data in releation to given users ID</em></p>
                 
 
                 
@@ -550,7 +553,7 @@
                 <h3 class="public ">isEmailFree()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isEmailFree(  <span class="argument">$email</span>) </pre>
-                <p><em></em></p>
+                <p><em>Check if given E-Mail is free in the system, used in update E-Mail (settings)</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -586,7 +589,7 @@
                 <h3 class="public ">updateEmail()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">updateEmail(  <span class="argument">$email</span>) </pre>
-                <p><em></em></p>
+                <p><em>Update the users current E-Mail with the new recieved</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -622,7 +625,7 @@
                 <h3 class="public ">updateUserData()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">updateUserData(  <span class="argument">$firstName</span>,   <span class="argument">$lastName</span>,   <span class="argument">$age</span>,   <span class="argument">$country</span>,   <span class="argument">$state</span>,   <span class="argument">$address</span>,   <span class="argument">$phone</span>,   <span class="argument">$newsletter</span>) </pre>
-                <p><em></em></p>
+                <p><em>Update the users current changed data with exception of password, E-Mail and avatar</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -693,7 +696,7 @@
                 <h3 class="public ">comparePassword()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">comparePassword(  <span class="argument">$password</span>) </pre>
-                <p><em></em></p>
+                <p><em>Compare and validate if password is equal to users current password</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -729,7 +732,7 @@
                 <h3 class="public ">updatePassword()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">updatePassword(  <span class="argument">$password</span>) </pre>
-                <p><em></em></p>
+                <p><em>Update the current users password of criterias are met</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -765,7 +768,7 @@
                 <h3 class="public ">updateAvatar()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">updateAvatar(  <span class="argument">$avatarFile</span>) </pre>
-                <p><em></em></p>
+                <p><em>Update the current users avatar</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -801,7 +804,9 @@
                 <h3 class="public ">deleteAccount()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">deleteAccount() </pre>
-                <p><em></em></p>
+                <p><em>Delete the users account from the system,
+removing all traces and data due to &quot;ON DELETE CASCADE&quot;
+with foregin key constraints on users Primary Key</em></p>
                 
 
                 
@@ -829,8 +834,8 @@
                 <h3 class="public ">deleteOfferHelp()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">deleteOfferHelp() </pre>
-                <p><em></em></p>
-                
+                <p><em>Delete the users current active offer help.</em></p>
+                <p>Also removes the offers releated statistics</p>
 
                 
                 
@@ -899,7 +904,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 2nd, 2018 at 11:45.
+                    on December 2nd, 2018 at 20:52.
                 </section>
             </section>
         </section>

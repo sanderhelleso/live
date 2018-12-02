@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Releated file for OfferHelp.php and User.php classes
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * Server and SQL logic is performed using retrieved data
+    */
+
     // include request validation
     include_once '../../auth/validRequest.php';
 
