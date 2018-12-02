@@ -5,7 +5,7 @@
     </div>
     <div class="columns">
         <div id="find-help" class="column action-card animated fadeIn">
-            <a href="/dashboard/find-help">
+            <a href="/find">
                 <h2>Find Help</h2>
                 <div class="columns">
                     <div class="column card-bg"></div>

@@ -73,6 +73,7 @@
                 <div class="column">
                     <h2 class="title">Ready to get started?</h1>
                     <a class="button" href="/signup">Sign Up Now</a>
+                    <a class="button" href="/find">Try Us Out</a>
                 </div>
             </div>
         </div>

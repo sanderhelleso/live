@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    /*include 'database.php';
     $dbConn = getDatabaseConnection();
 
     function checkSearchIsNotEmpty(){
@@ -68,5 +68,5 @@
         echo "<br>";
         echo "<br>";
      }
-    }
+    }*/
 ?>

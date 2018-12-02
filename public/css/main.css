@@ -95,3 +95,27 @@ select, input {
     stroke: #dddddd !important;
     margin: 0 10px -3px 12px;
 }
+
+@media screen and (max-width: 1086px) {
+    #nav-user-name {
+        display: inline-block;
+        margin: 1rem 0;
+    }
+
+    #avatar {
+        padding-bottom: 1rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    #main-navbar-menu {
+        max-width: 400px;
+        margin: 0 auto 3rem auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #main-navbar {
+        padding: 1rem;
+    }    
+}

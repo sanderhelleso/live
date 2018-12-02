@@ -1,16 +1,106 @@
-.map{
-  float:left;
-  height:100%;
-  width:50%;
-  margin:0px;
-  padding:0px;
+.site-content {
+  min-height: 100vh;
 }
-.form{
-  background-color:red;
-  float:right;
-  height:100%;
-  width:50%;
-  border:1px black;
-  margin:0px;
-  padding:0px;
+
+#main-cont {
+	position: relative;
+	min-height: 95vh;
+	max-width: 99vw;
+	margin: 70px auto 5rem auto;
+}
+
+#map-cont, #map {
+	min-height: 100vh;
+	padding: 1.5rem 0 0 0;
+}
+
+#map-cont {
+	box-shadow: 0 16px 32px rgba(10, 10, 10, .2);
+}
+
+#find-content-cont {
+	max-width: 70%;
+	margin: 20vh auto 0 auto;
+}
+
+#find-content-cont h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+#find-content-cont h5 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	max-width: 70%;
+	margin: 0 auto 2rem auto;
+}
+
+#find-content-cont p {
+	color: #9e9e9e;
+	max-width: 60%;
+	font-weight: 100;
+	margin: 0 auto;
+}
+
+#find-border {
+    height: 8px;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    margin: 2rem auto 3rem auto;
+    transform: rotate(180deg);
+}
+
+#find-form {
+	padding-top: 1.5rem;
+	margin-top: 3rem;
+	border-top: 1px solid #eeeeee;
+}
+
+#find-form .field {
+	max-width: 75%;
+	margin: 2rem auto;
+}
+
+#find-btn {
+    min-width: 250px;
+    margin-top: 1rem;
+    min-height: 3rem;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, .1);
+    transition: 0.3s ease-in-out;
+    border: none;
+    font-weight: 600;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#find-btn:hover {
+    box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+@media screen and (max-width: 1000px) {
+	#find-content-cont {
+		max-width: 90%;
+	}	
+}
+
+@media screen and (max-width: 768px) {
+	#map-cont, #map {
+		min-height: 50vh;
+	}
+
+	#find-content-cont {
+		margin-top: 10vh;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#find-content-cont {
+		max-width: 100%;
+	}	
 }

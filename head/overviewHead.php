@@ -45,6 +45,7 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="../../node_modules/bulma-calendar/dist/js/bulma-calendar.min.js"></script>
     <script src="../../public/js/dashboard/dashboardNavbar.js" type="module"></script>
+    <script src="../../public/js/navbar.js"></script>
     <script src="../../public/js/dashboard/overview.js" type="module"></script>
 
     <title>Offer Help</title>
