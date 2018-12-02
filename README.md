@@ -7,6 +7,7 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 
 <br>
 <br>
+
 ## Screenshots and Preview of application
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/landing.jpg"></img>
 
