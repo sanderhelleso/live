@@ -1,4 +1,19 @@
 <?php
+
+    /**
+     * Authentication class to handle authentication aspects of the application
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * This class represent a JWT or token based authentication system.
+    * On login users get awared with a token containing a unique 128 bit token.
+    * The server stores this token in the database and send back to the client 
+    * wich then store the token in localstorage on the client, all following
+    * requests to secure endponints will include the token and compare. If for some
+    * reason the token dont match (user modify via chrome extension etc) the system
+    * will clear the token and logout the user on the next secure route request
+    */
+
     class Authenticate {
 
         // db connection and table
@@ -15,8 +30,11 @@
             $this->conn = $db;
             $this->id = $id;
         }
-
-        // generate a new token
+        
+        /**
+         * Generate a brand new token and store in the releated user
+         * NOTE: If entry allready exists in DB, update record instead of creating new
+        */  
         public function createToken() {
 
             // generate a new auth token
@@ -24,10 +42,6 @@
 
             // get timestamp token was issued at
             $this->issuedAt = round(microtime(true) * 1000);
-
-            /**
-             * NOTE: If entry allready exists in DB, update record instead of creating new
-            **/
 
             // create token query
             $query = "INSERT INTO 
@@ -57,6 +71,9 @@
             return $stmt;
         }
 
+        /**
+         * Remove a specific token releated to given user ID
+        */
         public function removeToken() {
 
             // remove token query
@@ -77,6 +94,9 @@
             return $stmt;
         }
 
+        /**
+         * Compare given token against sat user token releated to gived user ID
+        */
         public function compareToken($id, $token) {
 
             // compare token query
@@ -99,6 +119,10 @@
 
         }
 
+        /**
+         * Validate a specific token releated to given user ID
+         * Compares both token and issued at timestamp 
+        */
         public function validateToken() {
 
             // validate token query
@@ -122,6 +146,9 @@
             return $stmt;
         }
 
+        /**
+         * Retrieve authorization header from request
+        */
         public function getAuthorizationHeader() {
 
             // initialize headers as empty
@@ -153,6 +180,9 @@
             return $headers;
         }
 
+        /**
+         * Retrieve beared header containing token from request header
+        */
         public function getBearerToken() {
 
             // get auth token from header

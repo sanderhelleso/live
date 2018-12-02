@@ -1,12 +1,5 @@
 <?php
 
-    /**
-     * 
-     * NOTE: Due to using gmail account as sender, sometimes the emails may not arrive
-     * Also because we are sending HTML, there is a risk that emails appear in "spam" folder 
-     * 
-    **/
-
     // import api keys
     include_once('../../enviorment.php');
 
@@ -15,6 +8,20 @@
     require("../../libs/PHPMailer/src/SMTP.php");
     require("../../libs/PHPMailer/src/Exception.php");
 
+    /**
+     * Forgot Password class that allows for resetting of user password
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * This class represents a custom forgot password system that allows users to send a 
+    * reset password to the accounts releated E-Mail. If the E-Mail recieved
+    * is not in our system, the same response message is send back to the client
+    * to prevent potensial phising for user information (we dont want to reveal users)
+    *
+    * NOTE: Due to using gmail account as sender, sometimes the emails may not arrive
+    * Also because we are sending HTML, there is a risk that emails appear in "spam" folder 
+    */
+    
     class ForgotPassword {
 
         // db connection, tables and domain
@@ -34,7 +41,9 @@
             $this->email = $email;
         }
 
-        // find user ID connected to given E-Mail
+        /**
+         * Search and find for connected user ID releated to given E-Mail
+        */  
         public function getId() {
 
             // find user ID query
@@ -53,18 +62,26 @@
             return $stmt;
         }
 
-        // set user ID
+        /**
+         * Set user ID to member variable
+        */  
         public function setId($id) {
             $this->id = $id;
         }
 
+        /**
+         * Generate a brand new unique 128 bit URL wich
+        */  
         public function createUrl() {
 
             // create a new reset password url
             $this->url = bin2hex(openssl_random_pseudo_bytes(64));
         }
 
-        // add url to forgot_password table
+        /**
+         * Store created url in releated authenticaton table
+         * in releatin to the given user ID
+        */  
         public function setForgotPasswordUrl() {
 
             $query = "INSERT INTO
@@ -91,7 +108,17 @@
             return $stmt;
         }
 
-        // send email containing url link
+        /**
+         * Send E-Mail containing link to reset password URL
+         * to the given users E-Mail address
+         * 
+         * --- CONFIGURATIONS ---
+         *  1. SMTP ENABLED
+         *  2. PORT 587
+         *  3. HOST "in-v3.mailjet.com"
+         *  4. USERNAME AND PASSWORD RETIREVED FROM ENV
+         *  5. HTML BODY IS ALLOWED
+        */  
         public function sendMail() {
 
             // instantiate new mailer object
@@ -122,7 +149,9 @@
             $mail->send();
         }
 
-        // create email body containing url to reset password
+        /**
+         * Create the releated HTML E-Mail body 
+        */  
         private function emailBody() {
 
             // reset password full url

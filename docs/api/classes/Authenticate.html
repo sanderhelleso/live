@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">187</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">142</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-812875787"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1754761915"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-812875787" class="accordion-body collapse in">
+            <div id="namespace-1754761915" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -170,8 +170,15 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
                     <h1><small>\</small>Authenticate</h1>
-                    <p><em></em></p>
-                    
+                    <p><em>Authentication class to handle authentication aspects of the application</em></p>
+                    <p>@author Sander Hellesø <a href="mailto:shellesoe@csumb.edu">shellesoe@csumb.edu</a></p>
+<p>This class represent a JWT or token based authentication system.
+On login users get awared with a token containing a unique 128 bit token.
+The server stores this token in the database and send back to the client
+wich then store the token in localstorage on the client, all following
+requests to secure endponints will include the token and compare. If for some
+reason the token dont match (user modify via chrome extension etc) the system
+will clear the token and logout the user on the next secure route request</p>
                     
                                         
                     <section id="summary">
@@ -440,7 +447,8 @@
                 <h3 class="public ">createToken()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">createToken() </pre>
-                <p><em></em></p>
+                <p><em>Generate a brand new token and store in the releated user
+NOTE: If entry allready exists in DB, update record instead of creating new</em></p>
                 
 
                 
@@ -468,7 +476,7 @@
                 <h3 class="public ">removeToken()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">removeToken() </pre>
-                <p><em></em></p>
+                <p><em>Remove a specific token releated to given user ID</em></p>
                 
 
                 
@@ -496,7 +504,7 @@
                 <h3 class="public ">compareToken()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">compareToken(  <span class="argument">$id</span>,   <span class="argument">$token</span>) </pre>
-                <p><em></em></p>
+                <p><em>Compare given token against sat user token releated to gived user ID</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -537,7 +545,8 @@
                 <h3 class="public ">validateToken()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">validateToken() </pre>
-                <p><em></em></p>
+                <p><em>Validate a specific token releated to given user ID
+Compares both token and issued at timestamp</em></p>
                 
 
                 
@@ -565,7 +574,7 @@
                 <h3 class="public ">getAuthorizationHeader()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getAuthorizationHeader() </pre>
-                <p><em></em></p>
+                <p><em>Retrieve authorization header from request</em></p>
                 
 
                 
@@ -593,7 +602,7 @@
                 <h3 class="public ">getBearerToken()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getBearerToken() </pre>
-                <p><em></em></p>
+                <p><em>Retrieve beared header containing token from request header</em></p>
                 
 
                 
@@ -663,7 +672,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 2nd, 2018 at 11:45.
+                    on December 2nd, 2018 at 20:52.
                 </section>
             </section>
         </section>

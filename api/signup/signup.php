@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Releated file for Signup.php class
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * Server and SQL logic is performed using retrieved data
+    */
+
     // include request validation
     include_once '../../auth/validRequest.php';
 
@@ -50,7 +58,9 @@
 
     }
 
-
+    /**
+     * Validate E-Mail and check if it is allready in use, utilizing the class function "validate"
+    */  
     function emailInUse($signup) {
 
         // check if email is allready in use by another user
@@ -58,6 +68,9 @@
         return $result->rowCount();
     }
 
+    /**
+     * Attempt to create a new account with gived data
+    */
     function attemptCreateAccount($signup) {
 
         $result = $signup->createAccount();
@@ -68,11 +81,15 @@
             attemptSetUserData($signup, $GLOBALS['db']->lastInsertId());
         }
 
+        // else send bad request back to user
         else {
             badRequest();
         }
     }
 
+    /**
+     * Attempt to set the given user data recieved from client to releated user with given ID
+    */  
     function attemptSetUserData($signup, $id) {
 
         $result = $signup->setUserData($id);
@@ -96,9 +113,16 @@
 
         // if insertion failed, send bad request
         else {
-            
-            // unable to create user with given credentials
-            // send back error response to request
+            badRequest();
+        }
+    }
+
+    /**
+     * Unable to create user with given credentials.
+     * Send back error response to request
+    */
+    function badRequest() {
+
             http_response_code(400); // Bad request
             echo json_encode(
                 array('success' => false,
@@ -106,6 +130,5 @@
                     'message' => 'Unable to create user with given credentials'
                 )
             );
-        }
     }
 ?>

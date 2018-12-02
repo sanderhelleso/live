@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Releated file for Login.php class
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * Server and SQL logic is performed using retrieved data
+    */
+
     // include request validation
     include_once '../../auth/validRequest.php';
 
@@ -57,6 +65,9 @@
         );
     }
 
+    /**
+     * Attempt to set the users token if login was successfull
+    */
     function setToken($id, $expire) {
 
         // get db connection and logged in users ID

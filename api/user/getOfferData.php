@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Releated file for OfferHelp.pgp and User.php class
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * Server and SQL logic is performed using retrieved data
+    */
+
     // include request validation
     include_once '../../auth/validRequest.php';
 
@@ -40,8 +48,6 @@
         }
 
         else {
-
-            
 
             // unable to fetch offer data,
             // send back error response to request

@@ -1,4 +1,28 @@
 <?php
+    /**
+     * Signup class that allows users to sign up and create an account for our application
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * This class represent an sign up system that allows users to 
+    * sign up and create and account for our application. Required data fields
+    * for sign up is the following: 
+    *
+    * --- CRITERIAS FOR SIGN UP ---
+    *   1. Firstname
+    *   2. Lastname
+    *   3. Age
+    *   4. Country
+    *   5. State
+    *   6. Address
+    *   7. Phone Number
+    *   8. E-Mail
+    *   9. Password
+    *   10. Newsletter (Yes/No)
+    *
+    * NOTE: Avatar is set to null as default but users can update once thei are logged in via settings page
+    */
+
     class Signup {
 
         // db connection and tables
@@ -46,10 +70,11 @@
         }
 
 
-        // validate credentials
+        /**
+         * Attempt to validate the given sign up data,
+         * Check for existing E-Mail and validates data
+        */  
         public function validate() {
-
-            //@TODO: do form validation here...
 
             // check for exsisting email query
             $query = "SELECT * 
@@ -66,7 +91,10 @@
             return $stmt;
         }
 
-        // attempt to create account with given credentials
+        /**
+         * Attempt to create a new account with the given data
+         * This function is reached if validation is successfull
+        */ 
         public function createAccount() {
 
             // create account query
@@ -94,7 +122,9 @@
             return $stmt;
         }
 
-        // set user data for account
+        /**
+         * Attempt to store the given data in the database
+        */ 
         public function setUserData($id) {
 
             // set user data query

@@ -1,16 +1,18 @@
 <?php
 
+    /**
+     * Releated file for ForgotPassword.php class
+    *
+    *  @author Sander Hellesø <shellesoe@csumb.edu>
+    *
+    * NOTE: we send back same response even if email acctually exsists our 
+    * or not. We dont want to reveal if a certain email is in our system.
+    * We also send request back BEFORE running email script due to wait
+    * if email exists and an email is actually sendt to the address.
+    */
+
     // include request validation
     include_once '../../auth/validRequest.php';
-
-    /**
-     * 
-     * NOTE: we send back same response even if email acctually exsists our 
-     * or not. We dont want to reveal if a certain email is in our system.
-     * We also send request back BEFORE running email script due to wait
-     * if email exists and an email is actually sendt to the address.
-     * 
-    **/
 
     // set JSON header 
     header('Content-Type: application/json');
