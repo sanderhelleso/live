@@ -1,4 +1,6 @@
-<!-- Login Head component -->
+<?php include('../enviorment.php') ?>
+
+<!-- Find Head component -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,8 +44,17 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/find.css" />
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <?php
+        if (isset($_COOKIE['auth_token'])) {
+            echo '<link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard/dashboardNavbar.css" />';
+            echo '<script src="../public/js/dashboard/dashboardNavbar.js" type="module"></script>';
+        }
+    ?>
     <script src="../public/js/navbar.js"></script>
     <script src="../public/js/find.js" type="module"></script>
+    <?php
+        echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key=' . $_ENV['GOOGLE_MAPS_API_KEY'] . '"></script>';
+    ?>
 
     <title>Find</title>
 </head>

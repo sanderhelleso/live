@@ -48,3 +48,9 @@
 #nav-user {
     display: none;
 }
+
+.disabled-nav-item {
+    pointer-events: none;
+    color: #9e9e9e;
+    opacity: 0.5;
+}

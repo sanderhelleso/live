@@ -34,7 +34,7 @@
 }
 
 #hero-banner a, #get-started-section a {
-    margin: 3rem 0;
+    margin: 3rem 1rem 3rem 1rem;
     padding: 1.75rem;
     min-height: 3rem;
     min-width: 300px;
@@ -54,6 +54,12 @@
 
 #hero-banner a:hover , #get-started-section a:hover {
     box-shadow: 0 16px 32px rgba(10, 10, 10, .4);
+}
+
+#get-started-section a:nth-child(2) {
+    background: #1FA2FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .section {
@@ -300,6 +306,10 @@
 
 @media screen and (max-width: 800px) {
 
+    #hero {
+        background-position: 15% center; 
+    }
+
     #hero-banner {
         max-width: 85%;
     }
@@ -311,6 +321,10 @@
 
     #hero-banner h5 {
         font-size: 1.25rem;
+    }
+
+    #hero-banner a, #get-started-section a {
+        margin: 1rem 0 2rem 0;
     }
 
     .section figure {
@@ -325,5 +339,16 @@
     .section p {
         max-width: 100%;
         margin: 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #hero-banner a, #get-started-section a {
+        max-width: 250px;
+        min-width: 250px;
+    }
+
+    #hero {
+        min-height: 130vh;
     }
 }

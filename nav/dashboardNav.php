@@ -25,13 +25,13 @@
                         <a class="navbar-item" href="/dashboard/overview">
                             <i data-feather="activity"></i> Overview
                         </a>
-                        <a class="navbar-item" href="#">
+                        <a class="navbar-item" href="/find">
                             <i data-feather="globe"></i> Find Help
                         </a>
                         <a class="navbar-item" href="/dashboard/offer-help">
                             <i data-feather="life-buoy"></i> Offer Help
                         </a>
-                        <a class="navbar-item" href="#">
+                        <a class="navbar-item disabled-nav-item" href="#">
                             <i data-feather="award"></i> Achivements
                         </a>
                         <a class="navbar-item" href="/dashboard/settings">

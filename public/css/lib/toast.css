@@ -1,5 +1,6 @@
 .toast {
     max-height: auto;
+    max-width: 95%;
     background-color: #ffffff;
     border-radius: 4px;
     padding: 1rem 2rem 1.5rem 2rem;
@@ -39,4 +40,11 @@
 
 .toast-success {
     background-color: #05c776;
+}
+
+@media screen and (max-width: 600px) {
+    .toast {
+        left: 2.5%;
+        top: 85%;
+    }
 }

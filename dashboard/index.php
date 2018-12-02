@@ -7,9 +7,9 @@
 <?php include("../head/dashboardHead.php"); ?>
 <html>
 <body class="site">
-<?php include("../nav/dashboardNav.php"); ?>
-<?php include("main/main.php"); ?>
-<?php include("../footer/footer.php"); ?>
+    <?php include("../nav/dashboardNav.php"); ?>
+    <?php include("main/main.php"); ?>
+    <?php include("../footer/footer.php"); ?>
 </body>
 <script>
     feather.replace();
