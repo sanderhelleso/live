@@ -37,6 +37,10 @@ async function loadOfferData() {
 
         // store offer data in localstorage
         localStorage.setItem('offer_data', JSON.stringify(data.payload));
+
+        // display stats
+        document.querySelector('#overview-cont').className = 'container animated fadeIn';
+        document.querySelector('#overview-cont').style.display = 'block';
         return;
     }
 
@@ -112,6 +116,9 @@ function setNavbarData(data) {
 }
 
 function setAvatar(image, data) {
-    image.src = data.avatar ? `data:image/png;base64,${data.avatar}` : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
+    const defaultAvatar = `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
+    image.src = data.avatar ? `data:image/png;base64,${data.avatar}` : defaultAvatar;
     image.alt = `${data.first_name} ${data.last_name}'s avatar`;
+
+    return defaultAvatar;
 }

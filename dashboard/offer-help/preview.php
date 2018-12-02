@@ -33,9 +33,6 @@
             
 
         </section>
-        <footer class="modal-card-foot">
-            <button class="button hide-modal">Cancel</button>
-            <button id="confirm-offer" class="button is-primary confirm">Confirm</button>
-        </footer>
+        <?php include('previewFooter.php') ?>
     </div>
 </div>

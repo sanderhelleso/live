@@ -37,8 +37,8 @@ function setCover() {
 
     // set preview cover image
     const data = JSON.parse(localStorage.getItem("user_data"));
-    img = `url('data:image/png;base64,${data.avatar}')`;
     cover = document.querySelector('#preview-cover');
+    img = data.avatar ? `url('data:image/png;base64,${data.avatar}')` : `url(${DATA.setAvatar(cover, data)})`
 
     // set name
     DATA.setName(data, 'preview-name');

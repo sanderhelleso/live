@@ -1,11 +1,17 @@
 import { MODAL } from '../helpers/modal';
 import { DATA } from '../dashboard/loadData';
 import { PREVIEW } from '../helpers/preview';
+import { HEADER } from '../helpers/authHeader';
+import { toast } from '../lib/toast';
+import { RECENT_ACTION } from '../helpers/recentActionNotification';
 
 window.onload = initialize;
 
 let data;
 async function initialize() {
+
+    // check for new offer
+    RECENT_ACTION.newOffer();
 
     // load users current offer stats
     await DATA.loadOfferData();
@@ -26,8 +32,6 @@ function setStats(data) {
 
 function openOffer() {
 
-    console.log(data);
-
     // set offer areas
     const AREAS = setAreas(data);
     createAreas(AREAS);
@@ -47,8 +51,45 @@ function openOffer() {
     // set description
     document.querySelector('#preview-description').innerHTML = data.description;
 
+    // prepeare modal for removal
+    document.querySelector('#remove-offer').addEventListener('click', removeOffer);
+
     // open offer modal
     MODAL.open('offer');
+}
+
+async function removeOffer() {
+
+    // send POST request offer data endpoint
+    const response = await fetch('/api/offerHelp/removeOfferHelp.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            ...HEADER(),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: JSON.parse(localStorage.getItem('user_data')).user_id
+        })
+    });
+
+    // get response data
+    let data = await response.json();
+
+    if (data.success) {
+
+        // set success message
+        localStorage.setItem('offer_deleted_successfully', true);
+        window.location.replace('/dashboard');
+    }
+
+    else {
+        
+        // display response message
+        toast(data.message, data.success, 3000);
+    }
 }
 
 function setAreas(data) {

@@ -223,5 +223,24 @@
             // return statement
             return $stmt;
         }
+
+        public function deleteOfferHelp() {
+
+            // delete current offer query
+            $query = "DELETE
+                      FROM 
+                      $this->helpersTable
+                      WHERE 
+                      user_id = '$this->id'";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
     }
 ?>

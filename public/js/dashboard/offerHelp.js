@@ -272,9 +272,14 @@ async function confirmOffer() {
     let data = await response.json();
 
     if (data.success) {
+
+        // remove old offer
         if (localStorage.getItem('offer_data')) {
             localStorage.removeItem('offer_data');
         }
+
+        // set success message
+        localStorage.setItem('new_offer_success', true);
         window.location.replace('/dashboard/overview');
     }
 
