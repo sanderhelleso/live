@@ -3,10 +3,49 @@ import { HEADER } from '../helpers/authHeader';
 
 export const DATA = {
     loadUserData,
+    loadOfferData,
     setNavbarData,
     setAvatar,
     setName,
     setFirstName
+}
+
+async function loadOfferData() {
+
+     // send POST request offer data endpoint and retrieve offer data
+     const response = await fetch('/api/user/getOfferData.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            ...HEADER(),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: JSON.parse(localStorage.getItem('auth_token')).id
+        })
+    });
+
+    // get response data
+    let data = await response.json();
+
+    if (data.success) {
+        // clean up data
+        delete data.payload.help_id;
+        delete data.payload.user_id;
+
+        // store offer data in localstorage
+        localStorage.setItem('offer_data', JSON.stringify(data.payload));
+
+        // display stats
+        document.querySelector('#overview-cont').className = 'container animated fadeIn';
+        document.querySelector('#overview-cont').style.display = 'block';
+        return;
+    }
+
+    window.location.replace('/dashboard/offer-help');
+
 }
 
 async function loadUserData() {
@@ -77,6 +116,9 @@ function setNavbarData(data) {
 }
 
 function setAvatar(image, data) {
-    image.src = data.avatar ? `data:image/png;base64,${data.avatar}` : `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
+    const defaultAvatar = `${location.protocol}//${location.host}/public/img/dashboard/defaultAvatar.jpg`;
+    image.src = data.avatar ? `data:image/png;base64,${data.avatar}` : defaultAvatar;
     image.alt = `${data.first_name} ${data.last_name}'s avatar`;
+
+    return defaultAvatar;
 }

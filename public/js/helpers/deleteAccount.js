@@ -70,7 +70,7 @@ async function deleteAccount(button) {
         localStorage.setItem('account_deleted_successfully', true);
 
         // redirect to login page
-        window.location.replace('/login/login.php');
+        window.location.replace('/login');
     }  
 
     // delete account failed

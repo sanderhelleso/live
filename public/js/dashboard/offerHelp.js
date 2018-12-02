@@ -2,18 +2,29 @@ import { HEADER } from '../helpers/authHeader';
 import { DATA } from './loadData';
 import { MODAL } from '../helpers/modal';
 import { PREVIEW } from '../helpers/preview';
+import { GEO_LOCATION } from '../helpers/geoLocation';
 import { toast } from '../lib/toast';
 
 // store areas selected
 const AREAS = [];
+
+// location
+let geoLocation = {
+    latitude: null,
+    longitude: null
+};
+
+// date
 let calendarDate = {
-    start: undefined,
-    from: undefined
+    start: null,
+    from: null
 }
 
 window.onload = initialize;
 
 function initialize() {
+
+    geoLocation = GEO_LOCATION.getLocation();
 
     // prepeare areas to select
     initializeAreas();
@@ -52,9 +63,9 @@ function initializeAreas() {
 }
 
 function fadeAreas() {
-    document.querySelector('#areas').className = 'columns animated fadeIn';
+    document.querySelector('#areas').className = 'columns animated fadeIn is-desktop';
     setTimeout(() => {
-        document.querySelector('#areas').className = 'columns';
+        document.querySelector('#areas').className = 'columns is-desktop';
     }, 600);
 }
 
@@ -124,7 +135,6 @@ function loadCalendar() {
             calendarDate = date;
         });
     });
-
 }
 
 function validate() {
@@ -158,28 +168,13 @@ function validate() {
     openPreview();
 }
 
-let img;
-let cover;
 function openPreview() {
 
+    // animate cover
     PREVIEW.initAnimateCover(AREAS);
 
-    // set preview cover image
-    const data = JSON.parse(localStorage.getItem("user_data"));
-    img = `url('data:image/png;base64,${data.avatar}')`;
-    cover = document.querySelector('#preview-cover');
-    
-    cover.style.background = `
-        linear-gradient(
-        rgba(255, 255, 255, 0.3), 
-        rgba(255, 255, 255, 1)),
-        ${img}
-    `; 
-    cover.style.backgroundPosition = '0% 30%';
-    cover.style.backgroundSize = 'cover';
-
-    // set name
-    DATA.setName(data, 'preview-name');
+    // set preview cover image and name
+    PREVIEW.setCover();
 
     // set time
     document.querySelector('#preview-date').innerHTML = 
@@ -255,10 +250,10 @@ async function confirmOffer() {
         start: formatDate(calendarDate.start),
         end: formatDate(calendarDate.end),
         description: document.querySelector('textarea').value,
-        price: document.querySelector('input[type="number"]').value
+        price: document.querySelector('input[type="number"]').value,
+        latitude: geoLocation.latitude ? geoLocation.latitude : 0.0,
+        longitude: geoLocation.longitude ? geoLocation.longitude : 0.0
     }
-
-    console.log(offerData);
 
     // send POST request offer data endpoint
     const response = await fetch('/api/offerHelp/offerHelp.php', {
@@ -277,6 +272,14 @@ async function confirmOffer() {
     let data = await response.json();
 
     if (data.success) {
+
+        // remove old offer
+        if (localStorage.getItem('offer_data')) {
+            localStorage.removeItem('offer_data');
+        }
+
+        // set success message
+        localStorage.setItem('new_offer_success', true);
         window.location.replace('/dashboard/overview');
     }
 

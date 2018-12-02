@@ -38,7 +38,7 @@
     // set JSON header 
     header('Content-Type: application/json');
 
-    // include required db config, login and auth model
+    // include required db config, user and auth model
     include_once '../config/Database.php';
     include_once '../models/user/User.php';
     include_once '../models/Authenticate.php';
@@ -64,48 +64,39 @@
     // check for valid token
     if ($valid) {
 
-        // instantiate user object
+        // instantiate offer help object
         $user = new User($db, $data['id']);
 
-        // attempt to retrieve user data
-        $result = $user->getUserData();
-        $valid = $result->rowCount();
+        // attempt to delete help offer
+        $valid = $user->deleteOfferHelp();
 
-        // check if data retrieval was successfull
-        if ($valid) {
+        // check if help offer was successfully deleted
+        if ($valid->rowCount()) {
 
-            // retrieve users data
-            $userData = $result->fetch(PDO::FETCH_ASSOC);
-
-            // extract users data
-            extract($userData);
-
-            // create assoc array containing success response
-            $userDataRes = array(
+            // send back success data
+            $deleteOfferHelpSuccess = array(
                 'success' => true,
-                'message' => 'User data retrieved successfully',
-                'timestamp' => $timestamp,
-                'payload' => $userData
+                'message' => 'Offer successfully deleted!',
+                'timestamp' => $timestamp
             );
 
             // send back response to request
             http_response_code(200); // Request was fulfilled
-            echo json_encode($userDataRes);
-        } 
+            echo json_encode($deleteOfferHelpSuccess);
+        }  
 
         else {
 
-            // unable to fetch user data,
+            // something went wrong when attempt to set offer,
             // send back error response to request
-            http_response_code(400); // Bad request
+            http_response_code(400); // Bad Request
             echo json_encode(
                 array('success' => false,
-                    'message' => 'Something went wrong when attempting to fetch user data',
+                    'message' => 'Something went wrong when deleting offer. Please try again',
                     'timestamp' => $timestamp
                 )
             );
         }
+    }
 
-    } 
-    
 ?>

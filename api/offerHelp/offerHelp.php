@@ -74,7 +74,9 @@
             $data['start'],
             $data['end'],
             $data['description'],
-            $data['price']
+            $data['price'],
+            $data['latitude'],
+            $data['longitude']
         );
 
         // attempt to set help offer
@@ -82,6 +84,9 @@
 
         // check if help offer was valid
         if ($valid->rowCount()) {
+
+            // set stats data
+            $offerHelp->setOfferStatistics();
 
             // send back success data
             $offerHelpSuccess = array(

@@ -121,12 +121,6 @@
     opacity: 0;
 }
 
-#selected {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-}
-
 #selected h2 {
     opacity: 0.7;
     font-size: 1.35rem;
@@ -135,7 +129,6 @@
     max-width: 400px;
     margin: 0 auto 1rem auto;
     font-weight: 100;
-    border-bottom: 1px solid #eeeeee;
 }
 
 #selected h5 {
@@ -258,6 +251,7 @@
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 0.6rem;
+    text-transform: capitalize;
 }
 
 #preview-body {
@@ -367,4 +361,39 @@
 
 .modal-card-foot {
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    #areas .column {
+        min-height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .offer-help-section {
+        margin-bottom: 5rem !important;
+    }
+
+    #selected {
+        position: relative;
+        transform: none;
+        left: 0;
+    }
+
+    .textarea-cont, .fee-col {
+        max-width: 100%; 
+    }
+
+    #select-time {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #offer-help-form-cont {
+        max-width: 95%;
+    }
+
+    #offer-btn {
+        min-width: 100%;
+    }
 }
