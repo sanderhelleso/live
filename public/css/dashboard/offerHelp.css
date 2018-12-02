@@ -363,7 +363,7 @@
     justify-content: space-between;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1088px) {
     #areas .column {
         min-height: 250px;
         margin-bottom: 2rem;

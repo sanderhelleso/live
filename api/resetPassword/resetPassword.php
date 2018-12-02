@@ -89,7 +89,7 @@
         $data = json_decode($content, true);
 
         //If json_decode failed, the JSON is invalid.
-        if(!is_array($data)) {
+        if (!is_array($data)) {
 
             // send response back to request
             http_response_code(422); // Unprocessable Entity
