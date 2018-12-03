@@ -1,0 +1,132 @@
+[02-Dec-2018 18:59:19 UTC] PHP Warning:  include(../head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 18:59:19 UTC] PHP Stack trace:
+[02-Dec-2018 18:59:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 18:59:19 UTC] PHP Warning:  include(): Failed opening '../head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 18:59:19 UTC] PHP Stack trace:
+[02-Dec-2018 18:59:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 18:59:19 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 18:59:19 UTC] PHP Stack trace:
+[02-Dec-2018 18:59:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 18:59:19 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 18:59:19 UTC] PHP Stack trace:
+[02-Dec-2018 18:59:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:01:07 UTC] PHP Warning:  include(./head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:01:07 UTC] PHP Stack trace:
+[02-Dec-2018 19:01:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:01:07 UTC] PHP Warning:  include(): Failed opening './head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:01:07 UTC] PHP Stack trace:
+[02-Dec-2018 19:01:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:01:07 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:01:07 UTC] PHP Stack trace:
+[02-Dec-2018 19:01:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:01:07 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:01:07 UTC] PHP Stack trace:
+[02-Dec-2018 19:01:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:02:42 UTC] PHP Warning:  include(head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:02:42 UTC] PHP Stack trace:
+[02-Dec-2018 19:02:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:02:42 UTC] PHP Warning:  include(): Failed opening 'head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:02:42 UTC] PHP Stack trace:
+[02-Dec-2018 19:02:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:02:42 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:02:42 UTC] PHP Stack trace:
+[02-Dec-2018 19:02:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:02:42 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:02:42 UTC] PHP Stack trace:
+[02-Dec-2018 19:02:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:27 UTC] PHP Warning:  include(head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:03:27 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:27 UTC] PHP Warning:  include(): Failed opening 'head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:03:27 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:27 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:03:27 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:27 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:03:27 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:34 UTC] PHP Warning:  include(/head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:03:34 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:34 UTC] PHP Warning:  include(): Failed opening '/head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:03:34 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:34 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:03:34 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:03:34 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:03:34 UTC] PHP Stack trace:
+[02-Dec-2018 19:03:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:12 UTC] PHP Warning:  include(./head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:04:12 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:12 UTC] PHP Warning:  include(): Failed opening './head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:04:12 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:12 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:04:12 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:12 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:04:12 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:41 UTC] PHP Warning:  include(./head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:04:41 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:41 UTC] PHP Warning:  include(): Failed opening './head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:04:41 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:41 UTC] PHP Warning:  include(find/findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:04:41 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:04:41 UTC] PHP Warning:  include(): Failed opening 'find/findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:04:41 UTC] PHP Stack trace:
+[02-Dec-2018 19:04:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:07:53 UTC] PHP Warning:  include(./head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:07:53 UTC] PHP Stack trace:
+[02-Dec-2018 19:07:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:07:53 UTC] PHP Warning:  include(): Failed opening './head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:07:53 UTC] PHP Stack trace:
+[02-Dec-2018 19:07:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:07:53 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:07:53 UTC] PHP Stack trace:
+[02-Dec-2018 19:07:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:07:53 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:07:53 UTC] PHP Stack trace:
+[02-Dec-2018 19:07:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:13:37 UTC] PHP Warning:  include(./head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:13:37 UTC] PHP Stack trace:
+[02-Dec-2018 19:13:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:13:37 UTC] PHP Warning:  include(): Failed opening './head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[02-Dec-2018 19:13:37 UTC] PHP Stack trace:
+[02-Dec-2018 19:13:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:13:37 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:13:37 UTC] PHP Stack trace:
+[02-Dec-2018 19:13:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[02-Dec-2018 19:13:37 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[02-Dec-2018 19:13:37 UTC] PHP Stack trace:
+[02-Dec-2018 19:13:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:52:04 UTC] PHP Warning:  include(../head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[03-Dec-2018 17:52:04 UTC] PHP Stack trace:
+[03-Dec-2018 17:52:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:52:04 UTC] PHP Warning:  include(): Failed opening '../head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[03-Dec-2018 17:52:04 UTC] PHP Stack trace:
+[03-Dec-2018 17:52:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:52:04 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[03-Dec-2018 17:52:04 UTC] PHP Stack trace:
+[03-Dec-2018 17:52:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:52:04 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[03-Dec-2018 17:52:04 UTC] PHP Stack trace:
+[03-Dec-2018 17:52:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:54:29 UTC] PHP Warning:  include(../head/findHead.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[03-Dec-2018 17:54:29 UTC] PHP Stack trace:
+[03-Dec-2018 17:54:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:54:29 UTC] PHP Warning:  include(): Failed opening '../head/findHead.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 3
+[03-Dec-2018 17:54:29 UTC] PHP Stack trace:
+[03-Dec-2018 17:54:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:54:29 UTC] PHP Warning:  include(findMap.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[03-Dec-2018 17:54:29 UTC] PHP Stack trace:
+[03-Dec-2018 17:54:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
+[03-Dec-2018 17:54:29 UTC] PHP Warning:  include(): Failed opening 'findMap.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336-Final-Project/find/index.php on line 16
+[03-Dec-2018 17:54:29 UTC] PHP Stack trace:
+[03-Dec-2018 17:54:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336-Final-Project/find/index.php:0
