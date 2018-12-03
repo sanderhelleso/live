@@ -8,7 +8,7 @@
         <div id="top-cont">
             <h1>Find Help</h1>
             <div id="find-border"></div>
-            <h5>Looking for someone to care of loved ones or another service?</h1>
+            <h5>Looking for someone to take care of loved ones?</h1>
             <p>Here you can find what you're looking for. Select areas and how far away your helpers can be</p>
         </div>
             
@@ -21,30 +21,20 @@
 
             <div class="columns">
                 <div class="checkbox-cont field column">
-                    <input type="checkbox" class="is-checkradio" id="child-care-checkbox" checked="checked">
-                    <label class="checkbox" for="child-care-checkbox"><span>Child Care</span></label>
+                    <input type="checkbox" class="is-checkradio" id="child-care" checked="checked">
+                    <label class="checkbox" for="child-care"><span>Child Care</span></label>
                 </div>
                 <div class="checkbox-cont field column">
-                    <input type="checkbox" class="is-checkradio" id="elder-care-checkbox" checked="checked">
-                    <label class="checkbox" for="elder-care-checkbox"><span>Elder Care</span></label>
+                    <input type="checkbox" class="is-checkradio" id="elder-care" checked="checked">
+                    <label class="checkbox" for="elder-care"><span>Elder Care</span></label>
                 </div>
                 <div class="checkbox-cont field column">
-                    <input type="checkbox" class="is-checkradio" id="animal-care-checkbox" checked="checked">
-                    <label class="checkbox" for="animal-care-checkbox"><span>Animal Care</span></label>
+                    <input type="checkbox" class="is-checkradio" id="animal-care" checked="checked">
+                    <label class="checkbox" for="animal-care"><span>Animal Care</span></label>
                 </div>
             </div>
-            <!--<div class="field">
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input is-medium find-input" type="text" name="searchByStats" placeholder="What do you need help you with?" size="45" id="searchForm">
-                    <span class="icon is-left">
-                    <i data-feather="search"></i>
-                    </span>
-                </div>
-                <p class="help password-help is-danger has-text-left"></p>
-            </div>-->
         </form>
         <button id="find-btn" class="button is-primary">Find</button>
 
-        <!--child care, elder care, other-->
     </div>
 </div>
