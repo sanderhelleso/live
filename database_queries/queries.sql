@@ -29,7 +29,10 @@ CREATE TABLE `markers` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,`name` VAR
 INSERT INTO `markers` (`id`, `name`, `address`, `lat`, `lng`, `type`) VALUES ('1', 'Zack Hutchinson', '7 moreland Ave, Pacific Grove', '36.861034', '121.171936', 'restaurant');
 
 -- create helpers table
-CREATE TABLE `live`.`helpers` ( `user_id` INT NOT NULL , `child_care` BOOLEAN NULL, `elder_care` BOOLEAN NULL, `animal_care` BOOLEAN NULL, `start_date` DATE NOT NULL, `end_date` DATE NOT NULL, `description` VARCHAR(200), `price` VARCHAR(10) NOT NULL, `latitude` DECIMAL NULL, `longitude` DECIMAL NULL, PRIMARY KEY (`user_id`), FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
+CREATE TABLE `live`.`helpers` ( `user_id` INT NOT NULL , `child_care` BOOLEAN NULL, `elder_care` BOOLEAN NULL, `animal_care` BOOLEAN NULL, `start_date` DATE NOT NULL, `end_date` DATE NOT NULL, `description` VARCHAR(200), `price` VARCHAR(10) NOT NULL, `latitude` DECIMAL(10, 8) NULL, `longitude` DECIMAL(11, 8) NULL, PRIMARY KEY (`user_id`), FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
 
 -- create helper statistic table
 CREATE TABLE `live`.`help_offer_statistics` (`help_id` int(11) UNIQUE NOT NULL, `last_viewed` date NULL, `total_views` int(11) NULL, FOREIGN KEY (help_id) REFERENCES helpers (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
+
+-- create test offer data
+INSERT INTO `helpers`(`user_id`, `child_care`, `elder_care`, `animal_care`, `start_date`, `end_date`, `description`, `price`, `latitude`, `longitude`) VALUES (2, 1, 1, 1, '2018-12-02', '2018-12-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere quam sed interdum vehicula. Pellentesque vel ligula ac risus tristique auctor.', 25, 36.65739,-121.79510);
