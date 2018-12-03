@@ -20,7 +20,7 @@
             .dropdown-content {
                 display: none;
                 position: absolute;
-                background-color: #f1f1f1;
+                background-color: #ffa639;
                 min-width: 160px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
@@ -33,11 +33,11 @@
                 display: block;
             }
             
-            .dropdown-content a:hover {background-color: #ddd;}
+            .dropdown-content a:hover {background-color: #9bff74;}
             
             .dropdown:hover .dropdown-content {display: block;}
             
-            .dropdown:hover .dropbtn {background-color: #3e8e41;}
+            .dropdown:hover .dropbtn {background-color: yellow;}
       </style>
     </head>
     <body>
@@ -47,9 +47,10 @@
         <div class="dropdown">
             <button class="dropDownBtn">Choose a topic</button>
             <div class="dropdown-content">
-                <a href="#">Account Information and Settings</a>
-                <a href="#">Technical Support</a>
-                <a href="#">Learn How To use Our Site</a>
+                <a href="../help/contactForm.php">Account Information and Settings</a>
+                <a href="../help/contactForm.php">Technical Support</a>
+                <a href="../help/contactForm.php">Report a bug</a>
+                <a href="../help/howToUseOurSite.php">Learn How To Use Our Site</a>
             </div>
         </div>
 
