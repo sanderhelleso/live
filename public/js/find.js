@@ -1,5 +1,6 @@
 import { GEO_LOCATION } from '../js/helpers/geoLocation';
 import { toast } from './lib/toast';
+import { DATA } from './dashboard/loadData';
 
 // default location sat to San Francisco
 const SF_LAT = 37.773972;
@@ -26,6 +27,11 @@ async function findHelp(e) {
 
     // clear old markers
     clearMarkers();
+
+    // clear old results
+    const resultsCont = document.querySelector('#results-cont');
+    resultsCont.style.opacity = '0';
+    document.querySelector('#results').innerHTML = '';
 
     // prevent form from submitting 
     e.preventDefault();
@@ -56,10 +62,17 @@ async function findHelp(e) {
 
     if (data.success) {
 
-        // itterate over payload and create markers
+        // itterate over payload and create markers and result cards
         data.payload.map(helper => {
             createMarker(helper);
+            createResultCard(helper);
         });
+
+        // display results
+        scrollTo(resultsCont);
+        setTimeout(() => {
+            resultsCont.style.opacity = '1';
+        }, 300);
     }
 
     // if no matches were found, display message
@@ -101,7 +114,13 @@ function createMarker(helper) {
 
     // add event to marker
     google.maps.event.addDomListener(marker, 'click', () => {
-        console.log(marker.id);
+
+        // on click on marker, scroll to releated helper
+        const ele = document.querySelector(`#helper-${marker.id}`);
+        scrollTo(ele);
+        setTimeout(() => {
+            ele.focus();
+        }, 700);
     });
 
     markers.push(marker);
@@ -159,7 +178,7 @@ function calculateZoomLevel(km) {
 
     while ((metersPerPixel * widthInPixels) > (1000 * km)) {
         metersPerPixel /= 2;
-        ++zoomLevel;
+        zoomLevel++;
     }
 
     return zoomLevel;
@@ -197,9 +216,181 @@ function createFindData() {
     // set range in KM selected
     data.radius = document.querySelector('#range-input').value;
 
-    // set date request was performed
-    data.date = new Date().toLocaleDateString();
+    // if logged in user performs request, pass along ID
+    data.id = localStorage.getItem('auth_token') 
+    ? 
+    JSON.parse(localStorage.getItem('auth_token')).id 
+    : 
+    null;
 
     // return data containing areas
     return data;
+}
+
+function createResultCard(helper) {
+
+    // create card cont
+    const card = document.createElement('div');
+    card.id = `helper-${helper.user_id}`;
+    card.className = 'card animated fadeIn column result-card';
+    card.tabIndex = '0';
+
+    /****
+     * 
+     * CARD HEADER
+     * 
+    ****/
+
+    // create card image cont
+    const cardImageCont = document.createElement('div');
+    cardImageCont.classList = 'card-image';
+
+    // get img data
+    const img = helper.avatar ? `url('data:image/png;base64,${helper.avatar}')` : `url(${DATA.setAvatar(cardImageCont, helper)})`
+    
+    // set bg
+    cardImageCont.style.background = `
+        linear-gradient(
+        rgba(255, 255, 255, 0.3), 
+        rgba(255, 255, 255, 1)),
+        ${img}
+    `; 
+    cardImageCont.style.backgroundPosition = 'center 20%';
+    cardImageCont.style.backgroundSize = 'cover';
+
+    // create card name
+    const name = document.createElement('h3');
+    name.className = 'card-name';
+    name.innerHTML = `${helper.first_name} ${helper.last_name}`;
+
+    // append header to card
+    cardImageCont.appendChild(name);
+    card.appendChild(cardImageCont);
+
+    /****
+     * 
+     * CARD BODY
+     * 
+    ****/
+
+    // card body cont
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-content';
+
+    // create media cont
+    const mediaCont = document.createElement('div');
+    mediaCont.className = 'media';
+
+    // create media content cont
+    const mediaContent = document.createElement('div');
+    mediaContent.className = 'media-content';
+
+    // create descriptipn
+    const description = document.createElement('p');
+    description.className = 'description';
+    description.innerHTML = helper.description;
+    
+    // append media to card body
+    mediaContent.appendChild(description);
+    mediaCont.appendChild(mediaContent);
+    cardBody.appendChild(mediaCont);
+
+    // create main content cont
+    const contentCont = document.createElement('div');
+    contentCont.className = 'content columns';
+
+    // create time cont
+    const timeCont = document.createElement('div');
+    timeCont.className = 'time-cont card-cont column';
+
+    // create date tag
+    const date = document.createElement('h5');
+    date.className = 'date';
+
+    // create from tag
+    const fromLabel = document.createElement('span');
+    fromLabel.innerHTML = 'From';
+
+    // create from time tag
+    const fromTime = document.createElement('p');
+    fromTime.innerHTML = helper.start_date;
+
+    // create to tag
+    const toLabel = document.createElement('span');
+    toLabel.innerHTML = 'To';
+
+    // create to time tag
+    const toTime = document.createElement('p');
+    toTime.innerHTML = helper.end_date;
+
+    // append from time and from date to date tag
+    date.appendChild(fromLabel);
+    date.appendChild(fromTime);
+    date.appendChild(toLabel);
+    date.appendChild(toTime);
+
+    // append date to time cont
+    timeCont.appendChild(date);
+
+    // append time cont to content cont
+    contentCont.appendChild(timeCont);
+
+    // create price cont
+    const priceCont = document.createElement('div');
+    priceCont.className = 'price-cont card-cont column';
+
+    // create amount tag
+    const amount = document.createElement('h5');
+    amount.className = 'amount';
+    amount.innerHTML = `<span>$</span>${helper.price}`;
+
+    // create amount label
+    const amountLabel = document.createElement('p');
+    amountLabel.innerHTML = 'Per Hour';
+
+    // append amount and label to price cont
+    priceCont.appendChild(amount);
+    priceCont.appendChild(amountLabel);
+
+    // append price cont to content cont
+    contentCont.appendChild(priceCont);
+
+    /****
+     * 
+     * CARD FOOTER
+     * 
+    ****/
+
+    // create button
+    const cardBtn = document.createElement('button');
+    cardBtn.className = 'button card-btn';
+
+    // modify text and event depending if user is logged in
+    if (localStorage.getItem('auth_token')) {
+        cardBtn.innerHTML = `Get In Touch With ${helper.first_name}`;
+    }
+
+    else {
+        cardBtn.innerHTML = `Log In to Get In Touch With ${helper.first_name}`;
+        cardBtn.addEventListener('click', () => {
+            window.location.replace('/login');
+        });
+    }
+
+    // append content to card
+    cardBody.appendChild(contentCont);
+    cardBody.appendChild(cardBtn);
+    card.appendChild(cardBody);
+
+    // append card to parent cont
+    document.querySelector('#results').appendChild(card);
+
+}
+
+// smooth scroll to given element
+function scrollTo(element) {
+    element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
 }

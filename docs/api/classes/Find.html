@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-378569877"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-292670407"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-378569877" class="accordion-body collapse in">
+            <div id="namespace-292670407" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -170,20 +170,15 @@
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\</small>Database</h1>
-                    <p><em>Database class that connects the application to the given database</em></p>
+                    <h1><small>\</small>Find</h1>
+                    <p><em>Find class to handle search of helpers in the application</em></p>
                     <p>@author Sander Hellesø <a href="mailto:shellesoe@csumb.edu">shellesoe@csumb.edu</a></p>
-<p>This class represent Database that connects the application to the given database
-and is used in all API calls to communicate with the database. Class is usually
-connected as &quot;conn&quot;. The class requires the following properties to be enable
-to connect:</p>
-<p>--- PROPERTIES ---</p>
-<ol>
-<li>HOST</li>
-<li>DATABASE NAME</li>
-<li>USERNAME</li>
-<li>PASSWORD</li>
-</ol>
+<p>This class represent a search and find system that allows
+users to search and find helpers depending on certain criterias
+sat by the user performing the request</p>
+<p>NOTE: The user performing the request do NOT require to be logged in
+to the system. However, to actually book and connect with thte helper,
+the user is required to create an account / log into the application</p>
                     
                                         
                     <section id="summary">
@@ -201,10 +196,17 @@ to connect:</p>
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <a href="../classes/Database.html#method_connect" class="">connect()</a><br />
+                                                                    <a href="../classes/Find.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Find.html#method_find" class="">find()</a><br />
                                                             </section>
                             <section class="span4">
-                                                                    <em>No public properties found</em>
+                                                                    <a href="../classes/Find.html#property_childCare" class="">$childCare</a><br />
+                                                                    <a href="../classes/Find.html#property_elderCare" class="">$elderCare</a><br />
+                                                                    <a href="../classes/Find.html#property_animalCare" class="">$animalCare</a><br />
+                                                                    <a href="../classes/Find.html#property_radius" class="">$radius</a><br />
+                                                                    <a href="../classes/Find.html#property_lat" class="">$lat</a><br />
+                                                                    <a href="../classes/Find.html#property_lng" class="">$lng</a><br />
+                                                                    <a href="../classes/Find.html#property_date" class="">$date</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No constants found</em>
@@ -226,11 +228,10 @@ to connect:</p>
                                                                     <em>No private methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/Database.html#property_host" class="">$host</a><br />
-                                                                    <a href="../classes/Database.html#property_dbName" class="">$dbName</a><br />
-                                                                    <a href="../classes/Database.html#property_username" class="">$username</a><br />
-                                                                    <a href="../classes/Database.html#property_password" class="">$password</a><br />
-                                                                    <a href="../classes/Database.html#property_conn" class="">$conn</a><br />
+                                                                    <a href="../classes/Find.html#property_conn" class="">$conn</a><br />
+                                                                    <a href="../classes/Find.html#property_helpersTable" class="">$helpersTable</a><br />
+                                                                    <a href="../classes/Find.html#property_helpersStatsTable" class="">$helpersStatsTable</a><br />
+                                                                    <a href="../classes/Find.html#property_usersDataTable" class="">$usersDataTable</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -243,12 +244,12 @@ to connect:</p>
                     
                     <dl>
                         <dt>File</dt>
-                            <dd><a href="../files/config.Database.html"><div class="path-wrapper">config\Database.php</div></a></dd>
+                            <dd><a href="../files/models.Find.html"><div class="path-wrapper">models\Find.php</div></a></dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">Default</div></dd>
                                                 <dt>Class hierarchy</dt>
                             <dd class="hierarchy">
-                                                                                                                                                                    <div class="namespace-wrapper">\Database</div>
+                                                                                                                                                                    <div class="namespace-wrapper">\Find</div>
                             </dd>
 
                         
@@ -272,108 +273,252 @@ to connect:</p>
                 <aside class="span4 detailsbar"></aside>
             </div>
 
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_childCare" name="property_childCare" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$childCare</h3>
+                <pre class="signature">$childCare : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_elderCare" name="property_elderCare" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$elderCare</h3>
+                <pre class="signature">$elderCare : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_animalCare" name="property_animalCare" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$animalCare</h3>
+                <pre class="signature">$animalCare : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_radius" name="property_radius" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$radius</h3>
+                <pre class="signature">$radius : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lat" name="property_lat" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$lat</h3>
+                <pre class="signature">$lat : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lng" name="property_lng" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$lng</h3>
+                <pre class="signature">$lng : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_date" name="property_date" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$date</h3>
+                <pre class="signature">$date : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
                                                                     <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_host" name="property_host" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$host</h3>
-                <pre class="signature">$host : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_dbName" name="property_dbName" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$dbName</h3>
-                <pre class="signature">$dbName : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_username" name="property_username" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$username</h3>
-                <pre class="signature">$username : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_password" name="property_password" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$password</h3>
-                <pre class="signature">$password : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
         <div class="span8 content class">
             <a id="property_conn" name="property_conn" class="anchor"></a>
             <article class="property">
                 <h3 class="private ">$conn</h3>
                 <pre class="signature">$conn : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_helpersTable" name="property_helpersTable" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$helpersTable</h3>
+                <pre class="signature">$helpersTable : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_helpersStatsTable" name="property_helpersStatsTable" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$helpersStatsTable</h3>
+                <pre class="signature">$helpersStatsTable : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_usersDataTable" name="property_usersDataTable" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$usersDataTable</h3>
+                <pre class="signature">$usersDataTable : </pre>
                 <p><em></em></p>
                 
 
@@ -401,12 +546,83 @@ to connect:</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_connect" name="method_connect" class="anchor"></a>
+            <a id="method___construct" name="method___construct" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">connect()</h3>
+                <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">connect() </pre>
-                <p><em>Attempt to connect to database using releated properties</em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$db</span>,   <span class="argument">$childCare</span>,   <span class="argument">$elderCare</span>,   <span class="argument">$animalCare</span>,   <span class="argument">$radius</span>,   <span class="argument">$lat</span>,   <span class="argument">$lng</span>,   <span class="argument">$date</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$db </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$childCare </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$elderCare </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$animalCare </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$radius </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$lat </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$lng </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$date </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Find.html"><div class="path-wrapper">\Find</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_find" name="method_find" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">find()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">find() </pre>
+                <p><em>Attempt to find matching helpers based on recieved criterias</em></p>
                 
 
                 
@@ -418,7 +634,7 @@ to connect:</p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                     <dt>Inherited from</dt>
-                    <dd><a href="../classes/Database.html"><div class="path-wrapper">\Database</div></a></dd>
+                    <dd><a href="../classes/Find.html"><div class="path-wrapper">\Find</div></a></dd>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -433,10 +649,10 @@ to connect:</p>
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">Database.php</h3>
+            <h3 id="source-view-label">Find.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/config\Database.php.txt" class="language-php line-numbers"></pre>
+            <pre data-src="../files/models\Find.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
 
