@@ -9,7 +9,6 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/mockups/welcome.png"></img>
 
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/mockups/dashboard.png"></img>
-<img src="https://github.com/sanderhelleso/live/blob/development/public/img/mockups/dashboard.png"></img>
 
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/mockups/find.png"></img>
 
