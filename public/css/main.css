@@ -1,5 +1,6 @@
 @import url("lib/toast.css");
 @import url("../../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css");
+@import url("../../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css");
 
 ::-webkit-scrollbar {
     width: 0.85em;

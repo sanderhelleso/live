@@ -21,11 +21,9 @@
     <div class="control has-text-centered is-medium">
         <button id="login-btn" class="button is-primary">Log In</button>
     </div>
-    <div class="checkbox-cont">
-        <label class="checkbox">
-        <input type="checkbox">
-        Remember me
-        </label>
+    <div class="checkbox-cont field">
+        <input type="checkbox" class="is-checkradio" id="remember-me-checkbox" checked="checked">
+        <label class="checkbox" for="remember-me-checkbox"><span>Remember me</span></label>
     </div>
     <a id="forgot-password">Forgott password?</a>
     <span class="login-options">or</span>

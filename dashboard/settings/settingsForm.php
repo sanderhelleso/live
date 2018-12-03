@@ -94,12 +94,10 @@
             </div>
         </div>
     </div>
-
+    
     <div class="checkbox-cont">
-        <label class="checkbox">
-        <input type="checkbox" name="newsletter">
-        Subscribe to our newsletter
-        </label>
+        <input type="checkbox" class="is-checkradio" id="newsletter-checkbox" name="newsletter">
+        <label class="checkbox" for="newsletter-checkbox"><span>Subscribe to our newsletter</span></label>
     </div>
 
     <div id="confirm-settings-col" class="columns is-centered">

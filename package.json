@@ -19,6 +19,8 @@
   "dependencies": {
     "bulma": "^0.7.2",
     "bulma-calendar": "^5.0.3",
+    "bulma-checkradio": "^2.1.0",
+    "bulma-slider": "^2.0.0",
     "bulma-tooltip": "^2.0.2"
   }
 }
