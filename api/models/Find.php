@@ -16,13 +16,13 @@
     
     class Find {
 
-        // db connection and table
+        // db connection and tables
         private $conn;
         private $helpersTable = 'helpers';
         private $helpersStatsTable = 'help_offer_statistics';
         private $usersDataTable = 'users_data';
 
-        // login properties
+        // find properties
         public $childCare;
         public $elderCare;
         public $animalCare;
@@ -106,9 +106,6 @@
          * 
          * Users can generate at least three reports, which use aggregate 
          * functions (e.g., average price of all products in the table)
-         * 
-         * The application uses two aggregate functons instead of three 
-         * as requirement lists - allowed by Utsab Saha <usaha@csumb.edu> on 12.04.2018
          * 
          * NOTE 2: If time, try to refactor to avoid really,really nasty breaking of DRY ...
         */ 

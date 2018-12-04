@@ -7,7 +7,6 @@ import { toast } from './lib/toast';
 
 // data recieved
 let results = new Array();
-let stats = new Array();
 
 // default location sat to San Francisco
 const SF_LAT = 37.773972;
@@ -76,11 +75,10 @@ async function findHelp(e) {
 
     if (data.success) {
 
-        console.log(data);
-
         // itterate over payload and create markers and result cards
         results = Object.values(data.payload.data);
         orderBy(results);
+        setStats(Object.values(data.payload.stats));
 
         // display results
         scrollTo(resultsCont);
@@ -98,6 +96,16 @@ async function findHelp(e) {
     setTimeout(() => {
         this.classList.remove('is-loading');
     }, 500);
+}
+
+// set the stats of result
+function setStats(stats) {
+
+    const statsEles = Array.from(document.querySelector('#stats').querySelectorAll('h5'));
+    stats.forEach(stat => {
+        statsEles[stats.indexOf(stat)].innerHTML = parseInt(stat);
+    });
+
 }
 
 // order results by order option

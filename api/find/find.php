@@ -60,8 +60,18 @@
 
             // get distance
             $distance = $find->getDistance($data['lat'], $data['lng'], $helperData['latitude'], $helperData['longitude']);
+
+            // if not within radius
             if ($distance > $data['radius']) {
+
+                // remove helper
                 unset($helpersData[$key]);
+
+                // update stats
+                $helpersStats['helpers_amount']--;
+                $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
+                $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
+                $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
             }
         }
 
