@@ -61,6 +61,9 @@
             // current date
             $now = date('Y-m-d', time());
 
+            // check if valid ID (logged in or not)
+            $id = $this->id ? $this->id : -1;
+
             // find helpers query
             $query = "SELECT
                       $this->helpersTable.*,
@@ -72,7 +75,7 @@
                       INNER JOIN $this->helpersStatsTable
                       ON $this->helpersTable.user_id = $this->helpersStatsTable.help_id
                       WHERE NOT
-                      $this->helpersTable.user_id = $this->id
+                      $this->helpersTable.user_id = $id
                       AND
                       $this->helpersTable.child_care = '$this->childCare'
                       AND
@@ -93,6 +96,24 @@
 
             // return statement
             return $stmt;
+        }
+
+        /**
+         * Calculates the distance between two coordinates  and check if withing given radius range (modified version from original, see link below)
+         * https://stackoverflow.com/questions/12439801/how-to-check-if-a-certain-coordinates-fall-to-another-coordinates-radius-using-p
+        */  
+        public function getDistance($latitude1, $longitude1, $latitude2, $longitude2) {  
+
+            $earth_radius = 6371;
+        
+            $dLat = deg2rad($latitude2 - $latitude1);  
+            $dLon = deg2rad($longitude2 - $longitude1);  
+        
+            $a = sin($dLat/2) * sin($dLat/2) + cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * sin($dLon/2) * sin($dLon/2);  
+            $c = 2 * asin(sqrt($a));  
+            $d = $earth_radius * $c;  
+        
+            return $d;  
         }
     }
 ?>

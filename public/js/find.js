@@ -10,7 +10,7 @@ const SF_LAT = 37.773972;
 const SF_LNG = -122.431297;
 
 // default zoom in km
-const DEFAULT_ZOOM_KM = 20;
+const DEFAULT_ZOOM_KM = 50;
 
 window.onload = initialize;
 
@@ -69,7 +69,8 @@ async function findHelp(e) {
     if (data.success) {
 
         // itterate over payload and create markers and result cards
-        results = data.payload;
+        results = Object.values(data.payload);
+        console.log(results);
         orderBy(results);
 
         // display results
@@ -218,7 +219,7 @@ function calculateZoomLevel(km) {
     let metersPerPixel = equatorLength / widthInPixels;
     let zoomLevel = 1;
 
-    while ((metersPerPixel * widthInPixels) > (1000 * km)) {
+    while ((metersPerPixel * widthInPixels) > (2500 * km)) {
         metersPerPixel /= 2;
         zoomLevel++;
     }
@@ -410,6 +411,7 @@ function createResultCard(helper) {
     // modify text and event depending if user is logged in
     if (localStorage.getItem('auth_token')) {
         cardBtn.innerHTML = `Get In Touch With ${helper.first_name}`;
+        cardBtn.addEventListener('click', openContact);
     }
 
     else {
@@ -427,6 +429,10 @@ function createResultCard(helper) {
     // append card to parent cont
     document.querySelector('#results').appendChild(card);
 
+}
+
+function openContact() {
+    
 }
 
 // smooth scroll to given element

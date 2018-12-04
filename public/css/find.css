@@ -112,7 +112,7 @@
 }
 
 #results-cont {
-	padding: 12.5rem 0 5rem 0;
+	padding: 10rem 0 5rem 0;
 	margin: 0 auto;
 	min-height: 1100px;
 }
@@ -135,7 +135,11 @@
 
 #results {
 	max-width: 90%;
-	margin: 3rem auto;
+	margin: 5rem auto;
+}
+
+#intro p {
+	margin-bottom: 2rem;
 }
 
 #intro {
@@ -158,8 +162,14 @@
 	outline: none;
 }
 
-#results .result-card:hover, #results .result-card:focus {
+#results .result-card:hover {
 	box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+#results .result-card:focus {
+	box-shadow: 0 32px 64px rgba(10, 10, 10, .5);
+	z-index: 29;
+	transform: scale(1.01);
 }
 
 .card-image {
