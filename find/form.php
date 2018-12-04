@@ -15,8 +15,8 @@
         <form id="find-form">
 
             <div class="column">
-                <h5 id="range-value">50<span>km</span></h5>
-                <input id="range-input" class="slider is-fullwidth" step="1" min="1" max="100" value="50" type="range">
+                <h5 id="range-value">20<span>km</span></h5>
+                <input id="range-input" class="slider is-fullwidth" step="1" min="1" max="100" value="20" type="range">
             </div>
 
             <div class="columns">

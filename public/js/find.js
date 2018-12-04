@@ -10,7 +10,7 @@ const SF_LAT = 37.773972;
 const SF_LNG = -122.431297;
 
 // default zoom in km
-const DEFAULT_ZOOM_KM = 50;
+const DEFAULT_ZOOM_KM = 20;
 
 window.onload = initialize;
 
@@ -70,7 +70,6 @@ async function findHelp(e) {
 
         // itterate over payload and create markers and result cards
         results = Object.values(data.payload);
-        console.log(results);
         orderBy(results);
 
         // display results
@@ -104,12 +103,12 @@ function orderBy() {
 
         // price (low to high)
         case 1:
-            results.sort((a, b) => a.price.localeCompare(b.price));
+            results.sort((a, b) => parseInt(a.price) - parseInt(b.price));
             break;
         
         // price (high to low)
         case 2:
-            results.sort((a, b) => b.price.localeCompare(a.price));
+            results.sort((a, b) => parseInt(b.price) - parseInt(a.price));
             break;
 
         // name (A - Z)

@@ -40,6 +40,10 @@
     $result = $find->find();
     $valid = $result->rowCount();
 
+    // messages
+    $successMsg = 'Helper data retrieved successfully';
+    $errorMsg = 'No helpers found matching your criterias. Maybe try a larger radius?';
+
     // check if any matches were found
     if ($valid) {
 
@@ -61,8 +65,6 @@
 
         // check if any results left after radius removal
         $validResult = count($helpersData) > 0 ? true : false;
-        $successMsg = 'Helper data retrieved successfully';
-        $errorMsg = 'No helpers found matching your criterias. Maybe try a larger radius?';
 
         // create assoc array containing success response
         $helpersDataRes = array(
