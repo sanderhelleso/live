@@ -129,13 +129,18 @@
 }
 
 #results-cont {
-	opacity: 0;
+	opacity: 1;
 	transition: 0.3s ease-in-out;
 }
 
 #results {
 	max-width: 90%;
 	margin: 3rem auto;
+}
+
+#intro {
+	max-width: 80%;
+	margin: 0 auto 5rem auto;
 }
 
 #results .result-card {
@@ -254,6 +259,10 @@
 	font-size: 1.75rem;
 	width: 100%;
 	text-transform: capitalize;
+}
+
+#sort {
+	float: right;
 }
 
 @media screen and (max-width: 1000px) {

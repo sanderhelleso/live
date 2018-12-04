@@ -2,6 +2,9 @@ import { GEO_LOCATION } from '../js/helpers/geoLocation';
 import { toast } from './lib/toast';
 import { DATA } from './dashboard/loadData';
 
+// data recieved
+let results = new Array();
+
 // default location sat to San Francisco
 const SF_LAT = 37.773972;
 const SF_LNG = -122.431297;
@@ -21,6 +24,9 @@ function initialize() {
 
     // prepeare search
     document.querySelector('#find-btn').addEventListener('click', findHelp);
+
+    // prepeare sort / order by
+    document.querySelector('#order-by-select').addEventListener('change', orderBy);
 }
 
 async function findHelp(e) {
@@ -63,10 +69,8 @@ async function findHelp(e) {
     if (data.success) {
 
         // itterate over payload and create markers and result cards
-        data.payload.map(helper => {
-            createMarker(helper);
-            createResultCard(helper);
-        });
+        results = data.payload;
+        orderBy(results);
 
         // display results
         scrollTo(resultsCont);
@@ -78,6 +82,7 @@ async function findHelp(e) {
     // if no matches were found, display message
     else {
         toast(data.message, data.success, 5000);
+        results = new Array();
     }
 
     setTimeout(() => {
@@ -85,6 +90,43 @@ async function findHelp(e) {
     }, 500);
 
     console.log(data);
+}
+
+// order results by order option
+function orderBy() {
+
+    // clear previous results
+    document.querySelector('#results').innerHTML = '';
+
+    const orderSetting = document.querySelector('#order-by-select').value;
+    switch(parseInt(orderSetting)) {
+
+        // price (low to high)
+        case 1:
+            results.sort((a, b) => a.price.localeCompare(b.price));
+            break;
+        
+        // price (high to low)
+        case 2:
+            results.sort((a, b) => b.price.localeCompare(a.price));
+            break;
+
+        // name (A - Z)
+        case 3:
+            results.sort((a, b) => `${a.first_name} ${a.last_name}`.localeCompare(`${b.first_name} ${b.last_name}`));
+            break;
+
+        // name (Z - A)
+        case 4:
+            results.sort((a, b) => `${b.first_name} ${b.last_name}`.localeCompare(`${a.first_name} ${a.last_name}`));
+            break;
+    }
+
+    // itterate over payload and create markers and result cards
+    results.map(helper => {
+        createMarker(helper);
+        createResultCard(helper);
+    });
 }
 
 function clearMarkers() {

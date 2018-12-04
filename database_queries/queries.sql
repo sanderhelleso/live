@@ -70,25 +70,25 @@ CALL UD();
 
 delimiter //
 
-CREATE PROCEDURE insertHDDD()
+CREATE PROCEDURE iiH()
 BEGIN
     DECLARE i int DEFAULT 1;
-    WHILE i <= 1000 DO
-        INSERT INTO `helpers` (`user_id`, `child_care`, `elder_care`, `animal_care`, `start_date`, `end_date`, `description`, `price`, `latitude`, `longitude`) VALUES (i, 1, 1, 1, '2018-12-02', '2018-12-28', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere quam sed interdum vehicula. Pellentesque vel ligula ac risus tristique auctor.', '100',(RAND() * (52.477040512464626 - 52.077090052913654)) + 52.077090052913654 , (RAND() * (-0.9172823750000134 - -1.8840792500000134)) + -1.8840792500000134);
+    WHILE i <= 100 DO
+        INSERT INTO `helpers` (`user_id`, `child_care`, `elder_care`, `animal_care`, `start_date`, `end_date`, `description`, `price`, `latitude`, `longitude`) VALUES (i, 1, 1, 1, '2018-12-02', '2018-12-28', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere quam sed interdum vehicula. Pellentesque vel ligula ac risus tristique auctor.', (CAST(RAND() * 1000 AS UNSIGNED) + 1), (RAND() * (37.773972 - 45.773972)) + 45.773972, (RAND() * (-122.431297 - -120.431297)) + -120.431297);
         SET i = i + 1;
     END WHILE;
 END//
 
 delimiter ;
 
-CALL insertHDDD();
+CALL iiH();
 
 delimiter //
 
-CREATE PROCEDURE insertStats()
+CREATE PROCEDURE iiS()
 BEGIN
     DECLARE i int DEFAULT 1;
-    WHILE i <= 1000 DO
+    WHILE i <= 100 DO
         INSERT INTO `help_offer_statistics`(`help_id`, `last_viewed`, `total_views`) VALUES (i, null ,(CAST(RAND() * 1000 AS UNSIGNED) + 1));
         SET i = i + 1;
     END WHILE;
@@ -96,7 +96,7 @@ END//
 
 delimiter ;
 
-CALL insertStats();
+CALL iiS();
 
 -- only tables
 
