@@ -111,12 +111,6 @@
 	clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);*/
 }
 
-#results-cont {
-	padding: 10rem 0 5rem 0;
-	margin: 0 auto;
-	min-height: 1100px;
-}
-
 #results-cont #intro h2 {
 	font-weight: 800;
 	font-size: 2.25rem;
@@ -129,8 +123,11 @@
 }
 
 #results-cont {
-	opacity: 1;
+	opacity: 0;
 	transition: 0.3s ease-in-out;
+	padding: 10rem 0 5rem 0;
+	margin: 0 auto;
+	min-height: 40vh;
 }
 
 #results {

@@ -47,11 +47,13 @@
     // check if any matches were found
     if ($valid) {
 
-        // retrieve helpers data
+        // retrieve helpers data and stats
         $helpersData = $result->fetchAll(PDO::FETCH_ASSOC);
+        $helpersStats = $find->findStats()->fetch(PDO::FETCH_ASSOC);
 
-        // extract users data
+        // extract users data and stats
         extract($helpersData);
+        extract($helpersStats);
 
         // remove results not within requested radius
         foreach ($helpersData as $key => $helperData) {
@@ -71,7 +73,10 @@
             'success' => $validResult,
             'message' => $validResult ? $successMsg : $errorMsg,
             'timestamp' => $timestamp,
-            'payload' => $helpersData
+            'payload' => array(
+                'data' => $helpersData,
+                'stats' => $helpersStats
+            )
         );
 
         // send back response to request
