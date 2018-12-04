@@ -16,6 +16,7 @@
 			<?php include('findMap.php') ?>
 			<?php include('form.php') ?>
 		</div>
+		<?php include('results.php') ?>
 	</main>
 <?php include("../footer/footer.php"); ?>
 </body>

@@ -33,7 +33,7 @@
         $data['radius'],
         $data['lat'],
         $data['lng'],
-        $data['date']
+        $data['id']
     );
 
     // attempt to find releated helpers matching given properties

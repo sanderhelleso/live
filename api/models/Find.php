@@ -29,7 +29,7 @@
         public $radius;
         public $lat;
         public $lng;
-        public $date;
+        public $id;
 
         // constructor with DB and find properties
         public function __construct(
@@ -40,7 +40,7 @@
             $radius,
             $lat,
             $lng,
-            $date
+            $id
         ) {
             $this->conn = $db;
             $this->childCare = $childCare;
@@ -49,7 +49,7 @@
             $this->radius = $radius;
             $this->lat = $lat;
             $this->lng = $lng;
-            $this->date = $date;
+            $this->id = $id;
         }
 
 
@@ -58,22 +58,32 @@
         */  
         public function find() {
 
-            // login query
+            // current date
+            $now = date('Y-m-d', time());
+
+            // find helpers query
             $query = "SELECT
                       $this->helpersTable.*,
                       $this->helpersStatsTable.total_views,
-                      $this->usersDataTable.*
+                      $this->usersDataTable.first_name, last_name, avatar
                       FROM $this->usersDataTable
                       INNER JOIN $this->helpersTable
                       ON $this->helpersTable.user_id = $this->usersDataTable.user_id
                       INNER JOIN $this->helpersStatsTable
                       ON $this->helpersTable.user_id = $this->helpersStatsTable.help_id
-                      WHERE
+                      WHERE NOT
+                      $this->helpersTable.user_id = $this->id
+                      AND
                       $this->helpersTable.child_care = '$this->childCare'
                       AND
                       $this->helpersTable.elder_care = '$this->elderCare'
                       AND
-                      $this->helpersTable.animal_care = '$this->animalCare'";
+                      $this->helpersTable.animal_care = '$this->animalCare'
+                      AND
+                      $this->helpersTable.start_date <= '$now'
+                      AND 
+                      $this->helpersTable.end_date >= '$now'
+                      ";
 
             // prepeare statement
             $stmt = $this->conn->prepare($query);
