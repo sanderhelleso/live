@@ -27,7 +27,6 @@ function open(modalType) {
     modal.classList.add('is-active');
 
     // focus first input to allow user to "tab" inputs immediatly
-    console.log(inputs);
     if (inputs.length > 0) {
         inputs[0].focus();
     }

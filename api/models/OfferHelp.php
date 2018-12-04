@@ -33,7 +33,8 @@
         public $longitude;
 
         // constructor with DB and offer help properties
-        public function __construct($db,
+        public function __construct(
+            $db,
             $id,
             $childCare,
             $elderCare,

@@ -22,12 +22,6 @@ CREATE TABLE `live`.`forgot_password` ( `user_id` INT NOT NULL , `reset_url` VAR
 -- create test forgot password data
 INSERT INTO `forgot_password`(`user_id`, `reset_url`) VALUES (1,'d81e0f58d1ea232c48ac237d885d79c9a2876397dfb5fc61b90949d86de5a4a8c07656563131061e73aa44874016d9c25a1ec55e5ff740baa7cf06b67b68592b');
 
--- create table for map data
-CREATE TABLE `markers` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,`name` VARCHAR( 60 ) NOT NULL ,`address` VARCHAR( 80 ) NOT NULL ,`lat` FLOAT( 10, 6 ) NOT NULL ,`lng` FLOAT( 10, 6 ) NOT NULL ,`type` VARCHAR( 30 ) NOT NULL) ENGINE = MYISAM ;
-
--- create test data for map data table
-INSERT INTO `markers` (`id`, `name`, `address`, `lat`, `lng`, `type`) VALUES ('1', 'Zack Hutchinson', '7 moreland Ave, Pacific Grove', '36.861034', '121.171936', 'restaurant');
-
 -- create helpers table
 CREATE TABLE `live`.`helpers` ( `user_id` INT NOT NULL , `child_care` BOOLEAN NULL, `elder_care` BOOLEAN NULL, `animal_care` BOOLEAN NULL, `start_date` DATE NOT NULL, `end_date` DATE NOT NULL, `description` VARCHAR(200), `price` VARCHAR(10) NOT NULL, `latitude` DECIMAL(10, 8) NULL, `longitude` DECIMAL(11, 8) NULL, PRIMARY KEY (`user_id`), FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
 
@@ -36,6 +30,9 @@ CREATE TABLE `live`.`help_offer_statistics` (`help_id` int(11) UNIQUE NOT NULL, 
 
 -- create test offer data
 INSERT INTO `helpers` (`user_id`, `child_care`, `elder_care`, `animal_care`, `start_date`, `end_date`, `description`, `price`, `latitude`, `longitude`) VALUES (2, 1, 1, 1, '2018-12-02', '2018-12-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere quam sed interdum vehicula. Pellentesque vel ligula ac risus tristique auctor.', 25, 36.65739,-121.79510);
+
+-- create helper requests table
+CREATE TABLE `live`.`helper_requests` (`help_id` int(11) NOT NULL, `user_requested` INT(11) NOT NULL, `message` VARCHAR(2000) NOT NULL, `child_care` BOOLEAN NULL, `elder_care` BOOLEAN NULL, `animal_care` BOOLEAN NULL, `date_requested` DATE NOT NULL, `accepted` TINYINT(1) NULL, `karma` INT NULL, FOREIGN KEY (help_id) REFERENCES helpers (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
 
 -- create 1000 test users
 delimiter //

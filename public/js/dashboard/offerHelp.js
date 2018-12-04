@@ -33,7 +33,7 @@ function initialize() {
     loadCalendar();
 
     // initialize textarea and chracter counter
-    document.querySelector('textarea').addEventListener('keyup', characterCounter);
+    document.querySelector('textarea').addEventListener('input', characterCounter);
 
     // initialize preview
     document.querySelector('#offer-btn').addEventListener('click', validate);

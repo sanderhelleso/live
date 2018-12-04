@@ -34,7 +34,6 @@
 
             $lastViewed = date('Y-m-d', time());
 
-
             // total views query
             $query = "UPDATE
                       $this->table 

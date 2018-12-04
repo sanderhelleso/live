@@ -1,8 +1,9 @@
 import { GEO_LOCATION } from '../js/helpers/geoLocation';
 import { DATA } from './dashboard/loadData';
 import { MODAL } from './helpers/modal';
-import { toast } from './lib/toast';
 import { WORDS } from './helpers/words';
+import { HEADER} from './helpers/authHeader';
+import { toast } from './lib/toast';
 
 // data recieved
 let results = new Array();
@@ -43,6 +44,7 @@ async function findHelp(e) {
     const resultsCont = document.querySelector('#results-cont');
     resultsCont.style.opacity = '0';
     document.querySelector('#results').innerHTML = '';
+    currentOptions = {};
 
     // prevent form from submitting 
     e.preventDefault();
@@ -93,8 +95,6 @@ async function findHelp(e) {
     setTimeout(() => {
         this.classList.remove('is-loading');
     }, 500);
-
-    console.log(data);
 }
 
 // order results by order option
@@ -174,8 +174,8 @@ function createMarker(helper) {
 }
 
 let map;
-let markers = new Array();
 let coords;
+let markers = new Array();
 async function initializeMap() {
 
     // fetch users geo location
@@ -436,6 +436,7 @@ function createResultCard(helper) {
 }
 
 let currentHelper; // current open helper
+let currentOptions = {}; // current selected options
 function openContact() {
 
     // set contact info data
@@ -506,7 +507,7 @@ function setContactInfo(data) {
     ${name}'s E-Mail and Phone Number to further communicate!`;
 
     // set button text
-    document.querySelector('#confirm-contact').innerHTML = `Request ${data.first_name}`;
+    document.querySelector('#confirm-contact').innerHTML = `Request ${name}`;
 }
 
 function toogleOptions() {
@@ -519,24 +520,75 @@ function toogleOptions() {
             const ele = document.querySelector(`#${option.id}-contact`);
             if (option.checked) {
                 ele.checked = true;
+                currentOptions[option.id.split('-').join('_')] = 1;
             }
 
             else {
                 ele.checked = false;
+                currentOptions[option.id.split('-').join('_')] = 0;
             }
         }
     );
 }
 
-function sendContact() {
+// attempt to send contact to helper
+async function sendContact() {
 
+    // validate textarea value
+    const textArea = document.querySelector('textarea');
+    if (textArea.value.length < 200) {
+        toast('To short request message! Please write atleast 200 characters', false, 3000, true);
+        textArea.focus();
+        return;
+    }
+
+    else if (textArea.value.length > CHARACTER_LIMIT) {
+        toast('To long request message! Please write a maximum of 2000 characters', false, 3000, true);
+        textArea.focus();
+        return;
+    }
+
+    // create POST body
+    const body = {
+        helper_id: currentHelper.user_id,
+        id: JSON.parse(localStorage.getItem('auth_token')).id,
+        message: textArea.value,
+        karma: Math.floor(Math.random() * Math.floor((500 + parseInt(currentHelper.total_views) / 10))) + 200,
+        ...currentOptions
+    }
+
+    // send POST request request helper endpoint
+    const response = await fetch('/api/requestHelper/requestHelper.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            ...HEADER(),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    });
+
+    // get response data
+    let data = await response.json();
+
+    // if request was succesfully listed,
+    // clear data and close modal
+    if (data.success) {
+        textArea.value = '';
+        document.querySelector('.delete').click();
+    }
+
+    // display message
+    toast(data.message, data.success, 5000, true);
 }
 
 // update helpers total view counter and set last seen timestamp
-async function updateViewCounter() {
+function updateViewCounter() {
 
     // send POST request update views endpoint
-    const response = await fetch('/api/updateView/updateView.php', {
+    fetch('/api/updateView/updateView.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
