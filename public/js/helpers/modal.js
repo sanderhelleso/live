@@ -21,13 +21,14 @@ function open(modalType) {
     modal = document.querySelector(`.modal-${modalType}`);
 
     // set modal inputs
-    inputs = Array.from(modal.querySelectorAll('input'));
+    inputs = Array.from(modal.querySelectorAll('input[type="text"], input[type="password"], textarea'));
 
     // opem modal
     modal.classList.add('is-active');
 
     // focus first input to allow user to "tab" inputs immediatly
-    if (modalType !== 'offer') {
+    console.log(inputs);
+    if (inputs.length > 0) {
         inputs[0].focus();
     }
 

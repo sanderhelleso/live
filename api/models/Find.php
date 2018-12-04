@@ -99,7 +99,7 @@
         }
 
         /**
-         * Calculates the distance between two coordinates  and check if withing given radius range (modified version from original, see link below)
+         * Calculates the distance between two coordinates and check if within given radius range (modified version from original, see link below)
          * https://stackoverflow.com/questions/12439801/how-to-check-if-a-certain-coordinates-fall-to-another-coordinates-radius-using-p
         */  
         public function getDistance($latitude1, $longitude1, $latitude2, $longitude2) {  

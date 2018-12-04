@@ -1,6 +1,8 @@
 import { GEO_LOCATION } from '../js/helpers/geoLocation';
-import { toast } from './lib/toast';
 import { DATA } from './dashboard/loadData';
+import { MODAL } from './helpers/modal';
+import { toast } from './lib/toast';
+import { WORDS } from './helpers/words';
 
 // data recieved
 let results = new Array();
@@ -11,6 +13,9 @@ const SF_LNG = -122.431297;
 
 // default zoom in km
 const DEFAULT_ZOOM_KM = 20;
+
+// helper contact chatacter limit
+const CHARACTER_LIMIT = 2000;
 
 window.onload = initialize;
 
@@ -430,8 +435,27 @@ function createResultCard(helper) {
 
 }
 
+let currentHelper; // current open helper
 function openContact() {
-    
+
+    // set contact info data
+    currentHelper = findHelper(this);
+    setContactInfo(currentHelper);
+
+    // increment view counter for heler
+    updateViewCounter();
+
+    // set random word and name
+    const heading = document.querySelector('#contact-heading');
+    heading.innerHTML = `${WORDS.getRandomWord() } !`;
+
+    // enable / disable options
+    toogleOptions();
+
+    // prepeare for sending og contact
+    document.querySelector('#confirm-contact').addEventListener('click', sendContact);
+
+    MODAL.open('contact');
 }
 
 // smooth scroll to given element
@@ -439,5 +463,89 @@ function scrollTo(element) {
     element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
+    });
+}
+
+function findHelper(that) {
+
+    // find helper
+    return results.find((helper) => {
+        return helper.user_id === that.parentElement.parentElement.id.split('-')[1];
+    });
+}
+
+function setContactInfo(data) {
+
+    // contact body elements
+    const textArea = document.querySelector('textarea');
+    const helperLabel = document.querySelector('#character-counter');
+
+    // reset text
+    helperLabel.innerHTML = 'Characters remaining: 2000';
+    textArea.value = '';
+
+    // prepeare for event
+    textArea.addEventListener('input', () => {
+        helperLabel.innerHTML = `Characters remaining: ${CHARACTER_LIMIT - textArea.value.length}`;
+    });
+
+    // set helpers avatar
+    const img = document.querySelector('#contact-img');
+    DATA.setAvatar(img, data);
+
+    // get and format helpers name
+    const name = `
+    ${data.first_name.split('')[0].toUpperCase()}${data.first_name.substring(1, data.first_name.length)}`;
+
+    // set intro
+    const intro = document.querySelector('#contact-intro');
+    intro.innerHTML = `
+    You are only a few steps away from finding your new 
+    helper! Let ${name} know what it is you require aid 
+    in and if ${name} accepts your request, you will recieve
+    ${name}'s E-Mail and Phone Number to further communicate!`;
+
+    // set button text
+    document.querySelector('#confirm-contact').innerHTML = `Request ${data.first_name}`;
+}
+
+function toogleOptions() {
+
+    // set disabled / enabled depending on sat options by user
+    Array.from(
+        document.querySelector('#find-options')
+        .querySelectorAll('input'))
+        .map(option => {
+            const ele = document.querySelector(`#${option.id}-contact`);
+            if (option.checked) {
+                ele.checked = true;
+            }
+
+            else {
+                ele.checked = false;
+            }
+        }
+    );
+}
+
+function sendContact() {
+
+}
+
+// update helpers total view counter and set last seen timestamp
+async function updateViewCounter() {
+
+    // send POST request update views endpoint
+    const response = await fetch('/api/updateView/updateView.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: currentHelper.user_id
+        })
     });
 }

@@ -7,6 +7,5 @@ const WORDS_ARR = ['Great', 'Awesome', 'Amazing', 'Cool', 'Nice', 'Great', 'Wond
 
 // pick random word from array
 function getRandomWord() {
-
     return WORDS_ARR[Math.floor(Math.random() * WORDS_ARR.length - 1) + 1];
 }
