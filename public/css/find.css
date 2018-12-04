@@ -45,7 +45,7 @@
 	margin: 0 auto;
 }
 
-#find-border {
+#find-border, #modal-border {
     height: 8px;
     width: 50%;
     border-radius: 20px;
@@ -112,7 +112,7 @@
 }
 
 #results-cont {
-	padding: 12.5rem 0 5rem 0;
+	padding: 10rem 0 5rem 0;
 	margin: 0 auto;
 	min-height: 1100px;
 }
@@ -135,7 +135,11 @@
 
 #results {
 	max-width: 90%;
-	margin: 3rem auto;
+	margin: 5rem auto;
+}
+
+#intro p {
+	margin-bottom: 2rem;
 }
 
 #intro {
@@ -158,8 +162,14 @@
 	outline: none;
 }
 
-#results .result-card:hover, #results .result-card:focus {
+#results .result-card:hover {
 	box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+#results .result-card:focus {
+	box-shadow: 0 32px 64px rgba(10, 10, 10, .5);
+	z-index: 29;
+	transform: scale(1.01);
 }
 
 .card-image {
@@ -263,6 +273,67 @@
 
 #sort {
 	float: right;
+}
+
+.modal-card-title {
+    text-align: left;
+    font-weight: 100;
+}
+
+.modal-card-body {
+    padding: 2.5rem 0;
+}
+
+.modal-card-body .columns {
+    max-width: 65%;
+    margin: 0.5rem auto;
+}
+
+.modal-card-foot {
+    justify-content: space-between;
+}
+
+.modal-card-body .enter-email {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eeeeee;
+}
+.modal-card-body h2 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-bottom: 1rem;
+}
+
+.modal-card-body p {
+	color: #9e9e9e;
+	font-weight: 100;
+	max-width: 80%;
+	margin: 0 auto 2rem auto;
+}
+
+.modal-card-body .image {
+	margin: 0 auto 2rem auto;
+}
+
+.modal-card-body .image img {
+	box-shadow: 0 8px 16px rgba(10, 10, 10, .2);
+}
+
+.modal-card-body #character-counter {
+	float: right;
+	color: #9e9e9e;
+	font-weight: 400;
+	font-size: 0.9rem;
+	margin-top: 1rem;
+}
+
+.modal-card-body textarea {
+	min-height: 250px !important;
+}
+
+#contact-message {
+	max-width: 70%;
+	margin: 0 auto;
 }
 
 @media screen and (max-width: 1000px) {

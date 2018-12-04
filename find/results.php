@@ -5,7 +5,7 @@
 			<h2>Helpers Found !</h2>
 			<p>The following helpers can assist you! Get in touch with them today</p>
 			<div id="sort">
-				<div class="select is-primary">
+				<div class="select">
 					<select id="order-by-select">
 						<option disabled>Order By</option>
 						<option value="1">Price (Low - High)</option>

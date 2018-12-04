@@ -40,6 +40,10 @@
     $result = $find->find();
     $valid = $result->rowCount();
 
+    // messages
+    $successMsg = 'Helper data retrieved successfully';
+    $errorMsg = 'No helpers found matching your criterias. Maybe try a larger radius?';
+
     // check if any matches were found
     if ($valid) {
 
@@ -49,10 +53,23 @@
         // extract users data
         extract($helpersData);
 
+        // remove results not within requested radius
+        foreach ($helpersData as $key => $helperData) {
+
+            // get distance
+            $distance = $find->getDistance($data['lat'], $data['lng'], $helperData['latitude'], $helperData['longitude']);
+            if ($distance > $data['radius']) {
+                unset($helpersData[$key]);
+            }
+        }
+
+        // check if any results left after radius removal
+        $validResult = count($helpersData) > 0 ? true : false;
+
         // create assoc array containing success response
         $helpersDataRes = array(
-            'success' => true,
-            'message' => 'Helper data retrieved successfully',
+            'success' => $validResult,
+            'message' => $validResult ? $successMsg : $errorMsg,
             'timestamp' => $timestamp,
             'payload' => $helpersData
         );
@@ -69,7 +86,7 @@
         echo json_encode(
             array(
                 'success' => false,
-                'message' => 'No helpers found matching your criterias',
+                'message' => $errorMsg,
                 'timestamp' => $timestamp
             )
         );

@@ -1,6 +1,9 @@
 import { GEO_LOCATION } from '../js/helpers/geoLocation';
-import { toast } from './lib/toast';
 import { DATA } from './dashboard/loadData';
+import { MODAL } from './helpers/modal';
+import { WORDS } from './helpers/words';
+import { HEADER} from './helpers/authHeader';
+import { toast } from './lib/toast';
 
 // data recieved
 let results = new Array();
@@ -11,6 +14,9 @@ const SF_LNG = -122.431297;
 
 // default zoom in km
 const DEFAULT_ZOOM_KM = 20;
+
+// helper contact chatacter limit
+const CHARACTER_LIMIT = 2000;
 
 window.onload = initialize;
 
@@ -38,6 +44,7 @@ async function findHelp(e) {
     const resultsCont = document.querySelector('#results-cont');
     resultsCont.style.opacity = '0';
     document.querySelector('#results').innerHTML = '';
+    currentOptions = {};
 
     // prevent form from submitting 
     e.preventDefault();
@@ -69,7 +76,7 @@ async function findHelp(e) {
     if (data.success) {
 
         // itterate over payload and create markers and result cards
-        results = data.payload;
+        results = Object.values(data.payload);
         orderBy(results);
 
         // display results
@@ -88,8 +95,6 @@ async function findHelp(e) {
     setTimeout(() => {
         this.classList.remove('is-loading');
     }, 500);
-
-    console.log(data);
 }
 
 // order results by order option
@@ -103,12 +108,12 @@ function orderBy() {
 
         // price (low to high)
         case 1:
-            results.sort((a, b) => a.price.localeCompare(b.price));
+            results.sort((a, b) => parseInt(a.price) - parseInt(b.price));
             break;
         
         // price (high to low)
         case 2:
-            results.sort((a, b) => b.price.localeCompare(a.price));
+            results.sort((a, b) => parseInt(b.price) - parseInt(a.price));
             break;
 
         // name (A - Z)
@@ -169,8 +174,8 @@ function createMarker(helper) {
 }
 
 let map;
-let markers = new Array();
 let coords;
+let markers = new Array();
 async function initializeMap() {
 
     // fetch users geo location
@@ -218,7 +223,7 @@ function calculateZoomLevel(km) {
     let metersPerPixel = equatorLength / widthInPixels;
     let zoomLevel = 1;
 
-    while ((metersPerPixel * widthInPixels) > (1000 * km)) {
+    while ((metersPerPixel * widthInPixels) > (2500 * km)) {
         metersPerPixel /= 2;
         zoomLevel++;
     }
@@ -410,6 +415,7 @@ function createResultCard(helper) {
     // modify text and event depending if user is logged in
     if (localStorage.getItem('auth_token')) {
         cardBtn.innerHTML = `Get In Touch With ${helper.first_name}`;
+        cardBtn.addEventListener('click', openContact);
     }
 
     else {
@@ -429,10 +435,169 @@ function createResultCard(helper) {
 
 }
 
+let currentHelper; // current open helper
+let currentOptions = {}; // current selected options
+function openContact() {
+
+    // set contact info data
+    currentHelper = findHelper(this);
+    setContactInfo(currentHelper);
+
+    // increment view counter for heler
+    updateViewCounter();
+
+    // set random word and name
+    const heading = document.querySelector('#contact-heading');
+    heading.innerHTML = `${WORDS.getRandomWord() } !`;
+
+    // enable / disable options
+    toogleOptions();
+
+    // prepeare for sending og contact
+    document.querySelector('#confirm-contact').addEventListener('click', sendContact);
+
+    MODAL.open('contact');
+}
+
 // smooth scroll to given element
 function scrollTo(element) {
     element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
+    });
+}
+
+function findHelper(that) {
+
+    // find helper
+    return results.find((helper) => {
+        return helper.user_id === that.parentElement.parentElement.id.split('-')[1];
+    });
+}
+
+function setContactInfo(data) {
+
+    // contact body elements
+    const textArea = document.querySelector('textarea');
+    const helperLabel = document.querySelector('#character-counter');
+
+    // reset text
+    helperLabel.innerHTML = 'Characters remaining: 2000';
+    textArea.value = '';
+
+    // prepeare for event
+    textArea.addEventListener('input', () => {
+        helperLabel.innerHTML = `Characters remaining: ${CHARACTER_LIMIT - textArea.value.length}`;
+    });
+
+    // set helpers avatar
+    const img = document.querySelector('#contact-img');
+    DATA.setAvatar(img, data);
+
+    // get and format helpers name
+    const name = `
+    ${data.first_name.split('')[0].toUpperCase()}${data.first_name.substring(1, data.first_name.length)}`;
+
+    // set intro
+    const intro = document.querySelector('#contact-intro');
+    intro.innerHTML = `
+    You are only a few steps away from finding your new 
+    helper! Let ${name} know what it is you require aid 
+    in and if ${name} accepts your request, you will recieve
+    ${name}'s E-Mail and Phone Number to further communicate!`;
+
+    // set button text
+    document.querySelector('#confirm-contact').innerHTML = `Request ${name}`;
+}
+
+function toogleOptions() {
+
+    // set disabled / enabled depending on sat options by user
+    Array.from(
+        document.querySelector('#find-options')
+        .querySelectorAll('input'))
+        .map(option => {
+            const ele = document.querySelector(`#${option.id}-contact`);
+            if (option.checked) {
+                ele.checked = true;
+                currentOptions[option.id.split('-').join('_')] = 1;
+            }
+
+            else {
+                ele.checked = false;
+                currentOptions[option.id.split('-').join('_')] = 0;
+            }
+        }
+    );
+}
+
+// attempt to send contact to helper
+async function sendContact() {
+
+    // validate textarea value
+    const textArea = document.querySelector('textarea');
+    if (textArea.value.length < 200) {
+        toast('To short request message! Please write atleast 200 characters', false, 3000, true);
+        textArea.focus();
+        return;
+    }
+
+    else if (textArea.value.length > CHARACTER_LIMIT) {
+        toast('To long request message! Please write a maximum of 2000 characters', false, 3000, true);
+        textArea.focus();
+        return;
+    }
+
+    // create POST body
+    const body = {
+        helper_id: currentHelper.user_id,
+        id: JSON.parse(localStorage.getItem('auth_token')).id,
+        message: textArea.value,
+        karma: Math.floor(Math.random() * Math.floor((500 + parseInt(currentHelper.total_views) / 10))) + 200,
+        ...currentOptions
+    }
+
+    // send POST request request helper endpoint
+    const response = await fetch('/api/requestHelper/requestHelper.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            ...HEADER(),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    });
+
+    // get response data
+    let data = await response.json();
+
+    // if request was succesfully listed,
+    // clear data and close modal
+    if (data.success) {
+        textArea.value = '';
+        document.querySelector('.delete').click();
+    }
+
+    // display message
+    toast(data.message, data.success, 5000, true);
+}
+
+// update helpers total view counter and set last seen timestamp
+function updateViewCounter() {
+
+    // send POST request update views endpoint
+    fetch('/api/updateView/updateView.php', {
+        method: 'POST',
+        mode: 'same-origin',
+        credentials: 'same-origin',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: currentHelper.user_id
+        })
     });
 }

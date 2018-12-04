@@ -19,7 +19,7 @@
                 <input id="range-input" class="slider is-fullwidth" step="1" min="1" max="100" value="20" type="range">
             </div>
 
-            <div class="columns">
+            <div id="find-options" class="columns">
                 <div class="checkbox-cont field column">
                     <input type="checkbox" class="is-checkradio" id="child-care" checked="checked">
                     <label class="checkbox" for="child-care"><span>Child Care</span></label>
