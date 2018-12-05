@@ -63,7 +63,7 @@
             }
 
             else {
-                $domain = 'demoliveapp';
+                $domain = 'demoliveapp.heroku.com';
                 $ssl = 'https://';
             }
 
