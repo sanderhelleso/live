@@ -1,4 +1,3 @@
-<?php include('../enviorment.php') ?>
 
 <!-- Find Head component -->
 <head>
