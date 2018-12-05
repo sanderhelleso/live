@@ -38,10 +38,10 @@
 
             if ($_SERVER['SERVER_NAME'] == 'liveapp') { // running on wamp / localhost
 
-                $this->host = 'localhost';
-                $this->dbName = 'live';
-                $this->username = 'live_administrator';
-                $this->password = 'GznUDh1AN8n60JlE'; 
+                $this->host = $_ENV['HOST'];
+                $this->dbName = $_ENV['DB_NAME'];
+                $this->username = $_ENV['DB_USERNAME'];
+                $this->password = $_ENV['DB_PASSWORD']; 
             }
 
             else { // running on heroku
@@ -51,7 +51,6 @@
                 $this->username = getenv('DB_USERNAME');
                 $this->password = getenv('DB_PASSWORD'); 
             }
-
          }
 
 
