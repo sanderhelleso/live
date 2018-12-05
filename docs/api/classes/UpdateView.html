@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-732326865"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2098427658"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-732326865" class="accordion-body collapse in">
+            <div id="namespace-2098427658" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -172,15 +172,13 @@
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\</small>OfferHelp</h1>
-                    <p><em>OfferHelp class that allows user to set up a offer for users to see and book</em></p>
+                    <h1><small>\</small>UpdateView</h1>
+                    <p><em>UpdateView class to handle updating of helpers total views</em></p>
                     <p>@author Sander Hellesø <a href="mailto:shellesoe@csumb.edu">shellesoe@csumb.edu</a></p>
-<p>This class represent offer help system that allows users to
-create an offer and allow other users to search and book
-based on what they need. Offer includes areas interested to help,
-time available, description and price (optional, an be free)
-The system also depends on statistics and will store total views
-and last seen date regarding the offer</p>
+<p>This class represent the way the system update the individual helpers total views
+count. Every time the user is previewd in the systems &quot;find&quot; section the system
+will call and update the individals total view counter by 1 aswell as setting the
+last seen timestamp in &quot;Y-m-d&quot; format</p>
                     
                                         
                     <section id="summary">
@@ -198,21 +196,11 @@ and last seen date regarding the offer</p>
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <a href="../classes/OfferHelp.html#method___construct" class="">__construct()</a><br />
-                                                                    <a href="../classes/OfferHelp.html#method_offerHelp" class="">offerHelp()</a><br />
-                                                                    <a href="../classes/OfferHelp.html#method_setOfferStatistics" class="">setOfferStatistics()</a><br />
+                                                                    <a href="../classes/UpdateView.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/UpdateView.html#method_updateTotalViews" class="">updateTotalViews()</a><br />
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/OfferHelp.html#property_id" class="">$id</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_childCare" class="">$childCare</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_elderCare" class="">$elderCare</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_animalCare" class="">$animalCare</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_startDate" class="">$startDate</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_endDate" class="">$endDate</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_description" class="">$description</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_price" class="">$price</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_latitude" class="">$latitude</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_longitude" class="">$longitude</a><br />
+                                                                    <a href="../classes/UpdateView.html#property_id" class="">$id</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No constants found</em>
@@ -234,9 +222,8 @@ and last seen date regarding the offer</p>
                                                                     <em>No private methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/OfferHelp.html#property_conn" class="">$conn</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_offerHelpTable" class="">$offerHelpTable</a><br />
-                                                                    <a href="../classes/OfferHelp.html#property_offerHelpStatsTable" class="">$offerHelpStatsTable</a><br />
+                                                                    <a href="../classes/UpdateView.html#property_conn" class="">$conn</a><br />
+                                                                    <a href="../classes/UpdateView.html#property_table" class="">$table</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -249,12 +236,12 @@ and last seen date regarding the offer</p>
                     
                     <dl>
                         <dt>File</dt>
-                            <dd><a href="../files/api.models.Offer-Help.html"><div class="path-wrapper">api\models\Offer-Help.php</div></a></dd>
+                            <dd><a href="../files/api.models.Update-View.html"><div class="path-wrapper">api\models\Update-View.php</div></a></dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">Default</div></dd>
                                                 <dt>Class hierarchy</dt>
                             <dd class="hierarchy">
-                                                                                                                                                                    <div class="namespace-wrapper">\OfferHelp</div>
+                                                                                                                                                                    <div class="namespace-wrapper">\UpdateView</div>
                             </dd>
 
                         
@@ -302,222 +289,6 @@ and last seen date regarding the offer</p>
         </aside>
     </div>
 
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_childCare" name="property_childCare" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$childCare</h3>
-                <pre class="signature">$childCare : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_elderCare" name="property_elderCare" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$elderCare</h3>
-                <pre class="signature">$elderCare : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_animalCare" name="property_animalCare" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$animalCare</h3>
-                <pre class="signature">$animalCare : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_startDate" name="property_startDate" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$startDate</h3>
-                <pre class="signature">$startDate : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_endDate" name="property_endDate" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$endDate</h3>
-                <pre class="signature">$endDate : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_description" name="property_description" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$description</h3>
-                <pre class="signature">$description : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_price" name="property_price" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$price</h3>
-                <pre class="signature">$price : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_latitude" name="property_latitude" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$latitude</h3>
-                <pre class="signature">$latitude : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_longitude" name="property_longitude" class="anchor"></a>
-            <article class="property">
-                <h3 class="public ">$longitude</h3>
-                <pre class="signature">$longitude : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
                                                                     <div class="row-fluid">
         <div class="span8 content class">
             <a id="property_conn" name="property_conn" class="anchor"></a>
@@ -544,34 +315,10 @@ and last seen date regarding the offer</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_offerHelpTable" name="property_offerHelpTable" class="anchor"></a>
+            <a id="property_table" name="property_table" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$offerHelpTable</h3>
-                <pre class="signature">$offerHelpTable : </pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_offerHelpStatsTable" name="property_offerHelpStatsTable" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$offerHelpStatsTable</h3>
-                <pre class="signature">$offerHelpStatsTable : </pre>
+                <h3 class="private ">$table</h3>
+                <pre class="signature">$table : </pre>
                 <p><em></em></p>
                 
 
@@ -603,7 +350,7 @@ and last seen date regarding the offer</p>
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$db</span>,   <span class="argument">$id</span>,   <span class="argument">$childCare</span>,   <span class="argument">$elderCare</span>,   <span class="argument">$animalCare</span>,   <span class="argument">$startDate</span>,   <span class="argument">$endDate</span>,   <span class="argument">$description</span>,   <span class="argument">$price</span>,   <span class="argument">$latitude</span>,   <span class="argument">$longitude</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$db</span>,   <span class="argument">$id</span>) </pre>
                 <p><em></em></p>
                 
 
@@ -619,51 +366,6 @@ and last seen date regarding the offer</p>
                                 <td>$id </td>
                                 <td></td>
                             </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$childCare </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$elderCare </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$animalCare </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$startDate </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$endDate </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$description </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$price </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$latitude </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$longitude </td>
-                                <td></td>
-                            </tr>
                                             </table>
                 
                 
@@ -674,7 +376,7 @@ and last seen date regarding the offer</p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                     <dt>Inherited from</dt>
-                    <dd><a href="../classes/OfferHelp.html"><div class="path-wrapper">\OfferHelp</div></a></dd>
+                    <dd><a href="../classes/UpdateView.html"><div class="path-wrapper">\UpdateView</div></a></dd>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -685,12 +387,12 @@ and last seen date regarding the offer</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_offerHelp" name="method_offerHelp" class="anchor"></a>
+            <a id="method_updateTotalViews" name="method_updateTotalViews" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">offerHelp()</h3>
+                <h3 class="public ">updateTotalViews()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">offerHelp() </pre>
-                <p><em>Attempt to create offer and store in releation to given user ID</em></p>
+                <pre class="signature" style="margin-right: 54px;">updateTotalViews() </pre>
+                <p><em>Attempt to update matching helpers total view count and last seen</em></p>
                 
 
                 
@@ -702,35 +404,7 @@ and last seen date regarding the offer</p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                     <dt>Inherited from</dt>
-                    <dd><a href="../classes/OfferHelp.html"><div class="path-wrapper">\OfferHelp</div></a></dd>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_setOfferStatistics" name="method_setOfferStatistics" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">setOfferStatistics()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setOfferStatistics() </pre>
-                <p><em>Attempt to create offer statistics and store in releation to given user ID</em></p>
-                
-
-                
-                
-                
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                    <dt>Inherited from</dt>
-                    <dd><a href="../classes/OfferHelp.html"><div class="path-wrapper">\OfferHelp</div></a></dd>
+                    <dd><a href="../classes/UpdateView.html"><div class="path-wrapper">\UpdateView</div></a></dd>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -745,10 +419,10 @@ and last seen date regarding the offer</p>
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">Offer-Help.php</h3>
+            <h3 id="source-view-label">Update-View.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/api\models\Offer-Help.php.txt" class="language-php line-numbers"></pre>
+            <pre data-src="../files/api\models\Update-View.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
 
