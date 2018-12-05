@@ -68,12 +68,11 @@
                 unset($helpersData[$key]);
 
                 // update stats
-                if (count($helpersStats) > 0) {
+                if ($helpersStats['helpers_amount'] > 1) {
                     $helpersStats['helpers_amount']--;
                     $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
                     $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
                     $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
-
                 }
             }
         }

@@ -271,7 +271,7 @@ function createFindData() {
 
     // find checked areas
     let selectedArea = false;
-    Array.from(document.querySelectorAll('.is-checkradio')).forEach(area => {
+    Array.from(document.querySelector('#find-options').querySelectorAll('.is-checkradio')).forEach(area => {
 
         const areaName = area.id.split('-').join('_');
         if (area.checked) {

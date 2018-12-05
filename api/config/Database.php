@@ -1,5 +1,8 @@
 <?php
 
+    // import api keys
+    include_once('../../enviorment.php');
+
     /**
      * Database class that connects the application to the given database
     *
@@ -38,7 +41,7 @@
 
             if ($_SERVER['SERVER_NAME'] == 'liveapp') { // running on wamp / localhost
 
-                $this->host = $_ENV['HOST'];
+                $this->host = $_ENV['DB_HOST'];
                 $this->dbName = $_ENV['DB_NAME'];
                 $this->username = $_ENV['DB_USERNAME'];
                 $this->password = $_ENV['DB_PASSWORD']; 
@@ -51,6 +54,7 @@
                 $this->username = getenv('DB_USERNAME');
                 $this->password = getenv('DB_PASSWORD'); 
             }
+
          }
 
 
