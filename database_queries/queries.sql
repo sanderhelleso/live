@@ -115,6 +115,10 @@ CREATE TABLE `live`.`helpers` ( `user_id` INT NOT NULL , `child_care` BOOLEAN NU
 -- create helper statistic table
 CREATE TABLE `live`.`help_offer_statistics` (`help_id` int(11) UNIQUE NOT NULL, `last_viewed` date NULL, `total_views` int(11) NULL, FOREIGN KEY (help_id) REFERENCES helpers (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
 
+-- create helper requests table
+CREATE TABLE `live`.`helper_requests` (`help_id` int(11) NOT NULL, `user_requested` INT(11) NOT NULL, `message` VARCHAR(2000) NOT NULL, `child_care` BOOLEAN NULL, `elder_care` BOOLEAN NULL, `animal_care` BOOLEAN NULL, `date_requested` DATE NOT NULL, `accepted` TINYINT(1) NULL, `karma` INT NULL, FOREIGN KEY (help_id) REFERENCES helpers (user_id) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE = INNODB;
+
+
 /**
 delimiter //
 
