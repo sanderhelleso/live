@@ -14,7 +14,7 @@
 	<main class="site-content is-centered has-text-centered">
 		<div id="main-cont" class="columns">
 			<?php include('contact.php') ?>
-			<?php include('findMap.php') ?>
+			<?php include('map.php') ?>
 			<?php include('form.php') ?>
 		</div>
 		<?php include('results.php') ?>
