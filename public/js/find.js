@@ -76,8 +76,9 @@ async function findHelp(e) {
     if (data.success) {
 
         // itterate over payload and create markers and result cards
-        results = Object.values(data.payload);
+        results = Object.values(data.payload.data);
         orderBy(results);
+        setStats(Object.values(data.payload.stats));
 
         // display results
         scrollTo(resultsCont);
@@ -95,6 +96,16 @@ async function findHelp(e) {
     setTimeout(() => {
         this.classList.remove('is-loading');
     }, 500);
+}
+
+// set the stats of result
+function setStats(stats) {
+
+    const statsEles = Array.from(document.querySelector('#stats').querySelectorAll('h5'));
+    stats.forEach(stat => {
+        statsEles[stats.indexOf(stat)].innerHTML = parseInt(stat);
+    });
+
 }
 
 // order results by order option

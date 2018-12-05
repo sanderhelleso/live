@@ -16,13 +16,13 @@
     
     class Find {
 
-        // db connection and table
+        // db connection and tables
         private $conn;
         private $helpersTable = 'helpers';
         private $helpersStatsTable = 'help_offer_statistics';
         private $usersDataTable = 'users_data';
 
-        // login properties
+        // find properties
         public $childCare;
         public $elderCare;
         public $animalCare;
@@ -69,6 +69,60 @@
                       $this->helpersTable.*,
                       $this->helpersStatsTable.total_views,
                       $this->usersDataTable.first_name, last_name, avatar
+                      FROM $this->usersDataTable
+                      INNER JOIN $this->helpersTable
+                      ON $this->helpersTable.user_id = $this->usersDataTable.user_id
+                      INNER JOIN $this->helpersStatsTable
+                      ON $this->helpersTable.user_id = $this->helpersStatsTable.help_id
+                      WHERE NOT
+                      $this->helpersTable.user_id = $id
+                      AND
+                      $this->helpersTable.child_care = '$this->childCare'
+                      AND
+                      $this->helpersTable.elder_care = '$this->elderCare'
+                      AND
+                      $this->helpersTable.animal_care = '$this->animalCare'
+                      AND
+                      $this->helpersTable.start_date <= '$now'
+                      AND 
+                      $this->helpersTable.end_date >= '$now'
+                      ";
+
+            // prepeare statement
+            $stmt = $this->conn->prepare($query);
+
+            // exceute query
+            $stmt->execute();
+
+            // return statement
+            return $stmt;
+        }
+
+        /**
+         * Find the aggerate of find result (sum records and avg of price)
+         * 
+         * NOTE: The only reason this function is in the application is due
+         * to the following project requirment: 
+         * 
+         * Users can generate at least three reports, which use aggregate 
+         * functions (e.g., average price of all products in the table)
+         * 
+         * NOTE 2: If time, try to refactor to avoid really,really nasty breaking of DRY ...
+        */ 
+        public function findStats() {
+
+            // current date
+            $now = date('Y-m-d', time());
+
+            // check if valid ID (logged in or not)
+            $id = $this->id ? $this->id : -1;
+
+            // find helpers query
+            $query = "SELECT
+                      COUNT(*) AS helpers_amount,
+                      AVG($this->helpersTable.price) AS average_price,
+                      MIN($this->helpersTable.price) AS min_price,
+                      MAX($this->helpersTable.price) AS max_price
                       FROM $this->usersDataTable
                       INNER JOIN $this->helpersTable
                       ON $this->helpersTable.user_id = $this->usersDataTable.user_id

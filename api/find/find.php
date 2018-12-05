@@ -47,19 +47,31 @@
     // check if any matches were found
     if ($valid) {
 
-        // retrieve helpers data
+        // retrieve helpers data and stats
         $helpersData = $result->fetchAll(PDO::FETCH_ASSOC);
+        $helpersStats = $find->findStats()->fetch(PDO::FETCH_ASSOC);
 
-        // extract users data
+        // extract users data and stats
         extract($helpersData);
+        extract($helpersStats);
 
         // remove results not within requested radius
         foreach ($helpersData as $key => $helperData) {
 
             // get distance
             $distance = $find->getDistance($data['lat'], $data['lng'], $helperData['latitude'], $helperData['longitude']);
+
+            // if not within radius
             if ($distance > $data['radius']) {
+
+                // remove helper
                 unset($helpersData[$key]);
+
+                // update stats
+                $helpersStats['helpers_amount']--;
+                $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
+                $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
+                $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
             }
         }
 
@@ -71,7 +83,10 @@
             'success' => $validResult,
             'message' => $validResult ? $successMsg : $errorMsg,
             'timestamp' => $timestamp,
-            'payload' => $helpersData
+            'payload' => array(
+                'data' => $helpersData,
+                'stats' => $helpersStats
+            )
         );
 
         // send back response to request
