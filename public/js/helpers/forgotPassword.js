@@ -1,5 +1,5 @@
-import { toast } from '../lib/toast';
-import { VALIDATE } from '../helpers/validateForm';
+import { toast } from '../lib/toast.js';
+import { VALIDATE } from '../helpers/validateForm.js';
 
 
 export const FORGOTPASSWORD = {
@@ -42,7 +42,7 @@ async function sendForgotPassword(button) {
     button.classList.add('is-loading');
     
     // send POST request update user password endpoint
-    const response = await fetch('/api/forgotPassword/forgotPassword.php', {
+    const response = await fetch('/api/forgot-password/forgot-password.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

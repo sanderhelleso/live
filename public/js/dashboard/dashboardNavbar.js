@@ -1,5 +1,5 @@
-import { DATA } from './loadData';
-import { LOGOUT } from '../logout';
+import { DATA } from './loadData.js';
+import { LOGOUT } from '../logout.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 

@@ -1,6 +1,6 @@
-import { toast } from '../lib/toast';
-import { HEADER } from '../helpers/authHeader';
-import { VALIDATE } from '../helpers/validateForm';
+import { toast } from '../lib/toast.js';
+import { HEADER } from '../helpers/authHeader.js';
+import { VALIDATE } from '../helpers/validateForm.js';
 
 export const PASSWORD = {
     validate
@@ -59,7 +59,7 @@ async function changePassword(button) {
     }
 
     // send POST request update user password endpoint
-    const response = await fetch('/api/user/updatePassword.php', {
+    const response = await fetch('/api/user/update-password.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

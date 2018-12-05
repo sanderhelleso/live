@@ -1,9 +1,9 @@
-import { GEO_LOCATION } from '../js/helpers/geoLocation';
-import { DATA } from './dashboard/loadData';
-import { MODAL } from './helpers/modal';
-import { WORDS } from './helpers/words';
-import { HEADER} from './helpers/authHeader';
-import { toast } from './lib/toast';
+import { GEO_LOCATION } from '../js/helpers/geoLocation.js';
+import { DATA } from './dashboard/loadData.js';
+import { MODAL } from './helpers/modal.js';
+import { WORDS } from './helpers/words.js';
+import { HEADER} from './helpers/authHeader.js';
+import { toast } from './lib/toast.js';
 
 // data recieved
 let results = new Array();
@@ -569,7 +569,7 @@ async function sendContact() {
     }
 
     // send POST request request helper endpoint
-    const response = await fetch('/api/requestHelper/requestHelper.php', {
+    const response = await fetch('/api/request-helper/request-helper.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
@@ -599,7 +599,7 @@ async function sendContact() {
 function updateViewCounter() {
 
     // send POST request update views endpoint
-    fetch('/api/updateView/updateView.php', {
+    fetch('/api/update-view/update-view.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

@@ -1,4 +1,4 @@
-import { REGEX } from './regex';
+import { REGEX } from './regex.js';
 
 export const VALIDATE = {
     setHelpMessage,

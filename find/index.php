@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<?php include("../head/findHead.php") ?>
+<?php include("../head/find.php"); ?>
 <body class="site">
 	<?php
         if (isset($_COOKIE['auth_token'])) {
-			include("../nav/dashboardNav.php");
+			include("../nav/dashboard-nav.php");
         }
 
         else {
@@ -14,7 +14,7 @@
 	<main class="site-content is-centered has-text-centered">
 		<div id="main-cont" class="columns">
 			<?php include('contact.php') ?>
-			<?php include('findMap.php') ?>
+			<?php include('map.php') ?>
 			<?php include('form.php') ?>
 		</div>
 		<?php include('results.php') ?>

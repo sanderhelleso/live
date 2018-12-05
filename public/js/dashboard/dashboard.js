@@ -1,5 +1,5 @@
-import { DATA } from './loadData';
-import { RECENT_ACTION } from '../helpers/recentActionNotification';
+import { DATA } from './loadData.js';
+import { RECENT_ACTION } from '../helpers/recentActionNotification.js';
 
 window.onload = initialize;
 

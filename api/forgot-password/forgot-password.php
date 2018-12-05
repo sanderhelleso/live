@@ -12,7 +12,7 @@
     */
 
     // include request validation
-    include_once '../../auth/validRequest.php';
+    include_once '../../auth/request.php';
 
     // set JSON header 
     header('Content-Type: application/json');
@@ -30,7 +30,7 @@
 
     // include required db config and forgot password model
     include_once '../config/Database.php';
-    include_once '../models/ForgotPassword.php';
+    include_once '../models/Forgot-Password.php';
 
     // instantiate database and connect
     $databse = new Database();

@@ -1,9 +1,9 @@
-import { HEADER } from '../helpers/authHeader';
-import { DATA } from './loadData';
-import { MODAL } from '../helpers/modal';
-import { PREVIEW } from '../helpers/preview';
-import { GEO_LOCATION } from '../helpers/geoLocation';
-import { toast } from '../lib/toast';
+import { HEADER } from '../helpers/authHeader.js';
+import { DATA } from './loadData.js';
+import { MODAL } from '../helpers/modal.js';
+import { PREVIEW } from '../helpers/preview.js';
+import { GEO_LOCATION } from '../helpers/geoLocation.js';
+import { toast } from '../lib/toast.js';
 
 // store areas selected
 const AREAS = [];
@@ -256,7 +256,7 @@ async function confirmOffer() {
     }
 
     // send POST request offer data endpoint
-    const response = await fetch('/api/offerHelp/offerHelp.php', {
+    const response = await fetch('/api/offer-help/offer-help.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

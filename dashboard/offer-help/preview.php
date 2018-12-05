@@ -33,6 +33,6 @@
             
 
         </section>
-        <?php include('previewFooter.php') ?>
+        <?php include('footer.php') ?>
     </div>
 </div>

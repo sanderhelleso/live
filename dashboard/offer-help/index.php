@@ -3,13 +3,13 @@
     canAccessRoute();
 ?>
 <!DOCTYPE html>
-<?php include("../../head/offerHelpHead.php"); ?>
+<?php include("../../head/offer-help.php"); ?>
 <html>
 <body class="site">
-<?php include("../../nav/dashboardNav.php"); ?>
+<?php include("../../nav/dashboard-nav.php"); ?>
     <main class="site-content is-centered has-text-centered desktop">
         <div id="offer-help-cont">
-            <?php include("./offerHelpForm.php") ?>
+            <?php include("./form.php") ?>
             <?php include("./preview.php") ?>
         </div>
     </main>

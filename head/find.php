@@ -44,10 +44,10 @@
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <?php
-        /*if (isset($_COOKIE['auth_token'])) {
+        if (isset($_COOKIE['auth_token'])) {
             echo '<link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard/dashboardNavbar.css" />';
             echo '<script src="../public/js/dashboard/dashboardNavbar.js" type="module"></script>';
-        }*/
+        }
     ?>
     <script src="../public/js/navbar.js"></script>
     <script src="../public/js/find.js" type="module"></script>

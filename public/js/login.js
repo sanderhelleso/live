@@ -1,7 +1,7 @@
-import { toast } from './lib/toast';
-import { REGEX } from './helpers/regex';
-import { MODAL } from './helpers/modal';
-import { RECENT_ACTION } from './helpers/recentActionNotification';
+import { toast } from './lib/toast.js';
+import { REGEX } from './helpers/regex.js';
+import { MODAL } from './helpers/modal.js';
+import { RECENT_ACTION } from './helpers/recentActionNotification.js';
 
 window.onload = initializeForm;
 

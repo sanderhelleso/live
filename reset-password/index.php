@@ -2,7 +2,7 @@
 <?php 
     include("../auth/auth.php");
     validateResetPassword(); // check if reset password code is valid
-    include("../head/resetPasswordHead.php");
+    include("../head/reset-password.php");
 ?>
 <html>
 <body class="site">

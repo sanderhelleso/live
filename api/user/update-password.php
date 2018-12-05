@@ -9,14 +9,14 @@
     */
 
     // include request validation
-    include_once '../../auth/validRequest.php';
+    include_once '../../auth/request.php';
 
     // set JSON header 
     header('Content-Type: application/json');
 
-    // include required db config, login and auth model
+    // include required db config, user and auth model
     include_once '../models/user/User.php';
-    include_once '../../auth/validToken.php';
+    include_once '../../auth/token.php';
 
     // check for valid token
     if ($valid) {
@@ -24,45 +24,40 @@
         // instantiate user object
         $user = new User($db, $data['id']);
 
-        // attempt to retrieve user data
-        $result = $user->getUserData();
-        $valid = $result->rowCount();
+        // compare passwords
+        $validPassword = $user->comparePassword($data['password']);
 
-        // check if data retrieval was successfull
-        if ($valid) {
+        // check for valid password matching
+        if ($validPassword->rowCount()) {
 
-            // retrieve users data
-            $userData = $result->fetch(PDO::FETCH_ASSOC);
-
-            // extract users data
-            extract($userData);
+            // update password and send back response
+            $user->updatePassword($data['new_password']);
 
             // create assoc array containing success response
-            $userDataRes = array(
+            $passwordData = array(
                 'success' => true,
-                'message' => 'User data retrieved successfully',
-                'timestamp' => $timestamp,
-                'payload' => $userData
+                'message' => 'Password successfully updated!',
+                'timestamp' => $timestamp
             );
 
             // send back response to request
             http_response_code(200); // Request was fulfilled
-            echo json_encode($userDataRes);
+            echo json_encode($passwordData);
         } 
 
         else {
 
-            // unable to fetch user data,
+            // password did not match,
             // send back error response to request
-            http_response_code(400); // Bad request
+            http_response_code(401); // Unauthorized
             echo json_encode(
                 array('success' => false,
-                    'message' => 'Something went wrong when attempting to fetch user data',
+                    'message' => 'Wrong password. Please try again',
                     'timestamp' => $timestamp
                 )
             );
         }
+    }
 
-    } 
-    
+
 ?>

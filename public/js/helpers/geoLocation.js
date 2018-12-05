@@ -1,4 +1,4 @@
-import { toast } from '../lib/toast';
+import { toast } from '../lib/toast.js';
 
 export const GEO_LOCATION = {
     getLocation,
@@ -8,6 +8,7 @@ export const GEO_LOCATION = {
 async function getLocation() {
     if (navigator.geolocation) {
         const pos = await navigator.geolocation.getCurrentPosition(location);
+        console.log(pos);
         return pos;
     } 
     

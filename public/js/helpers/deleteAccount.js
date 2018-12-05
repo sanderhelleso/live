@@ -1,6 +1,6 @@
-import { toast } from '../lib/toast';
-import { HEADER } from '../helpers/authHeader';
-import { VALIDATE } from '../helpers/validateForm';
+import { toast } from '../lib/toast.js';
+import { HEADER } from '../helpers/authHeader.js';
+import { VALIDATE } from '../helpers/validateForm.js';
 
 
 export const DELETE = {
@@ -45,7 +45,7 @@ async function deleteAccount(button) {
     }
 
     // send POST request update user password endpoint
-    const response = await fetch('/api/user/deleteAccount.php', {
+    const response = await fetch('/api/user/delete-account.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

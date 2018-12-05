@@ -1,4 +1,4 @@
-import { DATA } from './data';
+import { DATA } from './data.js';
 
 export const LOCATION = {
     countryAndStates,

@@ -16,7 +16,7 @@
     // include required db config, user and reset password model
     include_once '../config/Database.php';
     include_once '../models/user/User.php';
-    include_once '../models/ResetPassword.php';
+    include_once '../models/Reset-Password.php';
 
     // instantiate database and connect
     $databse = new Database();

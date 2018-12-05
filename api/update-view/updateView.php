@@ -9,14 +9,14 @@
     */
 
     // include request validation
-    include_once '../../auth/validRequest.php';
+    include_once '../../auth/request.php';
 
     // set JSON header 
     header('Content-Type: application/json');
 
     // include required db config, login and auth model
     include_once '../config/Database.php';
-    include_once '../models/UpdateView.php';
+    include_once '../models/Update-View.php';
 
     // instantiate database and connect
     $databse = new Database();
