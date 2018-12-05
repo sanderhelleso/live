@@ -1,4 +1,7 @@
 {
+ 	"require-dev": {
+ 		"phpdocumentor/phpdocumentor": "dev-master"
+ 	},
  	"require": {
  		"php": "7.2.12"
  	}
