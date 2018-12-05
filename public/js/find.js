@@ -67,7 +67,7 @@ async function findHelp(e) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({...data})
+        body: JSON.stringify({data})
     });
 
     // get response data
