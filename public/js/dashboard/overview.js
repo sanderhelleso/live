@@ -62,7 +62,7 @@ function openOffer() {
 async function removeOffer() {
 
     // send POST request offer data endpoint
-    const response = await fetch('/api/offerHelp/removeOfferHelp.php', {
+    const response = await fetch('/api/offer-help/remove-offer-help.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

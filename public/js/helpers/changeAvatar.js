@@ -58,7 +58,7 @@ async function uploadAvatar() {
         body.append('id', JSON.parse(localStorage.getItem('auth_token')).id); // user id
 
         // send POST request update user endpoint
-        const response = await fetch('/api/user/updateAvatar.php', {
+        const response = await fetch('/api/user/update-avatar.php', {
             method: 'POST',
             mode: 'same-origin',
             credentials: 'same-origin',

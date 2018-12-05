@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<?php include("../head/findhead.php"); ?>
+<?php include("../head/find.php"); ?>
 <body class="site">
 	<?php
         if (isset($_COOKIE['auth_token'])) {
-			include("../nav/dashboardNav.php");
+			include("../nav/dashboard-nav.php");
         }
 
         else {

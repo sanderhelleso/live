@@ -4,10 +4,10 @@
 ?>
 
 <!DOCTYPE html>
-<?php include("../head/dashboardHead.php"); ?>
+<?php include("../head/dashboard.php"); ?>
 <html>
 <body class="site">
-    <?php include("../nav/dashboardNav.php"); ?>
+    <?php include("../nav/dashboard-nav.php"); ?>
     <?php include("main/main.php"); ?>
     <?php include("../footer/footer.php"); ?>
 </body>

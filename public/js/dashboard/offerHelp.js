@@ -256,7 +256,7 @@ async function confirmOffer() {
     }
 
     // send POST request offer data endpoint
-    const response = await fetch('/api/offerHelp/offerHelp.php', {
+    const response = await fetch('/api/offer-help/offer-help.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

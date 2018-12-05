@@ -8,6 +8,7 @@ export const GEO_LOCATION = {
 async function getLocation() {
     if (navigator.geolocation) {
         const pos = await navigator.geolocation.getCurrentPosition(location);
+        console.log(pos);
         return pos;
     } 
     

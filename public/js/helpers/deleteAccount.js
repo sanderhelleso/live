@@ -45,7 +45,7 @@ async function deleteAccount(button) {
     }
 
     // send POST request update user password endpoint
-    const response = await fetch('/api/user/deleteAccount.php', {
+    const response = await fetch('/api/user/delete-account.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

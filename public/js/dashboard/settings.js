@@ -114,7 +114,7 @@ async function updateUserData(button) {
     const body = VALIDATE.formData(true);
 
     // send POST request update user endpoint
-    const response = await fetch('/api/user/updateUserData.php', {
+    const response = await fetch('/api/user/update-user-data.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

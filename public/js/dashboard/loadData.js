@@ -13,7 +13,7 @@ export const DATA = {
 async function loadOfferData() {
 
      // send POST request offer data endpoint and retrieve offer data
-     const response = await fetch('/api/user/getOfferData.php', {
+     const response = await fetch('/api/user/get-offer-data.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

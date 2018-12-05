@@ -569,7 +569,7 @@ async function sendContact() {
     }
 
     // send POST request request helper endpoint
-    const response = await fetch('/api/requestHelper/requestHelper.php', {
+    const response = await fetch('/api/request-helper/request-helper.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
@@ -599,7 +599,7 @@ async function sendContact() {
 function updateViewCounter() {
 
     // send POST request update views endpoint
-    fetch('/api/updateView/updateView.php', {
+    fetch('/api/update-view/update-view.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

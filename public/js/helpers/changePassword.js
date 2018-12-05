@@ -59,7 +59,7 @@ async function changePassword(button) {
     }
 
     // send POST request update user password endpoint
-    const response = await fetch('/api/user/updatePassword.php', {
+    const response = await fetch('/api/user/update-password.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',

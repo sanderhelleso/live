@@ -3,17 +3,17 @@
 <?php 
     include("../auth/auth.php");
     isLoggedIn();
-    include("../head/loginHead.php");
+    include("../head/login.php");
 ?>
 <body class="site">
 <?php include("../nav/nav.php"); ?>
     <main class="site-content is-centered has-text-centered">
-        <?php include("./forgotPassword.php"); ?>
+        <?php include("./forgot-password.php"); ?>
         <div id="login-cover">
             <div id="login" class="animated fadeIn">
                 <h1>Log In to LIVE</h1> 
                 <div id="login-border"></div>
-                <?php include("loginForm.php"); ?>
+                <?php include("form.php"); ?>
             </div>
         </div>
     </main>

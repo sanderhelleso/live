@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <?php 
-    include("../head/404Head.php");
+    include("../head/404.php");
 ?>
 <html>
 <body class="site">
 <?php 
     if (isset($_COOKIE['auth_token'])) {
-        include("../nav/dashboardNav.php"); 
+        include("../nav/dashboard-nav.php"); 
     }
 
     else {

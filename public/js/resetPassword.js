@@ -54,7 +54,7 @@ async function updatePassword(button) {
     button.classList.add('is-loading');
     
     // send POST request update user password endpoint
-    const response = await fetch('/api/resetPassword/resetPassword.php', {
+    const response = await fetch('/api/reset-password/reset-password.php', {
         method: 'POST',
         mode: 'same-origin',
         credentials: 'same-origin',
