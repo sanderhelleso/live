@@ -1,16 +1,5 @@
 # remove .php extensions
 RewriteEngine On
 
-##Force SSL 
-
-#Normal way (in case you need to deploy to NON-heroku)
-RewriteCond %{HTTPS} !=on
-
-#Heroku way
-RewriteCond %{HTTP:X-Forwarded-Proto} !https 
-
-#If neither above conditions are met, redirect to https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
 # redirect to custom 404 page
 ##ErrorDocument 404 https://demoliveapp.herokuapp.com/404
