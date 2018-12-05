@@ -52,7 +52,7 @@
     <script src="../public/js/navbar.js"></script>
     <script src="../public/js/find.js" type="module"></script>
     <?php
-        echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key=' . $_ENV['GOOGLE_MAPS_API_KEY'] . '"></script>';
+        echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKlOpnC8ZKf2LN1Q6MoP3ZS4TmGTGYeho"></script>';
     ?>
 
     <title>Find</title>
