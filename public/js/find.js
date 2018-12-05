@@ -193,7 +193,7 @@ let markers = new Array();
 async function initializeMap() {
 
     // fetch users geo location
-    coords = null;//await GEO_LOCATION.getLocation();
+    coords = await GEO_LOCATION.getLocation();
     if (!coords) {
 
         // if geo location fetched failed, set default coords to San Fransico
