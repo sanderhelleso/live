@@ -201,7 +201,6 @@ async function initializeMap() {
     }
 
     // initialize map
-    const infoWindow = new google.maps.InfoWindow;
     map = new google.maps.Map(document.querySelector('#map'), {
         center: {
             lat: coords.latitude,
