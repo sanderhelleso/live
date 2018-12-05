@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include("../head/findHead.php") ?>
+<?php include("../head/findHead.php"); ?>
 <body class="site">
 	<?php
         if (isset($_COOKIE['auth_token'])) {
