@@ -1,6 +1,3 @@
-<?php
-    include('searchLogic.php');
-?>
 <div id="form-cont" class="column container">
 
     <div id="find-content-cont" class="animated fadeIn">

@@ -56,8 +56,18 @@
              * and validate the given url from query array
             **/
 
-            $domain = 'liveapp'; // REPLACE WITH PROD DOMAIN
-            $url = 'http://' . $domain . '/api/resetPassword/resetPassword.php';
+            // set domain and SSL
+            if ($_SERVER['SERVER_NAME'] == 'liveapp') {
+                $domain = 'liveapp';
+                $ssl = 'http://';
+            }
+
+            else {
+                $domain = 'demoliveapp.herokuapp.com';
+                $ssl = 'https://';
+            }
+
+            $url = $ssl . $domain . '/api/reset-password/reset-password.php';
             $data = array('reset_url' => $reset_url);
 
             // create request options

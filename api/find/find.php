@@ -11,7 +11,7 @@
     */
 
     // include request validation
-    include_once '../../auth/validRequest.php';
+    include_once '../../auth/request.php';
 
     // set JSON header 
     header('Content-Type: application/json');
@@ -68,13 +68,16 @@
                 unset($helpersData[$key]);
 
                 // update stats
-                $helpersStats['helpers_amount']--;
-                $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
-                $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
-                $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
+                if ($helpersStats['helpers_amount'] > 1) {
+                    $helpersStats['helpers_amount']--;
+                    $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
+                    $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
+                    $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
+                }
             }
         }
 
+    
         // check if any results left after radius removal
         $validResult = count($helpersData) > 0 ? true : false;
 
@@ -84,7 +87,7 @@
             'message' => $validResult ? $successMsg : $errorMsg,
             'timestamp' => $timestamp,
             'payload' => array(
-                'data' => $helpersData,
+                'data' => $validResult ? $helpersData : array(),
                 'stats' => $helpersStats
             )
         );

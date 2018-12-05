@@ -28,7 +28,9 @@
         private $conn;
         private $usersTable = 'users';
         private $forgotPasswordTable = 'forgot_password';
-        private $domain = 'liveapp';
+        private $domain;
+        private $ssl;
+        private $sender;
 
         // forgot password properties
         public $email;
@@ -131,15 +133,37 @@
             $mail->IsSMTP(); // enable SMTP
             $mail->SMTPAuth = true; // authentication enabled
             $mail->Port = 587; // port
-            $mail->Host = "in-v3.mailjet.com"; // host
-            $mail->Username = $_ENV['MAILJET_PUBLIC_KEY']; // username
-            $mail->Password = $_ENV['MAILJET_PRIVATE_KEY']; // password
+
+            /**
+             * Set database conenction properties depnding on dev / prod enviorment
+            */
+            if ($_SERVER['SERVER_NAME'] == 'liveapp') { // running on wamp / localhost
+
+                $mail->Host = $_ENV['MAILJET_HOST']; // host
+                $mail->Username = $_ENV['MAILJET_PUBLIC_KEY']; // username
+                $mail->Password = $_ENV['MAILJET_PRIVATE_KEY']; // password
+                $this->sender = $_ENV['EMAIL_SENDER']; // sender name
+                $this->domain = 'liveapp';
+                $this->ssl = 'http://';
+
+
+            }
+
+            else {  // running on heroku
+
+                $mail->Host = getenv('MAILJET_HOST'); // host
+                $mail->Username = getenv('MAILJET_PUBLIC_KEY'); // username
+                $mail->Password = getenv('MAILJET_PRIVATE_KEY'); // password
+                $this->sender = getenv('EMAIL_SENDER'); // sender name
+                $this->domain = 'demoliveapp.herokuapp.com';
+                $this->ssl = 'https://';
+            }
 
             /**
              * MAIL CONTENT SETTINGS
             **/
 
-            $mail->SetFrom('liveappmailer@gmail.com'); 
+            $mail->SetFrom($this->sender); 
             $mail->Subject = 'Reset Password for LIVE'; // email subject
             $mail->IsHTML(true); // set as HTML
             $mail->Body = $this->emailBody(); // email body content
@@ -155,7 +179,7 @@
         private function emailBody() {
 
             // reset password full url
-            $url = 'http://' . $this->domain . '/reset-password?' . $this->url;
+            $url = $this->ssl . $this->domain . '/reset-password?' . $this->url;
 
             // email body
             $body = '<html><main>';

@@ -8,9 +8,9 @@ import { toast } from './lib/toast.js';
 // data recieved
 let results = new Array();
 
-// default location sat to San Francisco
-const SF_LAT = 37.773972;
-const SF_LNG = -122.431297;
+// default location sat to Seaside, CA, USA (CSUMB Campus)
+const SF_LAT = 	36.653747;
+const SF_LNG = 	-121.798511;
 
 // default zoom in km
 const DEFAULT_ZOOM_KM = 20;
@@ -101,9 +101,11 @@ async function findHelp(e) {
 // set the stats of result
 function setStats(stats) {
 
+    let i = 0;
     const statsEles = Array.from(document.querySelector('#stats').querySelectorAll('h5'));
-    stats.forEach(stat => {
-        statsEles[stats.indexOf(stat)].innerHTML = parseInt(stat);
+    statsEles.forEach(ele => {
+        ele.innerHTML = parseInt(stats[i]);
+        i++;
     });
 
 }
@@ -167,6 +169,7 @@ function createMarker(helper) {
     const marker = new google.maps.Marker({ 
         position: latLng,
         map: map,
+        icon: mapsIcon('helper'),
         id: helper.user_id
     });
 
@@ -201,16 +204,35 @@ async function initializeMap() {
     }
 
     // initialize map
-    const infoWindow = new google.maps.InfoWindow;
     map = new google.maps.Map(document.querySelector('#map'), {
         center: {
             lat: coords.latitude,
             lng: coords.longitude
         }
     });
+
+    // initialize marker for user location
+    new google.maps.Marker({ 
+        position: { 
+            lat: parseFloat(coords.latitude),
+            lng: parseFloat(coords.longitude)
+        },
+        map: map,
+        icon: mapsIcon('home')
+    });
     
     // set initial zoom
     map.setZoom(calculateZoomLevel(DEFAULT_ZOOM_KM));
+}
+
+function mapsIcon(iconType) {
+
+    return {
+        url: `${location.protocol}//${location.host}/public/img/maps/${iconType}Icon.png`, // url
+        scaledSize: new google.maps.Size(50, 50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    }
 }
 
 // default zoom
@@ -249,7 +271,7 @@ function createFindData() {
 
     // find checked areas
     let selectedArea = false;
-    Array.from(document.querySelectorAll('.is-checkradio')).forEach(area => {
+    Array.from(document.querySelector('#find-options').querySelectorAll('.is-checkradio')).forEach(area => {
 
         const areaName = area.id.split('-').join('_');
         if (area.checked) {
