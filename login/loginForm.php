@@ -25,7 +25,7 @@
         <input type="checkbox" class="is-checkradio" id="remember-me-checkbox" checked="checked">
         <label class="checkbox" for="remember-me-checkbox"><span>Remember me</span></label>
     </div>
-    <a id="forgot-password">Forgott password?</a>
+    <a id="forgot-password">Forgot password?</a>
     <span class="login-options">or</span>
-    <a href="/signup">Dont have an account?</a>
+    <a href="/signup">Don't have an account yet?</a>
 </form>
