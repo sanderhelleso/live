@@ -1,6 +1,6 @@
-import { toast } from '../lib/toast';
-import { HEADER } from '../helpers/authHeader';
-import { VALIDATE } from '../helpers/validateForm';
+import { toast } from '../lib/toast.js';
+import { HEADER } from '../helpers/authHeader.js';
+import { VALIDATE } from '../helpers/validateForm.js';
 
 
 export const DELETE = {

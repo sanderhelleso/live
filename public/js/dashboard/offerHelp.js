@@ -1,9 +1,9 @@
-import { HEADER } from '../helpers/authHeader';
-import { DATA } from './loadData';
-import { MODAL } from '../helpers/modal';
-import { PREVIEW } from '../helpers/preview';
-import { GEO_LOCATION } from '../helpers/geoLocation';
-import { toast } from '../lib/toast';
+import { HEADER } from '../helpers/authHeader.js';
+import { DATA } from './loadData.js';
+import { MODAL } from '../helpers/modal.js';
+import { PREVIEW } from '../helpers/preview.js';
+import { GEO_LOCATION } from '../helpers/geoLocation.js';
+import { toast } from '../lib/toast.js';
 
 // store areas selected
 const AREAS = [];

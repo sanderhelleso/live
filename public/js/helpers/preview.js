@@ -1,4 +1,4 @@
-import { DATA} from '../dashboard/loadData';
+import { DATA} from '../dashboard/loadData.js';
 
 export const PREVIEW = {
     initAnimateCover,

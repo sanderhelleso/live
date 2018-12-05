@@ -1,9 +1,9 @@
-import { GEO_LOCATION } from '../js/helpers/geoLocation';
-import { DATA } from './dashboard/loadData';
-import { MODAL } from './helpers/modal';
-import { WORDS } from './helpers/words';
-import { HEADER} from './helpers/authHeader';
-import { toast } from './lib/toast';
+import { GEO_LOCATION } from '../js/helpers/geoLocation.js';
+import { DATA } from './dashboard/loadData.js';
+import { MODAL } from './helpers/modal.js';
+import { WORDS } from './helpers/words.js';
+import { HEADER} from './helpers/authHeader.js';
+import { toast } from './lib/toast.js';
 
 // data recieved
 let results = new Array();

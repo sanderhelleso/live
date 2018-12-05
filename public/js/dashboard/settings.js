@@ -1,11 +1,10 @@
-import { toast } from '../lib/toast';
-import { LOCATION } from '../lib/countriesAndStates/formLocation';
-import { VALIDATE } from '../helpers/validateForm';
-import { HEADER } from '../helpers/authHeader';
-import { DATA } from './loadData';
-import { MODAL } from '../helpers/modal';
-import { AVATAR } from '../helpers/changeAvatar';
-import { DELETE } from '../helpers/deleteAccount';
+import { toast } from '../lib/toast.js';
+import { LOCATION } from '../lib/countriesAndStates/formLocation.js';
+import { VALIDATE } from '../helpers/validateForm.js';
+import { HEADER } from '../helpers/authHeader.js';
+import { DATA } from './loadData.js';
+import { MODAL } from '../helpers/modal.js';
+import { AVATAR } from '../helpers/changeAvatar.js';
 
 
 window.onload = initialize;

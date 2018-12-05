@@ -1,5 +1,5 @@
-import { toast } from '../lib/toast';
-import { HEADER } from '../helpers/authHeader';
+import { toast } from '../lib/toast.js';
+import { HEADER } from '../helpers/authHeader.js';
 
 export const DATA = {
     loadUserData,

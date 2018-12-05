@@ -1,7 +1,7 @@
-import { VALIDATE } from '../helpers/validateForm';
-import { PASSWORD } from '../helpers/changePassword';
-import { DELETE } from './deleteAccount';
-import { FORGOTPASSWORD } from './forgotPassword';
+import { VALIDATE } from '../helpers/validateForm.js';
+import { PASSWORD } from '../helpers/changePassword.js';
+import { DELETE } from './deleteAccount.js';
+import { FORGOTPASSWORD } from './forgotPassword.js';
 
 export const MODAL = {
     open,

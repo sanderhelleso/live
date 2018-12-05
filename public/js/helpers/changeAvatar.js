@@ -1,6 +1,6 @@
-import { toast } from '../lib/toast';
-import { HEADER } from './authHeader';
-import { DATA } from '../dashboard/loadData';
+import { toast } from '../lib/toast.js';
+import { HEADER } from './authHeader.js';
+import { DATA } from '../dashboard/loadData.js';
 
 export const AVATAR = {
     selectAvatar

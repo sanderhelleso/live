@@ -1,4 +1,4 @@
-import { toast } from '../lib/toast';
+import { toast } from '../lib/toast.js';
 
 export const GEO_LOCATION = {
     getLocation,

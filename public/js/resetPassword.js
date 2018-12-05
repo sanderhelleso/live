@@ -1,5 +1,5 @@
-import { toast } from './lib/toast';
-import { VALIDATE } from './helpers/validateForm';
+import { toast } from './lib/toast.js';
+import { VALIDATE } from './helpers/validateForm.js';
 
 window.onload = initialize;
 

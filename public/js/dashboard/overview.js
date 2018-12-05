@@ -1,9 +1,10 @@
-import { MODAL } from '../helpers/modal';
-import { DATA } from '../dashboard/loadData';
-import { PREVIEW } from '../helpers/preview';
-import { HEADER } from '../helpers/authHeader';
-import { toast } from '../lib/toast';
-import { RECENT_ACTION } from '../helpers/recentActionNotification';
+import { MODAL } from '../helpers/modal.js';
+import { DATA } from '../dashboard/loadData.js';
+import { PREVIEW } from '../helpers/preview.js';
+import { HEADER } from '../helpers/authHeader.js';
+import { RECENT_ACTION } from '../helpers/recentActionNotification.js';
+import { toast } from '../lib/toast.js';
+
 
 window.onload = initialize;
 

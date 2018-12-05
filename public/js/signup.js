@@ -1,6 +1,6 @@
-import { toast } from './lib/toast';
-import { LOCATION } from './lib/countriesAndStates/formLocation';
-import { VALIDATE } from './helpers/validateForm';
+import { toast } from './lib/toast.js';
+import { LOCATION } from './lib/countriesAndStates/formLocation.js';
+import { VALIDATE } from './helpers/validateForm.js';
 
 window.onload = initialize;
 
