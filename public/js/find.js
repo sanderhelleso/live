@@ -8,9 +8,9 @@ import { toast } from './lib/toast.js';
 // data recieved
 let results = new Array();
 
-// default location sat to San Francisco
-const SF_LAT = 37.773972;
-const SF_LNG = -122.431297;
+// default location sat to Seaside, CA, USA (CSUMB Campus)
+const SF_LAT = 	36.653747;
+const SF_LNG = 	-121.798511;
 
 // default zoom in km
 const DEFAULT_ZOOM_KM = 20;
@@ -101,9 +101,11 @@ async function findHelp(e) {
 // set the stats of result
 function setStats(stats) {
 
+    let i = 0;
     const statsEles = Array.from(document.querySelector('#stats').querySelectorAll('h5'));
-    stats.forEach(stat => {
-        statsEles[stats.indexOf(stat)].innerHTML = parseInt(stat);
+    statsEles.forEach(ele => {
+        ele.innerHTML = parseInt(stats[i]);
+        i++;
     });
 
 }

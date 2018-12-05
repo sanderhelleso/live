@@ -60,7 +60,7 @@ async function loadUserData() {
     else {
 
         // send POST request user data endpoint and retrieve users data
-        const response = await fetch('/api/user/getUserData.php', {
+        const response = await fetch('/api/user/get-user-data.php', {
             method: 'POST',
             mode: 'same-origin',
             credentials: 'same-origin',

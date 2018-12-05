@@ -131,15 +131,30 @@
             $mail->IsSMTP(); // enable SMTP
             $mail->SMTPAuth = true; // authentication enabled
             $mail->Port = 587; // port
-            $mail->Host = "in-v3.mailjet.com"; // host
-            $mail->Username = $_ENV['MAILJET_PUBLIC_KEY']; // username
-            $mail->Password = $_ENV['MAILJET_PRIVATE_KEY']; // password
+
+            /**
+             * Set database conenction properties depnding on dev / prod enviorment
+            */
+            if ($_SERVER['SERVER_NAME'] == 'liveapp') { // running on wamp / localhost
+
+                $mail->Host = $_ENV['MAILJET_HOST']; // host
+                $mail->Username = $_ENV['MAILJET_PUBLIC_KEY']; // username
+                $mail->Password = $_ENV['MAILJET_PRIVATE_KEY']; // password
+
+            }
+
+            else {  // running on heroku
+
+                $mail->Host = getenv('MAILJET_HOST'); // host
+                $mail->Username = getenv('MAILJET_PUBLIC_KEY'); // username
+                $mail->Password = getenv('MAILJET_PRIVATE_KEY'); // password
+            }
 
             /**
              * MAIL CONTENT SETTINGS
             **/
 
-            $mail->SetFrom('liveappmailer@gmail.com'); 
+            $mail->SetFrom(getenv('EMAIL_SENDER')); 
             $mail->Subject = 'Reset Password for LIVE'; // email subject
             $mail->IsHTML(true); // set as HTML
             $mail->Body = $this->emailBody(); // email body content

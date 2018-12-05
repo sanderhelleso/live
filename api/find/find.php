@@ -68,15 +68,17 @@
                 unset($helpersData[$key]);
 
                 // update stats
-                if (count($helpersData) > 0) {
+                if (count($helpersStats) > 0) {
                     $helpersStats['helpers_amount']--;
                     $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
                     $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
                     $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
+
                 }
             }
         }
 
+    
         // check if any results left after radius removal
         $validResult = count($helpersData) > 0 ? true : false;
 

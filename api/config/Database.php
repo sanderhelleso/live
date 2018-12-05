@@ -24,18 +24,43 @@
          *NOTE* Before going prodcution, change properties and store in safe file thats not commited
         */
 
-        // db params 
-        private $host = 'localhost';
-        private $dbName = 'live';
-        private $username = 'live_administrator';
-        private $password = 'GznUDh1AN8n60JlE'; 
-        private $conn;  
+         // db params 
+         private $host;
+         private $dbName;
+         private $username;
+         private $password;
+         private $conn; 
+
+         /**
+         * Set database conenction properties depnding on dev / prod enviorment
+        */
+         public function setParams() {
+
+            if ($_SERVER['SERVER_NAME'] == 'liveapp') { // running on wamp / localhost
+
+                $this->host = 'localhost';
+                $this->dbName = 'live';
+                $this->username = 'live_administrator';
+                $this->password = 'GznUDh1AN8n60JlE'; 
+            }
+
+            else { // running on heroku
+
+                $this->host = getenv('DB_HOST');
+                $this->dbName = getenv('DB_NAME');
+                $this->username = getenv('DB_USERNAME');
+                $this->password = getenv('DB_PASSWORD'); 
+            }
+
+         }
+
 
         /**
          * Attempt to connect to database using releated properties
         */
         public function connect() {
             $this->conn = null;
+            $this->setParams();
 
             try {
 
