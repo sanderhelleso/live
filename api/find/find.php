@@ -88,7 +88,7 @@
             'message' => $validResult ? $successMsg : $errorMsg,
             'timestamp' => $timestamp,
             'payload' => array(
-                'data' => $validResult ? $helpersData : array(),
+                'data' => $helpersData,
                 'stats' => $helpersStats
             )
         );
