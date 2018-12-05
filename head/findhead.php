@@ -36,8 +36,6 @@
     <meta property="og:description" content="APP DESC">
     <meta property="og:site_name" content="APP NAME"> 
         
-    <link rel="icon" href="/URL/TO/ICON" type="image/gif" sizes="16x16">
-
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/animate.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/bulma.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
