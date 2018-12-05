@@ -167,6 +167,7 @@ function createMarker(helper) {
     const marker = new google.maps.Marker({ 
         position: latLng,
         map: map,
+        icon: mapsIcon('helper'),
         id: helper.user_id
     });
 
@@ -190,7 +191,7 @@ let markers = new Array();
 async function initializeMap() {
 
     // fetch users geo location
-    coords = await GEO_LOCATION.getLocation();
+    coords = null;//await GEO_LOCATION.getLocation();
     if (!coords) {
 
         // if geo location fetched failed, set default coords to San Fransico
@@ -207,9 +208,29 @@ async function initializeMap() {
             lng: coords.longitude
         }
     });
+
+    // initialize marker for user location
+    new google.maps.Marker({ 
+        position: { 
+            lat: parseFloat(coords.latitude),
+            lng: parseFloat(coords.longitude)
+        },
+        map: map,
+        icon: mapsIcon('home')
+    });
     
     // set initial zoom
     map.setZoom(calculateZoomLevel(DEFAULT_ZOOM_KM));
+}
+
+function mapsIcon(iconType) {
+
+    return {
+        url: `${location.protocol}//${location.host}/public/img/maps/${iconType}Icon.png`, // url
+        scaledSize: new google.maps.Size(50, 50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    }
 }
 
 // default zoom

@@ -11,7 +11,7 @@
     */
 
     // include request validation
-    include_once '../../auth/validRequest.php';
+    include_once '../../auth/request.php';
 
     // set JSON header 
     header('Content-Type: application/json');
@@ -68,10 +68,12 @@
                 unset($helpersData[$key]);
 
                 // update stats
-                $helpersStats['helpers_amount']--;
-                $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
-                $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
-                $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
+                if (count($helpersData) > 0) {
+                    $helpersStats['helpers_amount']--;
+                    $helpersStats['average_price'] = array_sum(array_column($helpersData, 'price')) / count($helpersData);
+                    $helpersStats['min_price'] = min(array_column($helpersData, 'price'));
+                    $helpersStats['max_price'] = max(array_column($helpersData, 'price'));
+                }
             }
         }
 

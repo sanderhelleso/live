@@ -1,5 +1,7 @@
-# remove .php extensions
+# remove .php extensions and force SSL
 RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # redirect to custom 404 page
-##ErrorDocument 404 https://demoliveapp.herokuapp.com/404
+#ErrorDocument 404 https://demoliveapp.herokuapp.com/404
