@@ -9,14 +9,14 @@
     */
 
     // include request validation
-    include_once '../../auth/validRequest.php';
+    include_once '../../auth/request.php';
 
     // set JSON header 
     header('Content-Type: application/json');
 
     // include required db config, user and auth model
     include_once '../models/user/User.php';
-    include_once '../../auth/validToken.php';
+    include_once '../../auth/token.php';
 
     // check for valid token
     if ($valid) {

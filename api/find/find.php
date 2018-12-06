@@ -6,7 +6,7 @@
     *  @author Sander Hellesø <shellesoe@csumb.edu>
     *
     * NOTE - From Find.php: The user performing the request do NOT require to be logged in
-    * to the system. However, to actually book and connect with thte helper,
+    * to the system. However, to actually request and connect with thte helper,
     * the user is required to create an account / log into the application
     */
 
