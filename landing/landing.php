@@ -4,7 +4,7 @@
         <div id="hero-banner" class="has-text-centered animated fadeIn">
             <h1 class="animated fadeInUp">LIVE</h1>
             <h5>Live your life. Find qualified and passionate people to take care of those you care about.</h5>
-            <a class="button animated fadeInDown" href="/signup">Get started today</a>
+            <a class="button animated fadeInDown" href="/signup">Get started today!</a>
         </div>
     </div>
     <section class="section has-text-centered">
