@@ -45,5 +45,5 @@
     <script src="../../public/js/navbar.js"></script>
     <script src="../../public/js/dashboard/overview.js" type="module"></script>
 
-    <title>Offer Help</title>
+    <title>LIVE | Offer Help</title>
 </head>
