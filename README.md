@@ -33,6 +33,25 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 <br>
 <br>
 
+
+## Mockups
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/welcome.png"></img>
+
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/dashboard.png"></img>
+
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/signup.png"></img>
+
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/login.png"></img>
+
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/find.png"></img>
+
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/deletepop.png"></img>
+
+<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/settings.png"></img>
+<br>
+<br>
+
+
 ## Features
 * Signup Sytem
 * Login System
