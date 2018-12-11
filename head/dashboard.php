@@ -1,40 +1,37 @@
-<!-- Head component -->
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
     <!-- SEO META -->
     <meta name="robots" content="follow, index" />
     <meta name="publisher" content="https://github.com/sanderhelleso" />
-    <meta name="description" content="APP DESC">
-    <meta property="og:site_name" content="APP NAME">
-    <meta name="keyword" content="APP KEYWORDS">
+    <meta name="description" content="Live your life. Find qualified and passionate people to tke care of those you care about.">
+    <meta property="og:site_name" content="LIVE">
+    <meta name="keyword" content="Help, Find, Helpers Close to me, Babysitter, Care, Child Care, Health Care, Animal Care, Sitter, Baby, Live">
     <meta name="robots" content="index, follow">
         
     <!-- Google + -->
     <meta itemprop="[Organization]">
-    <meta itemprop="name" content="APP NAME">
-    <meta itemprop="description" content="APP DESC">
-    <meta property="og:site_name" content="APP NAME">
-    <meta itemprop="image" content="/URL/APPCOVER">
+    <meta itemprop="name" content="LIVE">
+    <meta itemprop="description" content="Live your life. Find qualified and passionate people to tke care of those you care about.">
+    <meta property="og:site_name" content="LIVE">
+    <meta itemprop="image" content="../public/img/landing/hero.jpg">
         
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="APP TITLE">
-    <meta name="twitter:description" content="APP DESC">
-    <meta property="og:site_name" content="APP TITLE">
-    <meta name="twitter:image" content="/URL/APPCOVER">
-    <meta name="twitter:url" content="APP URL">
+    <meta name="twitter:title" content="LIVE">
+    <meta name="twitter:description" content="Live your life. Find qualified and passionate people to tke care of those you care about.">
+    <meta property="og:site_name" content="LIVE">
+    <meta name="twitter:image" content="../public/img/landing/hero.jpg">
+    <meta name="twitter:url" content="https://demoliveapp.herokuapp.com/">
         
     <!-- Facebook -->
-    <meta property="og:title" content="APP NAME">
+    <meta property="og:title" content="LIVE">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="APP URL">
-    <meta property="og:image" content="/URL/APPCOVER">
-    <meta property="og:description" content="APP DESC">
-    <meta property="og:site_name" content="APP NAME"> 
+    <meta property="og:url" content="https://demoliveapp.herokuapp.com/">
+    <meta property="og:image" content="../public/img/landing/hero.jpg">
+    <meta property="og:description" content="Live your life. Find qualified and passionate people to tke care of those you care about.">
+    <meta property="og:site_name" content="LIVE"> 
         
-    <link rel="icon" href="/URL/TO/ICON" type="image/gif" sizes="16x16">
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../public/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon/favicon-16x16.png">
     
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/animate.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../public/css/lib/bulma.min.css" />
