@@ -47,5 +47,5 @@
     <script src="../public/js/navbar.js"></script>
     <script src="../public/js/signup.js" type="module"></script>
 
-    <title> LIVE | Signup</title>
+    <title> LIVE | Signup </title>
 </head>
