@@ -16,7 +16,8 @@
                         Browse, Decide and find the right person whenever you need
                     </h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo risus, semper in mattis nec, mattis suscipit dolor. Nunc imperdiet aliquam enim, in aliquet elit gravida et. Nulla facilisi. Praesent at odio vulputate, dictum risus non, ultricies neque. Cras dictum purus mi, sit amet scelerisque libero luctus nec.
+                        With more than 35 countries actively engaged in LIVE, our service keeps expanding! LIVE recipients are allowed easy access to a wide range of certified care takers. We help you narrow down your options to help you make the best decision for your child's needs!
+                        
                     </p>
                 </div>
                 <div class="column">
@@ -41,7 +42,7 @@
                         Passionate people are waiting just around the corner to make a difference
                     </h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo risus, semper in mattis nec, mattis suscipit dolor. Nunc imperdiet aliquam enim, in aliquet elit gravida et. Nulla facilisi. Praesent at odio vulputate, dictum risus non, ultricies neque. Cras dictum purus mi, sit amet scelerisque libero luctus nec.
+                       LIVE guarantees your child's safety by hiring certified caretakers. All caretakers are required to go through background checks and fingerprints to ensure the safety and well being of the recipient.
                     </p>
                 </div>
             </div>
@@ -56,7 +57,7 @@
                         Progressive rating and reccomendation system
                     </h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo risus, semper in mattis nec, mattis suscipit dolor. Nunc imperdiet aliquam enim, in aliquet elit gravida et. Nulla facilisi. Praesent at odio vulputate, dictum risus non, ultricies neque. Cras dictum purus mi, sit amet scelerisque libero luctus nec.
+                        Any persons receiving service can qualify or critique their care takers. The ratings given to care takers are a safe way to share customer satisfaction. 
                     </p>
                 </div>
                 <div class="column">
