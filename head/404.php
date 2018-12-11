@@ -47,5 +47,5 @@
     <script src="../public/js/navbar.js"></script>
     <script src="../public/js/dashboard/dashboardNavbar.js" type="module"></script>
 
-    <title>404 - Page Not Found | LIVE</title>
+    <title> LIVE | 404 - Page Not Found </title>
 </head>
