@@ -1,4 +1,8 @@
-<a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">See API Documentation</a>        <a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">See Mocukups</a>       <a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">See User Stories</a>
+<a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">See API Documentation</a>
+<br>
+<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">See Mocukups</a>
+<br>
+<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">See User Stories</a>
 <br>
 
 # LIVE
