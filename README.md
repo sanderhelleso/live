@@ -6,7 +6,7 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 <br>
 <a href ="https://demoliveapp.herokuapp.com/docs/api/">API Documentation</a>
 <a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md">Mocukups</a>
-<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf>User Stories</a>
+<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf">User Stories</a>
 <br>
 <br>
 
