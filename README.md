@@ -1,17 +1,12 @@
+<a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">See API Documentation</a>        <a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">See Mocukups</a>       <a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">See User Stories</a>
+<br>
+
 # LIVE
 
 Application that connects people who care about others to those that needs to be taken care of.<br>
 Developed as final project in the course CST-336 Internet Programming at California State University CSUMB.
 <br>
-<br>
-<a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">See API Documentation</a>
-<br>
-<br>
-<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">See Mocukups</a>
-<br>
-<br>
-<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">See User Stories</a>
-<br>
+
 <br>
 
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/preview.gif"></img>
