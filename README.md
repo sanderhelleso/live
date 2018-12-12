@@ -5,7 +5,6 @@
   <li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">User Stories</a></li>
 </ul>
 <br>
-
 # LIVE
 
 Application that connects people who care about others to those that needs to be taken care of.<br>
