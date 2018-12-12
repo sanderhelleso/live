@@ -4,6 +4,11 @@ Application that connects people who care about others to those that needs to be
 Developed as final project in the course CST-336 Internet Programming at California State University CSUMB.
 <br>
 <br>
+<a href ="https://demoliveapp.herokuapp.com/docs/api/">API Documentation</a>
+<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md">Mocukups</a>
+<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf>User Stories</a>
+<br>
+<br>
 
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/preview.gif"></img>
 
@@ -34,24 +39,6 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 <br>
 
 
-## Mockups
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/welcome.png"></img>
-
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/dashboard.png"></img>
-
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/signup.png"></img>
-
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/login.png"></img>
-
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/find.png"></img>
-
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/deletepop.png"></img>
-
-<img src = "https://github.com/sanderhelleso/live/blob/master/public/img/mockups/settings.png"></img>
-<br>
-<br>
-
-
 ## Features
 * Signup Sytem
 * Login System
@@ -68,6 +55,11 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * SMTP and dynamic E-Mail Sending
 * HTACCESS and 404 / Invalid route handling
 * Search and Display Depending on Terms
+* ENV Key Security Utilizing Herokus ENV Variables
+* Dynamic Retrieval of helpers
+* Find Helpers using dynamic map based on selected KM (Radius)
+* Aggregate result from search result (Avg Min, Max and Total)
+* Karma, Total Amount Helped, Last Seen and Recent Activity
 
 
 ## Built With
@@ -76,6 +68,7 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * PHP
 * mySQL
 * Bulma.css
+* phpDocumentor
 
 ## Authors
 
