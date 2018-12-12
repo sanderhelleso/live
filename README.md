@@ -1,7 +1,7 @@
 <ul>
 <li><a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">API Documentation</a></li>
 <li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">Mocukups</a></li>
-<li><a href ="https://github.com/sanderhelleso/live/blob/master/screenshots/README.md" target="_blank">User Screenshots</a></li>
+<li><a href ="https://github.com/sanderhelleso/live/blob/master/screenshots/README.md" target="_blank">Screenshots</a></li>
 <li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">User Stories</a></li>
 <li><a href ="https://github.com/sanderhelleso/live/blob/master/database/README.md" target="_blank">Database</a></li>
 </ul>
