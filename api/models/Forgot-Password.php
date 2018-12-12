@@ -143,8 +143,8 @@
                 $mail->Username = $_ENV['MAILJET_PUBLIC_KEY']; // username
                 $mail->Password = $_ENV['MAILJET_PRIVATE_KEY']; // password
                 $this->sender = $_ENV['EMAIL_SENDER']; // sender name
-                $this->domain = 'liveapp';
-                $this->ssl = 'http://';
+                $this->domain = 'liveapp'; // domain name
+                $this->ssl = 'http://'; // protocol
 
 
             }
@@ -155,8 +155,8 @@
                 $mail->Username = getenv('MAILJET_PUBLIC_KEY'); // username
                 $mail->Password = getenv('MAILJET_PRIVATE_KEY'); // password
                 $this->sender = getenv('EMAIL_SENDER'); // sender name
-                $this->domain = 'demoliveapp.herokuapp.com';
-                $this->ssl = 'https://';
+                $this->domain = 'demoliveapp.herokuapp.com'; // domain name
+                $this->ssl = 'https://'; // protocol
             }
 
             /**
