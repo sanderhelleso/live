@@ -1,8 +1,9 @@
-<a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">See API Documentation</a>
-<br>
-<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">See Mocukups</a>
-<br>
-<a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">See User Stories</a>
+<ul>
+  <li><a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">API Documentation</a></li>
+  <li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">Mocukups</a></li>
+    <li><a href ="https://github.com/sanderhelleso/live/blob/master/screenshots/README.md" target="_blank">User Stories</a></li>
+  <li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">User Stories</a></li>
+<ul>
 <br>
 
 # LIVE
@@ -14,30 +15,6 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 <br>
 
 <img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/preview.gif"></img>
-
-<br>
-<br>
-
-## Screenshots and Preview of application
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/landing.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/dashboard.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/find.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/offer.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/settings.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/login.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/signup.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/forgot.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/updatePassword.jpg"></img>
-
-<img src="https://github.com/sanderhelleso/live/blob/master/public/img/readme/delete.jpg"></img>
 <br>
 <br>
 
@@ -76,9 +53,9 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 ## Authors
 
 * **Sander Hellesø**
-* ***Zack Hutchinson***
-* ***Gabriel Sanchez***
-* ***Michael Avalos-Garcia***
+* **Zack Hutchinson**
+* **Gabriel Sanchez**
+* **Michael Avalos-Garcia**
 
 ## License
 
