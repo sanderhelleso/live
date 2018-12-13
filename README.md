@@ -26,28 +26,28 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 
 
 ## Features
+
 * Signup Sytem
 * Login System
 * Logout System
+* Delete Account
+* API REST Server
+* Change Password
+* File / Avatar Upload
 * Forgot Password System
 * Token Based Authentication
-* API REST Server
 * API Auth Header Validation
-* File / Avatar Upload
+* Dynamic Retrieval of Helpers
 * Update User Settings and Data
-* Change Password
-* Delete Account
-* LocalStorage and Cookie Releation
 * SMTP and dynamic E-Mail Sending
-* HTACCESS and 404 / Invalid route handling
+* LocalStorage and Cookie Releation
+* SEO Metatag and Keyword Optimizing
 * Search and Display Depending on Terms
+* HTACCESS and 404 / Invalid route handling
 * ENV Key Security Utilizing Herokus ENV Variables
-* Dynamic Retrieval of helpers
+* Karma, Total Amount Helped, Last Seen and Recent Activity
 * Find Helpers using dynamic map based on selected KM (Radius)
 * Aggregate result from search result (Avg Min, Max and Total)
-* Karma, Total Amount Helped, Last Seen and Recent Activity
-* SEO Metatag and Keyword Optimizing
-
 
 ## Built With
 
