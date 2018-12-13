@@ -47,6 +47,7 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * Find Helpers using dynamic map based on selected KM (Radius)
 * Aggregate result from search result (Avg Min, Max and Total)
 * Karma, Total Amount Helped, Last Seen and Recent Activity
+* SEO Metatag and Keyword Optimizing
 
 
 ## Built With
@@ -57,12 +58,14 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * Bulma.css
 * phpDocumentor
 
+
 ## Authors
 
 * **Sander Hellesø**
 * **Zack Hutchinson**
 * **Gabriel Sanchez**
 * **Michael Avalos-Garcia**
+
 
 ## License
 
