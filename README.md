@@ -1,16 +1,16 @@
 <ul>
-<li><a href ="https://demoliveapp.herokuapp.com/docs/api/" target="_blank">API Documentation</a></li>
-<li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md" target="_blank">Mocukups</a></li>
-<li><a href ="https://github.com/sanderhelleso/live/blob/master/screenshots/README.md" target="_blank">Screenshots</a></li>
-<li><a href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf" target="_blank">User Stories</a></li>
-<li><a href ="https://github.com/sanderhelleso/live/blob/master/database/README.md" target="_blank">Database</a></li>
+<li><a target="_blank" href ="https://demoliveapp.herokuapp.com/docs/api/">API Documentation</a></li>
+<li><a target="_blank" href ="https://github.com/sanderhelleso/live/blob/master/mockups/README.md">Mocukups</a></li>
+<li><a target="_blank" href ="https://github.com/sanderhelleso/live/blob/master/screenshots/README.md">Screenshots</a></li>
+<li><a target="_blank" href ="https://github.com/sanderhelleso/live/blob/master/mockups/Live%252FUserstroy.pdf">User Stories</a></li>
+<li><a target="_blank" href ="https://github.com/sanderhelleso/live/blob/master/database/README.md">Database</a></li>
 </ul>
 
 # LIVE
 
 [![HitCount](http://hits.dwyl.io/sanderhelleso/live.svg)](http://hits.dwyl.io/sanderhelleso/live)
 
-<h3><a href="https://demoliveapp.herokuapp.com/" target="_blank">See Application</a></h3>
+<h3><a target="_blank" href="https://demoliveapp.herokuapp.com/" target="_blank">See Latest version of Application</a></h3>
 
 Application that connects people who care about others to those that needs to be taken care of.<br>
 Developed as final project in the course CST-336 Internet Programming at California State University CSUMB.
