@@ -126,5 +126,9 @@
         Subscribe to our newsletter
         </label>
     </div>
-    <a href="/login">Allready have an account?</a>
+    <div class="checkbox-cont field">
+        <input type="checkbox" class="is-checkradio" id="newsletter-checkbox" checked="checked">
+        <label class="checkbox" for="newsletter-checkbox"><span>Subscribe To Our Newsletter</span></label>
+    </div>
+    <a href="/login">Already have an account?</a>
 </form>
