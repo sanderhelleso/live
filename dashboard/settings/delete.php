@@ -12,7 +12,7 @@
                     <span><i data-feather="alert-triangle"></i></span>
                     <p>Deleting your account is permanent and will clear all data personally releated to this account.</p>
                     <br>
-                    <h5>Ths action is NOT reversible</h5>
+                    <h5>This action is NOT reversible</h5>
                 </div>
             </div>
             <div class="columns is-centered enter-current-password">
