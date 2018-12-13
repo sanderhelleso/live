@@ -7,6 +7,7 @@
 </ul>
 
 # LIVE
+[![HitCount](http://hits.dwyl.io/sanderhelleso/live.svg)](http://hits.dwyl.io/sanderhelleso/live)
 
 Application that connects people who care about others to those that needs to be taken care of.<br>
 Developed as final project in the course CST-336 Internet Programming at California State University CSUMB.
