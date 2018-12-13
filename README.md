@@ -9,6 +9,9 @@
 # LIVE
 
 [![HitCount](http://hits.dwyl.io/sanderhelleso/live.svg)](http://hits.dwyl.io/sanderhelleso/live)
+<img src="https://github.com/sanderhelleso/live/blob/master/public/img/badges/version.svg">
+<img src="https://github.com/sanderhelleso/live/blob/master/public/img/badges/build.svg">
+<img src="https://github.com/sanderhelleso/live/blob/master/public/img/badges/licence.svg">
 
 <h3><a target="_blank" href="https://demoliveapp.herokuapp.com/" target="_blank">See Latest version of Application</a></h3>
 
