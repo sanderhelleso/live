@@ -7,8 +7,10 @@
 </ul>
 
 # LIVE
-<h3><a href="https://demoliveapp.herokuapp.com/">Goto Application</a></h3>
+
 [![HitCount](http://hits.dwyl.io/sanderhelleso/live.svg)](http://hits.dwyl.io/sanderhelleso/live)
+
+<h3><a href="https://demoliveapp.herokuapp.com/">See Application</a></h3>
 
 Application that connects people who care about others to those that needs to be taken care of.<br>
 Developed as final project in the course CST-336 Internet Programming at California State University CSUMB.
