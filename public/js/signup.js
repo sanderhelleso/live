@@ -39,12 +39,16 @@ function validateForm(e) {
                 input.classList.add('is-danger');
                 VALIDATE.setHelpMessage(input, 'empty');
                 isValid = false;
+                return;
             }
 
             // attempt to validate fields, if any field fails required test, form is set to invalid
             else {
                 
                 isValid = VALIDATE.validate(input);
+                if (!isValid) {
+                    return;
+                }
             }
         }
     });
