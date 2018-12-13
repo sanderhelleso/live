@@ -19,14 +19,18 @@ function initialize() {
 
 function validateForm(e) {
 
+    // form elements
+    const formEles = Array.from(document.querySelectorAll('input, select'));
+
     // set form status to invalid
+    let validCount = 0;
     let isValid = false;
 
     // prevent page from reloading
     e.preventDefault();
 
     // itterate over all form fields
-    Array.from(document.querySelectorAll('input, select')).forEach(input => {
+    formEles.forEach(input => {
 
         // get all fields except checkbox
         if (input.type !== 'checkbox') {
@@ -46,15 +50,16 @@ function validateForm(e) {
             else {
                 
                 isValid = VALIDATE.validate(input);
-                if (!isValid) {
-                    return;
+                if (isValid) {
+                    validCount++;
                 }
             }
         }
     });
 
     // form is valid
-    if (isValid) {
+    console.log(validCount, " ", formEles.length - 1)
+    if (validCount == formEles.length - 1) {
 
         //attempt to create account
         createAccount(this);

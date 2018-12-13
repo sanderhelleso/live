@@ -121,7 +121,7 @@
         <button id="signup-btn" class="button is-primary">Sign Up And Create Account</button>
     </div>
     <div class="checkbox-cont field">
-        <input type="checkbox" class="is-checkradio" id="newsletter-checkbox" checked="checked">
+        <input type="checkbox" class="is-checkradio" id="newsletter-checkbox" checked="checked" name="newsletter">
         <label class="checkbox" for="newsletter-checkbox"><span>Subscribe To Our Newsletter</span></label>
     </div>
     <a href="/login">Already have an account?</a>
