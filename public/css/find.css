@@ -417,6 +417,6 @@
 	#results .result-card {
 		max-width: 95%;
 		min-width: 95%;
-		margin: 0 auto;
+		margin: 1.5rem auto;
 	}
 }
