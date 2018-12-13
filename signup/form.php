@@ -120,12 +120,6 @@
     <div class="control has-text-centered is-medium">
         <button id="signup-btn" class="button is-primary">Sign Up And Create Account</button>
     </div>
-    <div class="checkbox-cont">
-        <label class="checkbox">
-        <input type="checkbox" name="newsletter">
-        Subscribe to our newsletter
-        </label>
-    </div>
     <div class="checkbox-cont field">
         <input type="checkbox" class="is-checkradio" id="newsletter-checkbox" checked="checked">
         <label class="checkbox" for="newsletter-checkbox"><span>Subscribe To Our Newsletter</span></label>
