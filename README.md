@@ -65,9 +65,3 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 * **Gabriel Sanchez**
 * **Michael Avalos-Garcia**
 
-
-## License
-
-This project is licensed under the No License
- * You are not permitted to use, modify, or share the software. 
- * However we grant permission to reference and share for educational purposes only.
