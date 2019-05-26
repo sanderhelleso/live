@@ -53,7 +53,7 @@ Developed as final project in the course CST-336 Internet Programming at Califor
 
 * JavaScript
 * PHP
-* mySQL
+* MySQL
 * Bulma.css
 * phpDocumentor
 
